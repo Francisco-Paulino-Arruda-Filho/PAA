@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- MATHJAX 3 (através da CDN) -->
+        <title>Lista 01</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(\text{Disserte brevemente (200/400 palavras) sobre algoritmos. O texto deve conter definições de: problema, algoritmo, modelo computacional RAM e complexidade de tempo.} \)
+            <p>
+                <p>
+                    \(\text{Problema:} \)
+                </p>
+                <p>
+                    \(\text{Um problema é uma questão ou situação que precisa ser resolvida.} \)
+                </p>
+                <p>
+                    \(\text{Algoritmo:} \)
+                </p>
+                <p>
+                    \(\text{Um algoritmo é um conjunto de instruções finitas e bem definidas que, quando executadas, resolvem um problema.} \)
+                </p>
+                <p>
+                    \(\text{Modelo computacional RAM:} \)
+                </p>
+                <p>
+                    \(\text{O modelo computacional RAM (Random Access Machine) é uma máquina abstrata que possui uma memória infinita e instruções simples.} \)
+                </p>
+                <p>
+                    \(\text{Complexidade de tempo:} \)
+                </p>
+                <p>
+                    \(\text{A complexidade de tempo de um algoritmo é a quantidade de tempo que ele leva para executar em função do tamanho da entrada.} \)
+                </p>
+            </p>
+        </p>
+        <p>
+            <p>
+                \(\text{Questão 2} \)
+            </p>
+            \(\text{Enunciado} \)
+            <p>
+                \(\text{Suponha que estamos comparando implementações do insertion sort e do merge sort na mesma}\)<br>
+                \(\text{máquina. Para entradas de tamanho n, insertion sort executa em 8n2 passos, enquanto merge sort executa} \)
+                \(\text{em 64n lg n passos. Para quais valores de n insertion sort é melhor(mais eficiente) que o merge sort?} \)
+            </p>
+            <p>
+                \(\text{Não é possível fazer essas contas, pois não sabemos as especificações de cada máquina} \)
+            </p>
+        </p>
+        <p>
+            <p>
+                \(\text{Questão 3} \)
+            </p>
+            \(\text{Enunciado} \)
+            <p>
+                \(\text{Qual o menor valor de n tal que um algoritmo cujo tempo de execução é 100n2 executa mais}\)<br>
+                    \(\text{rápido que um algoritmo cujo tempo de execução é 2n na mesma máquina?} \)
+            </p>
+            <p>
+                \(\text{Não é possível fazer essas contas, pois não sabemos as especificações de cada máquina} \)
+            </p>
+        </p>
+        <p>
+            \(\text{Questão 5:} \)
+            <p>
+                <pre>
+                    <code>
+                        soma_binarios(array A, array B, int n)
+                            array C[n+1]
+                            int carry = 0
+                            for i = 0 to n do
+                                if(A[i] + B[i] + carry == 0) then
+                                    C[i] = 0
+                                    carry = 0
+                                else if(A[i] + B[i] + carry == 1) then
+                                    C[i] = 1
+                                    carry = 0
+                                else if(A[i] + B[i] + carry == 2) then
+                                    C[i] = 0
+                                    carry = 1
+                                else
+                                    C[i] = 1
+                                    carry = 1
+                            C[n] = carry
+                            return C
+                    </code>
+                </pre>
+            </p>
+        </p>
+        <p>
+            \(\text{Questão 7:} \)
+            <pre>
+                <code>
+                    eh_quadrado_magico(int n, array M)
+                        int soma = 0
+                        for i = 0 to n-1 do
+                            soma = soma + M[0][i]
+                        int soma_linha = 0
+                        for i = 0 to n-1 do
+                            soma_linha = 0
+                            for j = 0 to n-1 do
+                                soma_linha = soma_linha + M[i][j]
+                            if(soma_linha != soma) then
+                                return false
+                        int soma_coluna = 0
+                        for i = 0 to n-1 do
+                            soma_coluna = 0
+                            for j = 0 to n-1 do
+                                soma_coluna = soma_coluna + M[j][i]
+                            if(soma_coluna != soma) then
+                                return false
+                        int soma_diagonal1 = 0
+                        for i = 0 to n-1 do
+                            soma_diagonal1 = soma_diagonal1 + M[i][i]
+                        if(soma_diagonal1 != soma) then
+                            return false
+                        int soma_diagonal2 = 0
+                        for i = 0 to n-1 do
+                            soma_diagonal2 = soma_diagonal2 + M[i][n-1-i]
+                        if(soma_diagonal2 != soma) then
+                            return false
+                        return true
+                </code>
+            </pre>
+            <p>
+                \(\text{Análise de complexidade:}\)
+                <p>
+                    \(\text{O algoritmo eh_quadrado_magico possui complexidade de tempo \(O(n^2)\) e espaço \(O(1)\).}\)
+                </p>
+            </p>
+        </p>
+        </p>
+    </body>
+</html>

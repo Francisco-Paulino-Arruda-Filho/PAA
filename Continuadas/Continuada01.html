@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- MATHJAX 3 (através da CDN) -->
+        <title>Continuada 01</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(\text{Questão 1} \)
+            \(
+                \text{Projete um algoritmo para calcular \(\lfloor \sqrt{n} \rfloor\) utilizando apenas comandos de seleção, repetição e atribuição,}
+            \)
+            <br>
+            \(    
+                \text{e as quatro operações aritméticas básicas. Obs.: Como apenas a parte inteira do valor raiz quadrada é solicitado,}
+            \)
+            <br>
+            \(
+                \text{use um algoritmo iterativo simples que testa todos os valores inteiros dentro de uma faixa de valores possíveis.}
+            \)
+            <p>
+                <pre>
+                    <code>
+                        int raiz_quadrada(int n) {
+                            int i = 0;
+                            while (i * i <= n) {
+                                i++;
+                            }
+                            return i - 1;
+                        }
+                    </code>
+                </pre>
+            </p>
+        </p>
+        <p>
+            \(\text{Questão 3} \)
+            <p>
+                \(\text{Prove as seguintes afirmações:} \)
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        \[
+                            (n+2)^2 = O(n^2)
+                        \]
+                        <p>
+                            \[
+                                f(n) = (n+2)^2
+                            \]
+                        </p>
+                        <p>
+                            \[
+                                g(n) = n^2
+                            \]
+                        </p>
+                        <p>
+                            \(\text{Pela definição de O \(\exists n_0, c\) tal que \(f(n) \leq cn^2 \) } \)
+                            <p>
+                                \(
+                                    (n+2)^2 \leq cn^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    n^2 + 4n + 4 \leq cn^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    4n \leq 4n^2, \forall n \geq 1 
+                                \)
+                            </p>
+                            <p>
+                                \(4 \leq 4n^2, \forall n \geq 1 \)
+                            </p>
+                            <p>
+                                \(
+                                    n^2 + 4n + 4 \leq n^2 + 4n^2 + 4n^2, \forall n \geq 1
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    n^2 + 4n^2 + 4n^2 \leq cn^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    9n^2 \leq cn^2
+                                \)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar \(c=9\) e \(n_0=1\) } \)
+                            </p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            \[
+                                n^2 -3n -18 = \Omega(n^2)
+                            \]
+                        </p>
+                        <p>
+                            <p>
+                                \[
+                                    f(n) = n^2 -3n -18
+                                \]
+                            </p>
+                            <p>
+                                \[
+                                    g(n) = n^2
+                                \]
+                            </p>
+                            <p>
+                                \(\text{Pela definição de \(\Omega \)  \(\exists n_0, c\) tal que \(f(n) \geq cn^2 \) } \)
+                                <p>
+                                    \(
+                                        n^2 -3n -18 \geq cn^2
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \text{Basta assumir } c=\frac{1}{2}
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        n^2 -3n -18 \geq \frac{1}{2}n^2
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \frac{1}{2}n^2 -3n -18 \geq 0
+                                    \)
+                                </p>
+                                <P>
+                                    \(
+                                        n^2 -6n -36 \geq 0
+                                    \)
+                                </P>
+                                <P>
+                                    \(
+                                        \text{Resolvendo a inequação} 
+                                    \)
+                                    <p>
+                                        \(
+                                            \frac{6 \pm \sqrt{6^2 - 4 \cdot 1 \cdot (-36)}}{2 \cdot 1}
+                                        \)
+                                        <p>
+                                            \(
+                                                \frac{6 \pm \sqrt{36 + 144}}{2}
+                                            \)
+                                        </p>
+                                        <p>
+                                            \(
+                                                \frac{6 \pm \sqrt{180}}{2}
+                                            \)
+                                        </p>
+                                        <p>
+                                            \(
+                                                \frac{6 \pm 6\sqrt{5}}{2}
+                                            \)
+                                        </p>
+                                        <p>
+                                            \(
+                                                3 \pm 3\sqrt{5}
+                                            \)
+                                        </p>
+                                        <P>
+                                            \(
+                                                3 - 3\sqrt{5} \approx -6.7
+                                            \)
+                                        </P>
+                                        <p>
+                                            \(
+                                                3 + 3\sqrt{5} \approx 12.7
+                                            \)
+                                        </p>
+                                        <p>
+                                            \(
+                                                \text{Logo, para } n_0 \geq 13 \text{ a inequação é verdadeira.}
+                                            \)
+                                        </p>
+                                    </p>
+                                </P>
+                            </p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            \[
+                                n^3 -3n^2 - n = \Omega(n^3)
+                            \]
+                        </p>
+                        <p>
+                            <p>
+                                \[
+                                    f(n) = n^3 -3n^2 - n
+                                \]
+                            </p>
+                            <p>
+                                \[
+                                    g(n) = n^3
+                                \]
+                            </p>
+                            <p>
+                                \(\text{Pela definição de \(\Omega \)  \(\exists n_0, c\) tal que \(f(n) \geq cn^3 \) } \)
+                                <p>
+                                    \(
+                                        n^3 -3n^2 - n \geq cn^3
+                                    \)
+                                </p>
+                                <p>
+                                    \(\text{Basta tomar } c=\frac{1}{2} \)
+                                </p>
+                                <p>
+                                    \(
+                                        n^3 -3n^2 - n \geq \frac{1}{2}n^3
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \frac{1}{2}n^3 -3n^2 - n \geq 0
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \frac{1}{2}n^2 - 3n - 1 \geq 0
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        n^2 - 6n - 2 \geq 0
+                                    \)
+                                </p>
+                                <p>
+                                    <p>
+                                        \(\text{Resolvendo a inequação} \)
+                                        <p>
+                                            \(
+                                                \frac{6 \pm \sqrt{6^2 - 4 \cdot 1 \cdot (-2)}}{2 \cdot 1}
+                                            \)
+                                            <p>
+                                                \(
+                                                    \frac{6 \pm \sqrt{36 + 8}}{2}
+                                                \)
+                                            </p>
+                                            <p>
+                                                \(
+                                                    \frac{6 \pm \sqrt{44}}{2}
+                                                \)
+                                            </p>
+                                            <p>
+                                                \(
+                                                    \frac{6 \pm 2\sqrt{11}}{2}
+                                                \)
+                                            </p>
+                                            <p>
+                                                \(
+                                                    3 \pm \sqrt{11}
+                                                \)
+                                            </p>
+                                            <P>
+                                                \(
+                                                    3 - \sqrt{11} \approx 0.08
+                                                \)
+                                            </P>
+                                            <p>
+                                                \(
+                                                    3 + \sqrt{11} \approx 6.92
+                                                \)
+                                            </p>
+                                            <p>
+                                                \(
+                                                    \text{Logo, para } n_0 \geq 7 \text{ a inequação é verdadeira.}
+                                                \)
+                                            </p>
+                                        </p>
+                                    </p>
+                                </p>
+                            </p>
+                        </p>
+                    </li>
+                    <li>
+                        \[
+                            \lg^{100n^3+200n300} = O(\lg n)
+                        \]
+                        <p>
+                            \[
+                                f(n) = \lg^{100n^3+200n300}
+                            \]
+                        </p>
+                        <p>
+                            \[
+                                g(n) = \lg n
+                            \]
+                        </p>
+                        <p>
+                            \(\text{Pela definição de O temos que \(\exists n_0, c\) tal qual \(\lg^{(100n^3+200n+300)^2} \leq c\lg^n \) } \)
+                            <p>
+                                \(
+                                    \lg^{(100n^3+200n+300)^2} \leq c\lg^n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    2\lg^{100n^3+200n+300} \leq c\lg^n
+                                \)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar} c=8 \)
+                            </p>
+                            <p>
+                                \(
+                                    2\lg^{100n^3+200n+300} \leq 8\lg^n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    \lg^{100n^3+200n+300} \leq 4\lg^n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    \lg^{100n^3+200n+300} \leq \lg^{n^4}
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    100n^3+200n+300 \leq n^4
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    300 \leq n^4 - 100n^3 - 200n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    300 \leq n(n^3 - 100n^2 - 200)
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    300 \leq n(n^2(n - 100) - 200)
+                                \)
+                            </p>
+                            <P>
+                                \(
+                                    \text{Para basta tomar} n=105
+                                \)
+                            </P>
+                            <p>
+                                \(
+                                    300 \leq 105(11025(5) - 200)
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    300 \leq 105(55125 - 200)
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    300 \leq 105(54925)
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    300 \leq 5767125
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    \text{Logo, para } n_0 \geq 105 \text{ a inequação é verdadeira.}
+                                \)
+                            </p>
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </p>
+    </body>
+</html>

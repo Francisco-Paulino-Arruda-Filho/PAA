@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 03 - Questão 02</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <pre>
+            <code>
+                void buscar_binaria(int *v, int n, int x) {
+                    int inicio = 1;
+                    int fim = n;
+                    int meio;
+                    if(v[inicio] > x || v[fim] < x) {
+                        return -1;
+                    }
+                    while (inicio <= fim) {
+                        meio = (inicio + fim) / 2;
+                        if (v[meio] == x) {
+                            return meio;
+                        } else if (v[meio] < x) {
+                            inicio = meio + 1;
+                        } else {
+                            fim = meio - 1;
+                        }
+                    }
+                    return -1;  
+                }
+            </code>
+        </pre>
+        <p>
+            <p>
+                \(
+                    \text{O que cada variável representa: n é o tamanho do vetor, v é o vetor e x o valor chave}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Prova de corretude:}
+                \)
+                <p>
+                    \(
+                        \text{Caso base:}
+                    \)
+                    <p>
+                        \(
+                            \text{Se } n = 1 \text{, então } v[1] = x \text{ e a função retorna 1.}
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Caso indutivo:}
+                    \)
+                    <p>
+                        \(\text{Na linha do laço while, o índice é iniciado como 1, o vetor é incrementado enquanto inicio <= fim ou v[meio] != x,}\)<br>
+                        \(\text{ se ele encontrar o valor x, a função retorna meio, que é o índice do valor x no vetor.}\)<br>
+                        \(\text{Se o laço terminar sem encontrar o valor x, a função retorna -1,}\)<br>
+                        \(\text{Logo, independente do caso, a função retorna o índice do valor x no vetor ou -1 se não encontrar, pois graças ao while o índice é incrementado.}\)<br>
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Terminação:}
+                    \)
+                    <p>
+                        \(
+                            \text{O laço while termina quando inicio > fim, ou seja, quando o vetor é percorrido completamente.}
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- MATHJAX 3 (através da CDN) -->
+        <title>Lista 02</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            <pre>
+                <code>
+                    Algoritmo1 (S, x):
+                        Para i <- 1, 2, ..., |S| faça
+                            Para j <- i + 1, i + 2, ..., |S| faça
+                                Se S[i] + S[j] = x então
+                                    Retorne V
+                    Retorne F
+                </code>
+            </pre>
+            <p>
+                \(
+                    \text{Análise de complexidade linha por linha:}
+                \)
+                <p>
+                    <p>
+                        \(
+                            1.\text{ \(c_1(n+1) \) }
+                        \)<br>
+                        \(
+                            2.\text{ \(c_2(\sum^{n}_{j=2} t_j ) \) }
+                        \)<br>
+                        \(
+                            3.\text{ \(c_3(\sum^{n}_{j=2} (t_j-1) ) \) }
+                        \)<br>
+                        \(
+                            4.\text{ \(1\) }
+                        \)<br>
+                        \(
+                            5.\text{ \(1\) }
+                        \)<br>
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Melhor caso:}
+                    \)
+                    <p>
+                        \(
+                            \text{Quando a for de dentro executa uma única vez, ou seja, \(S[1] + S[2] == x \), quando \(t_j=1\)  }
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            c_1(n+1) + c_2(\sum^{n}_{j=2} t_j ) + c_3(\sum^{n}_{j=2} (t_j-1) ) + 1 + 1
+                        \)<br>
+                        \(
+                            c_1(n+1) + c_2(\sum^{n}_{j=2} 1 ) + c_3(\sum^{n}_{j=2} (1-1) ) + 1 + 1
+                        \)<br>
+                        \(
+                            c_1(n+1) + c_2(n-1) + 1 + 1
+                        \)<br>
+                        \(
+                            c_1n + c_1 + c_2n - c_2 + 1 + 1
+                        \)<br>
+                        \(
+                            (c_1 + c_2)n + c_1 - c_2 + 2
+                        \)<br>
+                        <p>
+                            \(
+                                \text{Criando as constantes \(a=c_1+c_2\) e \(b=c_1-c_2+2\) temos que \(an+b+2\) } 
+                            \)
+                        </p>
+                        \(
+                            \text{Ou seja, \(O(n)\) }
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Pior caso:}
+                    \)
+                </p>
+            </p>
+        </p>
+        <p>
+            \(\text{Questão 02} \)
+            <p>
+                <pre>
+                    <code>
+                        bool eh_primo(int n){
+                            if n <= 2:
+                                return False
+                            else {
+                                for(int i = 2; i <= sqrt(n); i++ ) {
+                                    if n % i == 0:
+                                        return False
+                                }
+                            }
+                            return True
+                        }
+                    </code>
+                </pre>
+            </p>
+        </p>
+        <p>
+            <p>
+                \(\text{Questão 4} \)
+            </p>
+            <p>
+                \(\text{Enunciado item 4.1} \)
+                <P>
+                    \[
+                        \frac{n(n-10)}{2} = O(n^2)
+                    \]
+                </P>
+                <p>
+                    <p>
+                        \[
+                            f(n) = \frac{n(n-10)}{2}
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            g(n) = n^2
+                        \]
+                    </p>
+                    <p>
+                        <p>
+                            \(\text{Pela definição de O temos que \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) \(\forall n \geq n_0\) }\)
+                            <p>
+                                \(f(n) = cg(n) \)
+                            </p>
+                            <p>
+                                \(\frac{n(n-10)}{2} \leq cn^2 \)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar } c=\frac{1}{2} \)
+                            </p>
+                            <p>
+                                \(\frac{n(n-10)}{2} \leq \frac{1}{2}n^2 \)
+                            </p>
+                            <p>
+                                \(\frac{(n^2-10n)}{2} \leq \frac{1}{2}n^2 \)
+                            </p>
+                            <p>
+                                \(n^2-10n \leq n^2 \)
+                            </p>
+                            <p>
+                                \(\text{Isso vale \(n \geq 1 \)} \)
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(\text{Enunciado item 4.2:} \)
+                <p>
+                    \[
+                        \sum_{i=1}^{n} i = O(n^2)
+                    \]
+                </p>
+                <p>
+                    <p>
+                        \[
+                            f(n) = \sum_{i=1}^{n} i
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            g(n) = n^2
+                        \]
+                    </p>
+                    <p>
+                        <p>
+                            \(\text{Pela definição de O temos que \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) \(\forall n \geq n_0\) }\)
+                            <p>
+                                \(f(n) = cg(n) \)
+                            </p>
+                            <p>
+                                \(\sum_{i=1}^{n} i \leq cn^2 \)
+                            </p>
+                            <p>
+                                \(\frac{n(n+1)}{2} \leq cn^2 \)
+                            </p>
+                            <p>
+                                \(\frac{(n+1)}{2} \leq cn \)
+                            </p>
+                            <p>
+                                \(\frac{n}{2}+\frac{1}{2} \leq cn \)
+                            </p>
+                            <p>
+                                \(\frac{1}{2} \leq n, \forall n \geq 1 \)
+                            </p>
+                            <p>
+                                \(\frac{n}{2}+n \leq cn \)
+                            </p>
+                            <p>
+                                \(\frac{3}{2}n \leq cn \)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar } c=\frac{3}{2}, n=1\)
+                            </p>
+                            <p>
+                                \(\frac{(n+1)}{2} \leq \frac{1}{2}n \)
+                            </p>
+                            <p>
+                                
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+            <p>
+                <!-- 2^{n−1} = Ω(2^n)-->
+                \(\text{Enunciado item 4.3:} \)
+                <p>
+                    \[
+                        2^{n-1} = \Omega(2^n)
+                    \]
+                </p>
+                <p>
+                    <p>
+                        \[
+                            f(n) = 2^{n-1}
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            g(n) = 2^n
+                        \]
+                    </p>
+                    <p>
+                        <p>
+                            \(\text{Pela definição de O temos que \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) \(\forall n \geq n_0\) }\)
+                            <p>
+                                \(f(n) = cg(n) \)
+                            </p>
+                            <p>
+                                \(2^{n-1} \leq c2^n \)
+                            </p>
+                            <p>
+                                \(2^{n-1} \leq c2^n \)
+                            </p>
+                            <p>
+                                \(2^{n-1} \leq c2^n \)
+                            </p>
+                            <p>
+                                \(2^{n-1} \leq c2^n \)
+                            </p>
+                            <p>
+                                \(2^{n-1} \leq c2^n \)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar } c=1, n=1\)
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(\text{Enunciado item 4.4:} \)
+                <p>
+                    \[
+                        \binom{n}{2} = \Theta(n^2)
+                    \]
+                </p>
+                <p>
+                    <p>
+                        \[
+                            \binom{n}{2} = \frac{n!}{2!(n-2)!}
+                        \]
+                    </p>
+                    <p>
+                        <p>
+                            \(\text{Demonstração :}\)
+                        </p>
+                        Pela definição de \(\Theta\) temos que mostrar que \(\exists c_1, c_2\)\(,n_0>0\) tal que \(c_1n^2 \leq \binom{n}{2} \leq c_2n^2 \) para todo n suficientemente grande.
+                        <p>
+                            <strong>
+                                \(\text{Lado esquerdo:} \)
+                            </strong>
+                            <p>
+                                \(\binom{n}{2} \geq c_1n^2 \)
+                            </p>
+                            <p>
+                                \(\frac{n!}{2!(n-2)!} \geq c_1n^2 \)
+                            </p>
+                            <p>
+                                \(\frac{n(n-1)}{2} \geq c_1n^2 \)
+                            </p>
+                            <p>
+                                \(\frac{n(n-1)}{2} \geq c_1n*n \)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar } c=\frac{1}{4} \)
+                            </p>
+                            <p>
+                                \(\frac{n(n-1)}{2} \geq \frac{1}{4}n^2 \)
+                            </p>
+                            <p>
+                                \(4\frac{n(n-1)}{2} \geq n^2 \)
+                            </p>
+                            <p>
+                                \(2n(n-1) \geq n^2 \)
+                            </p>
+                            <p>
+                                \(n(2n-2) \geq n*n \)
+                            </p>
+                            <p>
+                                \(2n-2 \geq n \)
+                            </p>
+                            <p>
+                                \(n \geq 2 \)
+                            </p>
+                            <p>
+                                \(\text{Isso vale para \(n \geq 2\) quando \(c=\frac{1}{4}\) } \)
+                            </p>
+                            <p>
+                                \(\text{Ou seja, basta tomar \(n_0=2\) e \(c=\frac{1}{4}\)} \)
+                            </p>
+                        </p> 
+                        <p>
+                            <strong>
+                                \(\text{Lado direito} \)
+                            </strong>
+                            <p>
+                                \(\binom{n}{2} \leq c_2n^2 \)
+                            </p>
+                            <p>
+                                \(\frac{n!}{2!(n-2)!} \leq c_2n^2 \)
+                            </p>
+                            <p>
+                                \(\frac{n(n-1)}{2} \leq c_2n^2 \)
+                            </p>
+                            <p>
+                                \(n^2-n \geq n^2 \)
+                            </p>
+                            <p>
+                                \(\text{Isso vale para \(n \geq 1\) } \)
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(\text{Questão 6} \)
+            <p>
+                \(
+                    \text{Enunciado: Prove o seguinte teorema: “Para quaisquer duas funções f (n) e g(n), temos que f (n) = Θ(g(n))}\)
+                    \(\text{ se, e somente se, f (n) = O(g(n)) e f (n) = Ω(g(n)) } 
+                \)
+            </p>
+            <p>
+                \(\text{Ida:} \)
+                <p>
+                    \(\text{Se \(f(n)=\Theta(g(n)) \) então \(f(n) = O(g(n))\) e \(f(n) = \Omega(g(n)) \) } \)
+                    <p>
+                        \(\text{Pela definição de \(\Theta\) temos que \(\exists c_1, c_2, n_0\) tal que \(c_1g(n) \leq f(n) \leq c_2g(n) \) para todo \(n \geq n_0\) } \)
+                        <p>
+                            \[
+                                c_1g(n) \leq f(n) \leq c_2g(n)
+                            \]
+                        </p>
+                        <p>
+                            \[
+                                f(n) \leq c_2g(n)
+                            \]
+                            <p>
+                                \(\text{Essa é a definição de O, ou seja, f(n)=O(g(n)) } \)
+                            </p>
+                        </p>
+                        <p>
+                            \[
+                                f(n) \geq c_1g(n)
+                            \]
+                            <p>
+                                \(\text{Essa é a definição de \(\Omega\), ou seja, \(f(n)=\Omega(g(n))\) } \)
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(\text{Volta:} \)
+                <p>
+                    \(\text{Se \(f(n)=O(g(n))\) e \(f(n)=\Omega(g(n)) \) então \(f(n)=\Theta(g(n)) \) } \)
+                    <p>
+                        \(\text{Pela definição de O temos que \(\exists c_2, n_0\) tal que \(f(n) \leq cg(n)\) \(\forall n \geq n_0\) }\)
+                        <p>
+                            \[
+                                f(n) \leq c_2g(n)
+                            \]
+                        </p>
+                        <p>
+                            \(\text{Pela definição de \(\Omega\) temos que \(\exists c_1, n_0\) tal que \(f(n) \geq cg(n)\) \(\forall n \geq n_0\) }\)
+                            <p>
+                                \[
+                                    f(n) \geq c_1g(n)
+                                \]
+                            </p>
+                            <p>
+                                \(\text{Pela definição de \(\Theta\) temos que \(\exists c_1, c_2, n_0\) tal que \(c_1g(n) \leq f(n) \leq c_2g(n) \) para todo \(n \geq n_0\) } \)
+                                <p>
+                                    \[
+                                        c_1g(n) \leq f(n) \leq c_2g(n)
+                                    \]
+                                </p>
+                                <p>
+                                    \(\text{Isso é a definição de \(\Theta\), ou seja, \(f(n)=\Theta(g(n))\) } \)
+                                </p>
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            <p>
+                \(\text{Questão 8} \)
+            </p>
+            \(\text{Enunciado} \)
+            <p>
+                \(\text{Questão 8. É verdade que 2n+1 = O(2n)? É verdade que\( 2^{2n} = O(2^n)\)?} \)
+            </p>
+            <p>
+                <p>
+                    \(\text{Primeiro item:} \)
+                </p>
+                <p>
+                    \(2n+1 = O(2n)\)
+                </p>
+                <p>
+                    \[
+                        f(n)=2n+1
+                    \]
+                </p>
+                <p>
+                    \[
+                        g(n)=2n
+                    \]
+                </p>
+            </p>
+            <p>
+                \(\text{Pela definição de O temos que \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) \(\forall n \geq n_0\) }\)
+                <p>
+                    <p>
+                        \(f(n) \leq cg(n)\)
+                    </p>
+                    <p>
+                        \(2n+1 \leq c2n\)
+                    </p>
+                    <p>
+                        \(1 \leq n, \forall n \geq 1 \)
+                    </p>
+                    <p>
+                        \(2n+n \leq c2n\)
+                    </p>
+                    <p>
+                        \(3n \leq c2n\)
+                    </p>
+                    <p>
+                        \(\text{Basta tomar \(n=1\) e \(c=2\) } \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                <p>
+                    \(\text{Segundo item:} \)
+                </p>
+                <p>
+                    \(2^{2n} = O(2^n)\)
+                </p>
+                <p>
+                    <p>
+                        \[
+                            f(n)=2^{2n}
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            g(n)=2^n
+                        \]
+                    </p>
+                    <p>
+                        \(\text{Pela definição de O temos que \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) \(\forall n \geq n_0\) }\)
+                        <p>
+                            <p>
+                                \(f(n) \leq cg(n)\)
+                            </p>
+                            <p>
+                                \(2^{2n} \leq c2^n\)
+                            </p>
+                            <p>
+                                \(2^{2n} \leq c2^n\)
+                            </p>
+                            <p>
+                                \(2^{2n} \leq c2^n\)
+                            </p>
+                            <p>
+                                \(2^{2n} \leq c2^n\)
+                            </p>
+                            <p>
+                                \(2^{n} \leq c\)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar \(n=1\) e \(c=2\) } \)
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+        <p>
+            <!--Prove que n^2 − 999n − 9999 = Ω(n^2).-->
+            <p> 
+                \(\text{Questão 10} \)
+                <p>
+                    <p>
+                        <p>
+                            \(\text{Enunciado: } \)
+                        </p>
+                        <p>
+                            \(\text{Prove que } n^2 - 999n - 9999 = \Omega(n^2) \)
+                            <p>
+                                \[
+                                    f(n) = n^2 - 999n - 9999
+                                \]
+                            </p>
+                            <p>
+                                \[
+                                    g(n) = n^2]
+                                \]
+                            </p>
+                        </p>
+                        <p>
+                            \(\text{Pela definição de \(\Omega\), temos que \(f(n) = \Omega(g(n))\) se existirem constantes positivas \(c\) e \(n_0\) tais que \(0 \leq cg(n) \leq f(n)\) para todo \(n \geq n_0\).}\)
+                            <p>
+                                \(
+                                    f(n)  \leq cg(n)
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    n^2 - 999n - 9999 \geq cn^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    -999n - 9999 \geq (c-1)n^2
+                                \)
+                            </p>
+                            <p>
+                                \(n^2 + n^2 \geq cn^2\)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar } c=2, n=1 \)
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

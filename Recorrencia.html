@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recorrência</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+        </style>
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \[
+                T(n) = \begin{cases}
+                1 & \text{se } n = 1 \\
+                T(\lceil \frac{n}{2} \rceil) + T(\lfloor \frac{n}{2} \rfloor) + n, & \text{ se } n \geq 2
+                \end{cases}
+            \]
+            <p>
+                \(
+                    \text{Chutamos que } T(n) = O(n \log n)
+                \)
+                <p>
+                    \(
+                        \text{Pela definição de O grande, temos que provar que } T(n) \leq cg(n)
+                    \)
+                    <p>
+                        \(
+                            T(n) \leq cn \log n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(\lceil \frac{n}{2} \rceil) + T(\lfloor \frac{n}{2} \rfloor) + n
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            \leq c \lceil \frac{n}{2} \rceil \log \lceil \frac{n}{2} \rceil + c \lfloor \frac{n}{2} \rfloor \log \lfloor \frac{n}{2} \rfloor + n
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            \leq c(\lceil \frac{n}{2} \rceil)\log^n + c(\lfloor \frac{n}{2} \rfloor)\log^{n-1} + n
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            = c(\lceil \frac{n}{2} \rceil + \lfloor \frac{n}{2} \rfloor)\log^n + c \lfloor \frac{n}{2} \rfloor + n 
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            = cn\log^n + c \lfloor \frac{n}{2} \rfloor + n
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            \leq cn\log^n
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            -c\lfloor \frac{n}{2} \rfloor + n \leq 0
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            \text{Basta tomar } n_0 \geq 2 \text{ e } c \geq 3
+                        \)
+                        <br><br>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \[
+                T(n) = \begin{cases}
+                1 & \text{se } n = 1 \\
+                T(\lceil \frac{n}{2} \rceil) + T(\lfloor \frac{n}{2} \rfloor) + n, & \text{ se } n \geq 2
+                \end{cases}
+            \]
+            <p>
+                <p>
+                    \(
+                        \text{Busca-se provar que:}
+                    \)
+                </p>
+                <p>
+                    \(
+                        T (n) = \Omega(\frac{n}{4})
+                    \)
+                </p>
+                <p>
+                    <p>
+                        \(
+                            \text{Já mostramos que \(T (n) = O(n lg n)\). Mas queremos mostrar que \(T (n) = \Theta(n lg n)\)}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Para isso, vamos mostrar que \(T (n) = \Omega(n lg n)\)}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Pela definição de Omega, temos que provar que } T(n) \geq cg(n)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \geq cn \log n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(\lceil \frac{n}{2} \rceil) + T(\lfloor \frac{n}{2} \rfloor) + n
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                            \geq c \lceil \frac{n}{2} \rceil \log \lceil \frac{n}{2} \rceil + c \lfloor \frac{n}{2} \rfloor \log \lfloor \frac{n}{2} \rfloor + n
+                        \)
+                        <br><br>
+                    </p>
+                    <p>
+                        \(
+                           
+                        \)
+                        <br><br>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            <p>
+                \[
+                    T(n) = \begin{cases}
+                    b & \text{se } n \leq 3 \\
+                    3T(\lfloor \frac{n}{4} \rfloor) + n, & \text{ se } n \geq 4
+                    \end{cases}
+                \]
+            </p>
+            <p>
+
+            </p>
+    </body>
+</html>

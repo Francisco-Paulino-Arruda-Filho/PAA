@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 03 - Questão 01</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <pre>
+            <code>
+                void buscar_linear(int *v, int n, int x) {
+                    for (int i = 1; i <= n; i++) {
+                        if (v[i] == x) {
+                            return i;
+                        }
+                    }
+                    return -1;
+                }
+            </code>
+        </pre>
+        <p>
+            <p>
+                \(
+                    text{O que cada variável representa: n é o tamanho do vetor, v é o vetor e x o valor chave}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Prova de corretude:}
+                \)
+                <p>
+                    \(
+                        \text{Caso base:}
+                    \)
+                    <p>
+                        \(
+                            \text{Se } n = 1 \text{, então } v[1] = x \text{ e a função retorna 1, pois o elemento vai estar na posição inicial}
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Caso indutivo:}
+                    \)
+                    <p>
+                       \(
+                            \text{Na linha do laço for, o índice é iniciado como 1, o vetor é incrementado enquanto i < n ou v[i] != x,}
+                            \text{ se ele encontrar o valor x, a função retorna i, que o índice atual que o laço está.}
+                            \text{Se o laço terminar sem encontrar o valor x, a função retorna -1,}
+                            \text{Logo, independente do caso, a função retorna o índice do valor x no vetor ou -1 se não encontrar, pois graças ao for o índice é incrementado.}
+                        \) 
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Terminação:}
+                    \)
+                    <p>
+                        \(
+                            \text{O laço for é finito, pois i é incrementado a cada iteração e o laço termina quando i = n,}
+                            \text{Logo, a função sempre termina.}
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Argumentação para provar que o pior caso é \(\Theta(n)\) }
+                    \)
+                    <p>
+                        \(
+                            \text{O pior caso é quando o valor x não está no vetor, então o laço for é executado n vezes, ou seja, ele vai até o final em busca do elemento que não existe}
+                            \text{Logo, a função é \(\Theta(n)\).}
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

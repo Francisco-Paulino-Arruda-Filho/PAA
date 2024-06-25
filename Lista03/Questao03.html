@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 03 - Questão 03</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <pre>
+            <code>
+                1.BubbleSort(A) 
+                    2.for i = 1 to A.lengh - 1 do
+                        3.for j = A.lengh downto i + 1
+                            4.if A[j] < A[j-1] then
+                                5.exchange A[j] with A[j-1]
+            </code>
+        </pre>
+        <p>
+            <p>
+                \(
+                    \text{Item A:}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Item B:}
+                \)
+                <p>
+                    \(\text{Declare de forma precisa uma invariante de laço para o laço for das linhas 2–4 e prove que essa}\)<br>
+                    \(\text{invariante de laço é verdadeira. Você deve usar indução matemática a fim de provar os três passos da}\)<br>
+                    \(\text{prova de invariante de laço: Inicialização, Manutenção e Término}\)<br>
+                </p>
+                <p>
+                    \(
+                        \text{Resposta:}
+                    \)
+                    <p>
+                        \(\text{A invariante do segundo laço é: A[j] > A[j-1] }\)<br>
+                        \(\text{Caso base: }\)<br>
+                        \(\text{Se i = 1, então o laço não é executado, logo a invariante é verdadeira.}\)<br>
+                        \(\text{Caso indutivo: }\)<br>
+                        \(\text{Se o laço for é executado, então A[j] > A[j-1] é verdadeiro, pois o laço só é executado se A[j] < A[j-1]}\)<br>
+                        \(\text{Terminação: }\)<br>
+                        \(\text{O laço termina quando i = A.lengh - 1, logo a invariante é verdadeira já que o laço é finito pois o valor segue sendo incrementado}\)<br>
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Item C:}
+                \)
+                <p>
+                    \(\text{Usando a Condição de Término da invariante de laço provada no item (b) anterior,}\)
+                    \(\text{declare uma invariante de laço para o laço das linhas 1–4 que permita a você provar a desigualdade 1.}\)
+                    \(\text{Sua prova deveria usar a estrutura de prova de invariante de laço: Inicialização, Manutenção e Término}\)
+                </p>
+                <p>
+                    \(
+                        \text{Resposta:}
+                    \)
+                    <p>
+                        \(\text{A invariante do primeiro laço é: O subvetor A[n-(i-1)...n] é ordenado}\)<br>
+                        \(\text{Caso base: }\)<br>
+                        \(\text{Se i = 1, então o laço não é executado, como o vetor só tem um elementi ele está ordenado.}\)<br>
+                        \(\text{Caso indutivo: }\)<br>
+                        <p>
+                            \(\text{Se o laço for externo for executado as linhas 2, 3 e 4 também são onde é feita as comparações de elementos}\)<br>
+                            \(\text{comparando o elemento até o final do vetor e posicionando ele em seu devido lugar}\)<br>
+                            \(\text{Fazendo isso até o fim do vetor} \)
+                        </p>
+                        \(\text{Terminação: }\)<br>
+                        \(\text{O laço termina quando i = A.lengh - 1, logo a invariante é verdadeira já que o laço é finito pois o valor segue sendo incrementado}\)<br>
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

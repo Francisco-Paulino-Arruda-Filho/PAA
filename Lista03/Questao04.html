@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 03 - Questão 04</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <pre>
+            <code>
+                string base6ParaBase2(const std::string& numeroBase6) {
+                    // Mapeamento dos dígitos de base 6 para binário
+                    std::unordered_map<char, std::string> mapaBase6ParaBase2 = {
+                        {'0', "000"}, {'1', "001"}, {'2', "010"}, 
+                        {'3', "011"}, {'4', "100"}, {'5', "101"}
+                    };
+                
+                    string numeroBase2;
+                    for (char digito : numeroBase6) {
+                        numeroBase2 += mapaBase6ParaBase2[digito];
+                    }
+                
+                    // Remove os zeros à esquerda
+                    numeroBase2.erase(0, numeroBase2.find_first_not_of('0'));
+                
+                    return numeroBase2.empty() ? "0" : numeroBase2;
+                }
+            </code>
+        </pre>
+        <p>
+            \(
+                \text{Análise de complexidade:}
+            \)
+            <p>
+                \(
+                    \text{Invariante de laço: O número de dígitos de base 2 é igual ao número de interações completas no laço}
+                \)
+                <p>
+                   \(
+                        \(  
+                            \text{Caso base:}
+                        \)<br>
+                        \(
+                            \text{Se } n \text{ tamanho do vetor} = 1 \text{, então ao fim da interação esse único valor estará convertido para binário usando os valores no mapa} 
+                        \)<br>
+                        \(
+                            \text{Caso indutivo:}
+                        \)<br>
+                        <p>
+                            \(\text{Na linha do laço for, o índice é iniciado como 1, o vetor é incrementado enquanto i < n ou v[i] != x,}\)<br>
+                            \(\text{ se ele encontrar o valor x, a função retorna i, que o índice atual que o laço está.}\)<br>
+                            \(\text{Se o laço terminar sem encontrar o valor x, a função retorna -1,}\)<br>
+                            \(\text{Logo, independente do caso, a função retorna o índice do valor x no vetor ou -1 se não encontrar, pois graças ao for o índice é incrementado.}\)<br>
+                        </p>
+                        \)<br>
+                        \(\text{Terminação:}\)<br>
+                        \(\text{Como o laço é finito, pois o laço itera encima do tamanho do vetor que representa o número e todo o número é finito.}\)<br>
+                        \(\text{Logo, a função termina e ao final todos os algarismos estarão convertidos}\)<br>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

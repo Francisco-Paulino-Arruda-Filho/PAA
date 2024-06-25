@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grafos</title>
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        \(\text{Grafos:}\)
+        <p>
+            \(\text{Um grafo é um conjunto de vértices e arestas.}\)
+            <p>
+                \(\text{Vértices:}\)
+                \(\text{São os pontos do grafo e são finitos}\)
+            </p>
+            <p>
+                \(\text{Arestas:}\)
+                \(\text{São os segmentos que ligam os vértices e são não ordenados}\)
+            </p>
+            <p>
+                <p>
+                    \(\text{Adjacênci e incidência:} \)
+                    \(\text{Dois vértices são adjacentes se estão ligados por uma aresta}\)
+                    <p>
+                        \(Exemplo de grafo usando mathjax \)
+                        \(\text{G = (V, E)}\)
+                        <p>
+                            \(\text{V = \{a, b, c, d\}}\)
+                            <p>
+                                \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                            </p>
+                            <p>
+                                \(Multigrafo:\)
+                                <p>
+                                    \(\text{É um grafo que possui mais de uma aresta ligando dois vértices}\)
+                                    <p>
+                                        \(\text{Exemplo:}\)
+                                        <p>
+                                            \(\text{G = (V, E)}\)
+                                            <p>
+                                                \(\text{V = \{a, b, c, d\}}\)
+                                                <p>
+                                                    \(\text{E = \{ab, ab, ac, ad, bc, bd, cd\}}\)
+                                                </p>
+                                            </p>
+                                        </p>
+                                    </p>
+                                    <p>
+                                        \(
+                                            \text{Laço:}
+                                        \)
+                                        <p>
+                                            \(\text{É uma aresta que liga um vértice a ele mesmo}\)
+                                            <p>
+                                                \(\text{Exemplo:}\)
+                                                <p>
+                                                    \(\text{G = (V, E)}\)
+                                                    <p>
+                                                        \(\text{V = \{a, b, c, d\}}\)
+                                                        <p>
+                                                            \(\text{E = \{aa, ab, ac, ad, bc, bd, cd\}}\)
+                                                        </p>
+                                                    </p>
+                                                </p>
+                                            </p>
+                                        </p>
+                                        <p>
+                                            \(
+                                                \text{Link:}
+                                            \)
+                                            <p>
+                                                \(\text{É uma aresta que liga dois vértices distintos}\)
+                                                <p>
+                                                    \(\text{Exemplo:}\)
+                                                    <p>
+                                                        \(\text{G = (V, E)}\)
+                                                        <p>
+                                                            \(\text{V = \{a, b, c, d\}}\)
+                                                            <p>
+                                                                \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                            </p>
+                                                        </p>
+                                                    </p>
+                                                </p>
+                                            </p>
+                                        </p>
+                                    </p>
+                                    <p>
+                                        \(
+                                            \text{Tamanho do grafo}
+                                        \)
+                                        <p>
+                                            \(
+                                                |G|= |V| + |E|
+                                            \)
+                                        </p>
+                                    </p>
+                                    <P>
+                                        \(
+                                            \text{Grafos completos}
+                                        \)
+                                        <p>
+                                            \(\text{Um grafo é completo se todos os vértices estão ligados por arestas}\)
+                                            <p>
+                                                \(\text{Exemplo:}\)
+                                                <p>
+                                                    \(\text{G = (V, E)}\)
+                                                    <p>
+                                                        \(\text{V = \{a, b, c, d\}}\)
+                                                        <p>
+                                                            \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                        </p>
+                                                    </p>
+                                                    <p>
+                                                        \(
+                                                            \text{Tamanho do grafo}
+                                                        \)
+                                                        <p>
+                                                            \(
+                                                                \binom{k}{n}
+                                                            \)
+                                                        </p>
+                                                    </p>
+                                                </p>
+                                            </p>
+                                            <p>
+                                                \(
+                                                    \text{Grau do vértice}
+                                                \)
+                                                <p>
+                                                    \(\text{O grau de um vértice é o número de arestas que incidem sobre ele}\)
+                                                    <p>
+                                                        \(\text{Exemplo:}\)
+                                                        <p>
+                                                            \(\text{G = (V, E)}\)
+                                                            <p>
+                                                                \(\text{V = \{a, b, c, d\}}\)
+                                                                <p>
+                                                                    \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                                    <p>
+                                                                        \(\text{Grau de a: 3}\)
+                                                                        <p>
+                                                                            \(\text{Grau de b: 3}\)
+                                                                            <p>
+                                                                                \(\text{Grau de c: 3}\)
+                                                                                <p>
+                                                                                    \(\text{Grau de d: 3}\)
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                    </p>
+                                                                </p>
+                                                            </p>
+                                                        </p>
+                                                    <p>
+                                                        \(
+                                                            \text{Handshaking lemma:}
+                                                        \)
+                                                            <p>
+                                                                \(
+                                                                    \text{A soma dos graus dos vértices de um grafo é igual a duas vezes o número de arestas}
+                                                                \)
+                                                                <p>
+                                                                    \(
+                                                                        \sum_{v \in V} \text{grau}(v) = 2|E|
+                                                                    \)
+                                                                </p>
+                                                            </p>
+                                                        \)
+                                                    </p>
+                                                </p>
+                                                <p>
+                                                    \(
+                                                        \text{Grafo complementar de grafo}
+                                                    \)
+                                                    <p>
+                                                        \(\text{O grafo complementar de um grafo é um grafo que possui os mesmos vértices do grafo original, mas as arestas são diferentes}\)
+                                                        <p>
+                                                            \(\text{Exemplo:}\)
+                                                            <p>
+                                                                \(\text{G = (V, E)}\)
+                                                                <p>
+                                                                    \(\text{V = \{a, b, c, d\}}\)
+                                                                    <p>
+                                                                        \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                                        <p>
+                                                                            \(\text{Grafo complementar de G:}\)
+                                                                            <p>
+                                                                                \(\text{G = (V, E)}\)
+                                                                                <p>
+                                                                                    \(\text{V = \{a, b, c, d\}}\)
+                                                                                    <p>
+                                                                                        \(\text{E = \{ac, ad, bc, bd, cd\}}\)
+                                                                                    </p>
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                    </p>
+                                                                </p>
+                                                            </p>
+                                                        </p>
+                                                        <p>
+                                                            \(
+                                                                \text{Passei em um grafo}
+                                                            \)
+                                                            <p>
+                                                                \(\text{Um passeio em um grafo é uma sequência de vértices e arestas tal que cada aresta tem como extremidades os vértices da sequência}\)
+                                                                <p>
+                                                                    \(\text{Exemplo:}\)
+                                                                    <p>
+                                                                        \(\text{G = (V, E)}\)
+                                                                        <p>
+                                                                            \(\text{V = \{a, b, c, d\}}\)
+                                                                            <p>
+                                                                                \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                                                <p>
+                                                                                    \(\text{Passeio: a, b, c, d}\)
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                    </p>
+                                                                </p>
+                                                            </p>
+                                                            <p>
+                                                                \(
+                                                                    \text{Grafo direcionado}
+                                                                \)
+                                                                <p>
+                                                                    \(\text{Um grafo direcionado é um grafo cujas arestas são orientadas}\)
+                                                                    <p>
+                                                                        \(\text{Exemplo:}\)
+                                                                        <p>
+                                                                            \(\text{G = (V, E)}\)
+                                                                            <p>
+                                                                                \(\text{V = \{a, b, c, d\}}\)
+                                                                                <p>
+                                                                                    \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                                                    <p>
+                                                                                        \(\text{Grafo direcionado:}\)
+                                                                                        <p>
+                                                                                            \(\text{G = (V, E)}\)
+                                                                                            <p>
+                                                                                                \(\text{V = \{a, b, c, d\}}\)
+                                                                                                <p>
+                                                                                                    \(\text{E = \{(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)\}}\)
+                                                                                                </p>
+                                                                                            </p>
+                                                                                        </p>
+                                                                                    </p>
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                    </p>
+                                                                    <p>
+                                                                        \(
+                                                                            \text{Grafo de caminhos}
+                                                                        \)
+                                                                        <p>
+                                                                            \(\text{Um grafo de caminhos é um grafo cujas arestas são orientadas e não formam ciclos}\)
+                                                                            <p>
+                                                                                \(\text{Exemplo:}\)
+                                                                                <p>
+                                                                                    \(\text{G = (V, E)}\)
+                                                                                    <p>
+                                                                                        \(\text{V = \{a, b, c, d\}}\)
+                                                                                        <p>
+                                                                                            \(\text{E = \{(a, b), (b, c), (c, d)\}}\)
+                                                                                        </p>
+                                                                                    </p>
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                        \(
+                                                                            \text{Grafo de ciclos}
+                                                                        \)
+                                                                        <p>
+                                                                            \(\text{Um grafo de ciclos é um grafo cujas arestas são orientadas e formam ciclos}\)
+                                                                            <p>
+                                                                                \(\text{Exemplo:}\)
+                                                                                <p>
+                                                                                    \(\text{G = (V, E)}\)
+                                                                                    <p>
+                                                                                        \(\text{V = \{a, b, c, d\}}\)
+                                                                                        <p>
+                                                                                            \(\text{E = \{(a, b), (b, c), (c, d), (d, a)\}}\)
+                                                                                        </p>
+                                                                                    </p>
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                    </p>
+                                                                    <p>
+                                                                        \(
+                                                                            \text{Conexidade}
+                                                                        \)
+                                                                        <p>
+                                                                            \(\text{Um grafo é conexo se existe um passeio entre quaisquer dois vértices}\)
+                                                                            <p>
+                                                                                \(\text{Exemplo:}\)
+                                                                                <p>
+                                                                                    \(\text{G = (V, E)}\)
+                                                                                    <p>
+                                                                                        \(\text{V = \{a, b, c, d\}}\)
+                                                                                        <p>
+                                                                                            \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                                                        </p>
+                                                                                    </p>
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                        <p>
+                                                                            \(
+                                                                                \text{Grafo ponderado}
+                                                                            \)
+                                                                            <p>
+                                                                                \(\text{Um grafo ponderado é um grafo cujas arestas possuem um peso}\)
+                                                                                <p>
+                                                                                    \(\text{Exemplo:}\)
+                                                                                    <p>
+                                                                                        \(\text{G = (V, E)}\)
+                                                                                        <p>
+                                                                                            \(\text{V = \{a, b, c, d\}}\)
+                                                                                            <p>
+                                                                                                \(\text{E = \{ab, ac, ad, bc, bd, cd\}}\)
+                                                                                                <p>
+                                                                                                    \(\text{Peso de ab: 2}\)
+                                                                                                    <p>
+                                                                                                        \(\text{Peso de ac: 3}\)
+                                                                                                        <p>
+                                                                                                            \(\text{Peso de ad: 4}\)
+                                                                                                            <p>
+                                                                                                                \(\text{Peso de bc: 5}\)
+                                                                                                                <p>
+                                                                                                                    \(\text{Peso de bd: 6}\)
+                                                                                                                    <p>
+                                                                                                                        \(\text{Peso de cd: 7}\)
+                                                                                                                    </p>
+                                                                                                                </p>
+                                                                                                            </p>
+                                                                                                        </p>
+                                                                                                    </p>
+                                                                                                </p>
+                                                                                            </p>
+                                                                                        </p>
+                                                                                    </p>
+                                                                                </p>
+                                                                            </p>
+                                                                        </p>
+                                                                    </p>
+                                                                </p>
+                                                            </p>
+                                                        </p>
+                                                    </p>
+                                                </p>
+                                            </p>
+                                        </p>
+                                    </P>
+                                </p>
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>
