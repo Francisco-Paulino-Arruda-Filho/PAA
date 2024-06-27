@@ -76,20 +76,29 @@
                     \)
                     <p>
                         \(
-                            \text{Quando a for de dentro executa o máximo de vezes, ou seja, \(S[n-1] + S[n] == x\) ou x não está em S, quando \(n=n\) }
+                            \text{Quando a for de dentro executa o máximo de vezes, ou seja, não está em S}
                         \)
                         <p>
                             \(
-                                \text{Ou seja, quando \(n=n\) e \(t_j=n-2\) }
+                                \text{Ou seja, quando \(n=n\) e \(t_j=n-i\) }
                             \)
                             <p>
                                 \(
                                     \text{Linha por linha:}
                                 \)
                                 <p>
-                                    \(
-                                        c_1(n) + c_2(\sum^{n-1}_{j=2} t_j-2) + c_3(\sum^{n-1}_{j=2} (t_j-2)) + 1 + 1  
-                                    \)<br>
+                                    \(c_1(n+1) + c_2(\sum^{n}_{j=2} t_j) + c_3(\sum^{n}_{j=2} t_j-1) + 1 + 1\)<br>
+                                    \(c_1(n+1) + c_2(\sum^{n}_{j=2} n-i) + c_3(\sum^{n}_{j=2} n-i-1) + 1 + 1\)<br>
+                                    \(c_1(n+1) + c_2(\sum^{n}_{j=2} n - \sum^{n}_{j=2} i) + c_3(\sum^{n}_{j=2} n - \sum^{n}_{j=2} i - \sum^{n}_{j=2} 1) + 1 + 1\)<br>
+                                    \(c_1(n+1) + c_2((\sum^{n}_{j=1} n - \sum^{1}_{j=1} n) - (\sum^{n}_{j=1} i - \sum^{1}_{j=1} i)) + c_3((\sum^{n}_{j=1} n - \sum^{1}_{j=1} n) - (\sum^{n}_{j=1} i - \sum^{1}_{j=1} i) - (\sum^{n}_{j=1} 1 - \sum^{1}_{j=1} 1)) + 1 + 1\)<br>
+                                    \(c_1(n+1) + c_2((n^2 - n) - (n - 1)) + c_3((n^2 - n) - (n - 1) - (n - 1)) + 1 + 1\)<br>
+                                    \(c_1(n+1) + c_2(n^2 - n - n + 1) + c_3(n^2 - n - n + 1 - n + 1) + 1 + 1\)<br>
+                                    \(c_1(n+1) + c_2(n^2 - 2n + 1) + c_3(n^2 - 2n + 1 - n + 1) + 1 + 1\)<br>
+                                    \(c_1(n+1) + c_2(n^2 - 2n + 1) + c_3(n^2 - 3n + 2) + 1 + 1\)<br>
+                                    \(c_1n + c_1 + c_2n^2 - 2c_2n + c_2 + c_3n^2 - 3c_3n + 2c_3 + 1 + 1\)<br>
+                                    \(c_1n + c_1 + c_2n^2 - 2c_2n + c_2 + c_3n^2 - 3c_3n + 2c_3 + 2\)<br>
+                                    \(c_1 + c_2 + c_3 + 2 + n(c_1 - 2c_2 - 3c_3) + n^2(c_2 + c_3)\)<br>
+                                    \(O(n^2)\)
                                 </p>
                             </p>
                         </p>
