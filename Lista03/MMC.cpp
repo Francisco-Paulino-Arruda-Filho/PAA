@@ -12,11 +12,15 @@ using namespace std;
 int algoritmo_euclides(int a, int b) {
 
     int r = a % b;
+    printf("r: %d\n", r);
 
     while(r != 0) {
         a = b;
+        printf("a: %d\n", a);
         b = r;
+        printf("b: %d\n", b);
         r = a % b;
+        printf("r: %d\n", r);
     }
 
     return b;
@@ -40,10 +44,7 @@ int main() {
     int a, b;
     cin >> a >> b;
 
-    int mdc = MDC(a, b);
-
-    printf("MDC: %d\n", mdc);
-    printf("MMC: %d\n", MMC(a, b));
+    printf("MDC: %d\n", algoritmo_euclides(a, b));
 
     return 0;
 }

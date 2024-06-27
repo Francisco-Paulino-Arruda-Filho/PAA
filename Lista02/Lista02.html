@@ -49,32 +49,24 @@
                     \)
                     <p>
                         \(
-                            \text{Quando a for de dentro executa uma única vez, ou seja, \(S[1] + S[2] == x \), quando \(t_j=1\)  }
+                            \text{Quando a for de dentro executa uma única vez, ou seja, \(S[1] + S[2] == x \), quando \(n=2\)  }
                         \)
                     </p>
                     <p>
                         \(
-                            c_1(n+1) + c_2(\sum^{n}_{j=2} t_j ) + c_3(\sum^{n}_{j=2} (t_j-1) ) + 1 + 1
+                            c_1(n+1) + c_2(\sum^{n}_{j=2} t_j) + c_3(\sum^{n}_{j=2} (t_j-1)) + 1 + 1
                         \)<br>
                         \(
-                            c_1(n+1) + c_2(\sum^{n}_{j=2} 1 ) + c_3(\sum^{n}_{j=2} (1-1) ) + 1 + 1
+                            c_1(2+1) + c_2(\sum^{2}_{j=2} t_j) + c_3(\sum^{2}_{j=2} (t_j-1)) + 1 + 1
                         \)<br>
                         \(
-                            c_1(n+1) + c_2(n-1) + 1 + 1
+                            3c_1 + c_2 + c_3 + 1 + 1
                         \)<br>
                         \(
-                            c_1n + c_1 + c_2n - c_2 + 1 + 1
+                            3c_1 + c_2 + c_3 + 2
                         \)<br>
                         \(
-                            (c_1 + c_2)n + c_1 - c_2 + 2
-                        \)<br>
-                        <p>
-                            \(
-                                \text{Criando as constantes \(a=c_1+c_2\) e \(b=c_1-c_2+2\) temos que \(an+b+2\) } 
-                            \)
-                        </p>
-                        \(
-                            \text{Ou seja, \(O(n)\) }
+                            O(1)
                         \)
                     </p>
                 </p>
@@ -82,6 +74,26 @@
                     \(
                         \text{Pior caso:}
                     \)
+                    <p>
+                        \(
+                            \text{Quando a for de dentro executa o máximo de vezes, ou seja, \(S[n-1] + S[n] == x\) ou x não está em S, quando \(n=n\) }
+                        \)
+                        <p>
+                            \(
+                                \text{Ou seja, quando \(n=n\) e \(t_j=n-2\) }
+                            \)
+                            <p>
+                                \(
+                                    \text{Linha por linha:}
+                                \)
+                                <p>
+                                    \(
+                                        c_1(n) + c_2(\sum^{n-1}_{j=2} t_j-2) + c_3(\sum^{n-1}_{j=2} (t_j-2)) + 1 + 1  
+                                    \)<br>
+                                </p>
+                            </p>
+                        </p>
+                    </p>
                 </p>
             </p>
         </p>
