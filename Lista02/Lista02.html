@@ -10,6 +10,7 @@
     </head>
     <body>
         <p>
+            \(\text{Questão 01:} \)
             <pre>
                 <code>
                     Algoritmo1 (S, x):
@@ -124,6 +125,77 @@
                         }
                     </code>
                 </pre>
+            </p>
+        </p>
+        <p>
+            \(\text{Questão 03:} \)
+            <pre>
+                <code>
+                    Algoritmo2 (N):
+                        i <- 1
+                        soma <- 0
+                        Enquanto i < N faça
+                            Para j <- 1, ..., i faça
+                                soma <- soma + 1
+                            i <- 2i
+                        Retorne soma
+                </code>
+            </pre>
+            <p>
+                \(\text{Análise de complexidade:} \)
+                <p>
+                    \(\text{Linha por linha:}\)
+                    <p>
+                        \(1. c_1 \)<br>
+                        \(2. c_2 \)<br>
+                        \(3. c_3n \)<br>
+                        \(4. c_4(\sum^{n}_{j=2} t_j ) \)<br>
+                        \(5. c_5(\sum^{n}_{j=2} t_j-1 ) \)<br>
+                        \(6. c_6(n-1) \)<br>
+                        \(7. c_7 \)<br>
+                        <p>
+                            \(
+                                c_1 + c_2 + c_3n + c_4(\sum^{n}_{j=2} t_j ) + c_5(\sum^{n}_{j=2} t_j-1 ) + c_6(n-1) + c_7
+                            \)
+                            <p>
+                                \(
+                                    \text{Melhor caso:}
+                                \)
+                                <p>
+                                    \(\text{Quando o laço interno executada o menor número de vezes, ou seja, \(t_j=1\) } \)
+                                    <p>
+                                        \(
+                                            c_1 + c_2 + c_3n + c_4(\sum^{n}_{j=2} t_j ) + c_5(\sum^{n}_{j=2} t_j-1 ) + c_6(n-1) + c_7
+                                        \)<br>
+                                        \(
+                                            c_1 + c_2 + c_3n + c_4(\sum^{n}_{j=2} 1 ) + c_5(\sum^{n}_{j=2} 1-1 ) + c_(n-1) + c_7
+                                        \)<br>
+                                        \(
+                                            c_1 + c_2 + c_3n + c_4(n-1) + c_6(n-1) + c_7
+                                        \)<br>
+                                        \(
+                                            c_1 + c_2 + c_3n + c_4n - c_4 + c_6(n-1) - c_6 + c_7
+                                        \)<br>
+                                        \(
+                                            c_1 + c_2 + c_3n + c_4n + c_6(n-1) + c_7
+                                        \)<br>
+                                        \(
+                                            O(n)
+                                        \)
+                                    </p>
+                                </p>
+                            </p>
+                            <p>
+                                \(
+                                    \text{Pior caso:}
+                                \)
+                                <p>
+                                    
+                                </p>
+                            </p>
+                        </p>
+                    </p>
+                </p>
             </p>
         </p>
         <p>

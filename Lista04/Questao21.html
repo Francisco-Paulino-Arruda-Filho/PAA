@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 04 - Questão 21</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            <p>
+                \(
+                    \text{Item A:}
+                \)
+            </p>
+            \[
+                T(n) = \begin{cases}
+                1 & \text{se } n = 1 \\
+                2T (\frac{n}{4}) + 1, & \text{ se } n \geq 2
+                \end{cases}
+            \]
+            <p>
+                <P>
+                    \(
+                        \text{Se \(T(n) = O(n^{\log_b^a}) \)}
+                    \)
+                    <p>
+                        \(
+                            a=2, b=4, f(n)=1
+                        \)
+                    </p>
+                </P>
+            </p>
+            <p>
+                \(
+                    \text{Se \(1 \in O(n^{\log_4^{2-e} }) \), então \(T(n) \in \Theta(n^{\log_4^{2} }) \)}
+                \)
+                <p>
+                    \(
+                        \text{Assumindo e como \(e=1\)}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Se \(1 \in O(n^{\log_4^{2-1} }) \), então \(T(n) \in \Theta(n^{\log_4^{2} }) \)}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Se \(1 \in O(n^{\log_4^{1} }) \), então \(T(n) \in \Theta(n^{\log_4^{2} }) \)}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Pela definição de \(O\), \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) }
+                    \)
+                </p>
+                <p>
+                    \(
+                        1 \leq cn^{\log_4^{1} }
+                    \)
+                </p>
+                <p>
+                    \(
+                        1 \leq cn^0
+                    \)
+                </p>
+                <p>
+                    \(
+                        1 \leq c
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Logo, \(T(n) \in \Theta(n^\frac{1}{2} )\)}
+                \)
+            </p>
+        </p>
+        <p>
+            \(\text{Item B:} \)
+            <p>
+                \[
+                    T(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    2T (\frac{n}{4}) + \sqrt{n}, & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </p>
+            <p>
+                <p>
+                    \(
+                        \text{Se \(T(n) =\ O(n^{\log_b^a}) \)}
+                    \)
+                    <p>
+                        \(
+                            a=2, b=4, f(n)=\sqrt{n}
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Se \(\sqrt{n} \in O(n^{\log_4^{2} }) \), então \(T(n) \in \Theta(n^{\log_4^{2}}\log^n ) \)}
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de \(O\), temos que \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\)}
+                        \)
+                        <p>
+                            \(
+                                \sqrt{n} \leq cn^{\log_4^{2} }
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \sqrt{n} \leq cn^{\frac{1}{2} }
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                n^{\frac{1}{2} } \leq cn^{\frac{1}{2} }
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{Logo, temos que } T(n) \in \Theta(n^{\log_4^{2}}\log^n )
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{Logo, temos que } T(n) \in \Theta(n^{\frac{1}{2}\log^n} )
+                            \)
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(\text{Item C:}\)
+            <P>
+                \[
+                    T(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    2T (\frac{n}{4}) + n, & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </P>
+            <p>
+                \(
+                    a=2, b=4, f(n)=n
+                \)
+            </p>
+            <p>
+                <p>
+                    \(
+                        \text{Se \(f(n) \in \Omega(n^{\log_b^{a} }) \) e \(af(\frac{n}{b}) \leq cf(n)\) , então \(T(n) \in \Theta(f(n)) \) }
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Se \(n \in \Omega(n^{\log_4^{2} }) \) e \(2\frac{n}{4} \leq cn\), então \(T(n) \in \Theta(n) \) }
+                    \)
+                    <p>
+                        \(
+                            \text{Se \(n \in \Omega(n^{\frac{1}{2} }) \) e \(\frac{n}{2} \leq cn\), então \(T(n) \in \Theta(n) \) }
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Logo, \(\Theta(n)\) }
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(\text{Item D:}\)
+            <P>
+                \[
+                    T(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    2T (\frac{n}{4}) + n^2, & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </P>
+            <p>
+                \(
+                    a=2, b=4, f(n)=n^2
+                \)
+            </p>
+            <p>
+                <p>
+                    \(
+                        \text{Se \(f(n) \in \Omega(n^{\log_b^{a} }) \) e \(af(\frac{n}{b}) \leq cf(n)\) , então \(T(n) \in \Theta(f(n)) \) }
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Se \(n^2 \in \Omega(n^{\log_4^{2} }) \) e \(2\frac{n}{4} \leq cn^2\), então \(T(n) \in \Theta(n^2) \) }
+                    \)
+                    <p>
+                        \(
+                            \text{Se \(n^2 \in \Omega(n^{\frac{1}{2} }) \) e \(\frac{n}{2} \leq cn^2\), então \(T(n) \in \Theta(n^2) \) }
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Logo, \(\Theta(n^2)\) }
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

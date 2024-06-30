@@ -18,7 +18,64 @@
     </head>
     <body>
         <p>
-            <strong>Questão 04:</strong> <br>
+            \(
+                \text{Questão 03:}
+            \)
+            <p>
+                \(
+                    \text{Mostre que a solução de \(T (n) = T (n - 1) + n \text{ é } O(n^2)\) }
+                \)
+                <p>
+                    \(
+                        \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                    \)
+                    <p>
+                        \(
+                            T(n) \leq c(n-1)^2
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(\text{Resolução:}\)
+                    <p>
+                        <p>
+                            \(T(n)=T(n-1) \)
+                        </p>
+                        <p>
+                            \(T(n) \leq c(n-1-1)^2 \)
+                        </p>
+                        <p>
+                            \(T(n) \leq c(n-2)^2 \)
+                        </p>
+                        <p>
+                            \(T(n) \leq c(n^2 - 4n + 4) \)
+                        </p>
+                        <p>
+                            \(c(n-1)^2 \leq c(n^2 - 4n + 4) \)
+                        </p>
+                        <p>
+                            \(c(n^2-2n+1) \leq c(n^2 - 4n + 4) \)
+                        </p>
+                        <p>
+                            \(cn^2-2cn+c \leq cn^2 - 4cn + 4c \)
+                        </p>
+                        <p>
+                            \(c(n^2 - 4n + 4) \leq c(n-1)^2 \)
+                        </p>
+                        <p>
+                            \(c(n^2 - 4n + 4) \leq c(n^2 - 2n + 1) \)
+                        </p>
+                        <p>
+                            \(\text{Basta tomar \(c=1\) e \(n_0=3\) } \)
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 04:}
+            \)
             <p>
                 \(
                     \text{Enunciado}
@@ -27,6 +84,16 @@
                     \(
                         \text{ Mostre que a solução de \(T (n) = T ( \lceil \frac{n}{2} \rceil) + 1 \text{ é } O(\log n) \) }
                     \)
+                    <p>
+                        \(
+                            \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                        \)
+                        <p>
+                            \(
+                                T(n) \leq c \log n
+                            \)
+                        </p>
+                    </p>
                     <p>
                         \(
                             \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
@@ -44,8 +111,156 @@
                     </p>
                     <p>
                         \(
-                            \leq c \log^n + 1
+                            \leq c \log^{n-1} + 1
                         \)
+                    </p>
+                    <p>
+                        \(
+                            c \log^{n-1} \leq c \log n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Basta tomar \(c=1\) e \(n_0=2\) } \)
+                         </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(\text{Questão 05:} \)
+            <p>
+                \(
+                    \text{Enunciado:}
+                \)
+                <p>
+                    \(\text{Vimos que a solução de T (n) = 2T (⌊n/2⌋) + n é O(n lg n). Mostre que a solução}\)<br>
+                    \(\text{dessa recorrência é também Ω(n lg n). Conclua que a solução é Θ(n lg n).}\)
+                </p>
+                <p>
+                    \(\text{Resolução:}\)
+                    <p>
+                        \(
+                            \text{Pela definição de Ω, \(\exists c_1, n_0 \) tal que } T(n) \geq cg(n)
+                        \)
+                        <p>
+                            \(
+                                T(n) \geq c n \log n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                T (n) = 2T ( \lfloor n/2 \rfloor ) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                T(n) \geq 2(c \lfloor \frac{n}{2} \rfloor \log \lfloor \frac{n}{2} \rfloor) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                T(n) \geq 2(c \frac{n}{2} \log \frac{n}{2}) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                T(n) \geq (cn \log \frac{n}{2}) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                cn \log n \geq (cn \log \frac{n}{2}) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                cn \log n \geq (cn \log^n - cn \log^2  ) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                (cn \log^2  ) \geq n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{Basta tomar \(c=1\) e \(n_0=2\) }
+                            \)
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 08:}
+            \)
+            <p>
+                \(
+                    \text{Enunciado:}
+                \)
+                <p>
+                    \(
+                        \text{Mostre que a solução para \(T (n) = 2T (⌊n/2⌋ + 17) + n \text{ é } O(n lg^n)\).}
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                        \)
+                        <p>
+                            \(
+                                T(n) \leq c n \log^n
+                            \)
+                            <p>
+                                \(
+                                    T (n) = 2T (⌊n/2⌋ + 17) + 1
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    T(n) \leq 2(c (\lfloor \frac{n}{2} \rfloor + 17)\log^{\lfloor \frac{n}{2} \rfloor + 17}) + 1
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    T(n) \leq 2(c (\frac{n}{2} + 17)\log^{\frac{n}{2} + 17} ) + 1
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    T(n) \leq (cn + 34c)\log^{\frac{n}{2} + 17} + 1
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    (cn + 34c)\log^{\frac{n}{2} + 17} + 1 \leq cn\log^n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    36^{36n} \geq 35^{34c + 36n}
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    36^{36n} \geq 35^{34c}*35^{36n}
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    36 \geq 35^{34c}*35
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    1,02 \geq 35^{34c}
+                                \)
+                            </p>
+                            <p>
+                                \(\text{Basta tomar \(c=\frac{1}{600}\) e \(n=36\) } \)
+                            </p>
+                        </p>
                     </p>
                 </p>
             </p>
