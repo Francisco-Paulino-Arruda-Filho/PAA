@@ -15,8 +15,11 @@ int algoritmo_euclides(int a, int b) {
 
     while(r != 0) {
         a = b;
+        printf("a: %d\n", a);
         b = r;
+        printf("b: %d\n", b);
         r = a % b;
+        printf("r: %d\n", r);
     }
 
     return b;
@@ -40,10 +43,9 @@ int main() {
     int a, b;
     cin >> a >> b;
 
-    int mdc = MDC(a, b);
+    int result = algoritmo_euclides(a, b);
 
-    printf("MDC: %d\n", mdc);
-    printf("MMC: %d\n", MMC(a, b));
+    printf("MDC: %d\n", result);
 
     return 0;
 }

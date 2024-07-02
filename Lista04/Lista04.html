@@ -265,5 +265,55 @@
                 </p>
             </p>
         </p>
+        <p>
+            \(
+                \text{Questão 10:}
+            \)
+            <p>
+                \(
+                    T (n) = 4T (\frac{n}{2}) + n \text{ é } T (n) = \Theta(n^2)
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(\Theta\), \(\exists c_1, c_2, n_0 \) tal que } c_1g(n) \leq T(n) \leq c_2g(n)
+                \)
+                <p>
+                    \(
+                        T (n) = 4T (\frac{n}{2}) + n 
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq 4c(\frac{n}{2})^2 + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq 4c(\frac{n}{4}) + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq cn + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        cn + n \leq cn^2
+                    \)
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_1=1\) e \(n_0=2\) }
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        T(n) = 4c(\frac{n}{2})^2 + n
+                    \)
+                </p>
+            </p>
+        </p>
     </body>
 </html>

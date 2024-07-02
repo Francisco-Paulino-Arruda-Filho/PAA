@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 03 - Questão 05</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <pre>
+            <code>
+                Algoritmo 1 Algoritmo de Euclides
+                    1: Procedimento EUCLIDES(a, b) ▷ Obtém o MDC de a e b
+                    2: r ← a mod b
+                    3: enquanto r̸ = 0 faça ▷ Já sabemos a resposta se r é 0
+                    4:      a ← b
+                    5:      b ← r
+                    6:      r ← a mod b
+                    7: devolve b ▷ O MDC é b
+            </code>
+        </pre>
+        <p>
+            \(
+                \text{Item A: Escreva uma invariante de laço adequada para o algoritmo}
+            \)
+            <p>
+                \(
+                    \text{invariante: \(r = a \mod b \) }
+                \)
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Item B: Demonstre a invariante de laço.}
+            \)
+            <p>
+                <p>
+                    \(\text{Prova de corretude:} \)
+                </p>
+                <p>
+                    \(
+                        \text{Caso base:}
+                    \)
+                    <p>
+                        \(\text{Ambos os valores são , ou seja, a=1 e b=1} \)
+                    </p>
+                    <p>
+                        \(r = 1 \mod 1 \)<br>
+                        \(r = 0 \)<br>
+                        \(MDC=1\)
+                    </p>
+                </p>
+                <p>
+                    \(\text{Caso indutivo:}\)
+                    <p>
+                        \(
+                            \text{No início do laço temos que \(r = a \mod b \) e \(a = b \) e \(b = r \) e \(r = a \mod b \), isso na primeira iteração.}
+                        \)<br>
+                        \(
+                            \text{Ou seja a vai sempre assumir o valor de b na interação anterior e b vai assumir o valor de r na interação anterior e r vai assumir o valor de a mod b na interação anterior.}
+                        \)<br>
+                        \(
+                            \text{, isso a cada iteração, ou seja, a cada iteração a invariante se mantém.}
+                        \)<br>
+                        \(
+                            \text{Ou seja, a invariante é verdadeira e o laço se antém até o r continuar sendo diferente de 0}
+                        \)<br>
+                        \(
+                            \text{Ou seja, o laço se mantém até que o MDC seja encontrado}
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(\text{Terminação:}\)
+                    <p>
+                        \(\text{O laço é finito, pois o laço itera encima do tamanho do vetor que representa o número e todo o número é finito e se chegar o final o MDC acaba sendo 1}\)
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Item C: Demonstre que o algoritmo está correto utilizando a afirmação acima.}
+            \)
+            <p>
+                \(
+                    \text{O algoritmo antes da primeira interação já tem a invariante verdadeira, pois \(r = a \mod b \) e \(a = b \) e \(b = r \) e \(r = a \mod b \), isso na primeira iteração.}
+                \)<br>
+                \(
+                    \text{e ao fim de cada iteração o valor é atualizado, linha 6, para os novos valores de a e b atualizados nas linhas 4 e 5.}
+                \)<br>
+                \(
+                    \text{e dividindo valores cada vez menores ou você chega em 0 ou em 1, que é o MDC.}	
+                \)<br>
+            </p>
+        </p>
+    </body>
+</html>

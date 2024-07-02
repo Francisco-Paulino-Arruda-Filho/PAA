@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 4.3.3</title>
+        
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(
+                T(n) = 2T(\frac{n}{2}) + n \text{ é } \Omega(n \log^n)
+            \)
+            <p>
+                \(
+                    \text{Pela definição de \(\Theta\), temos que: \(\exists n_0, c_1 \) tal que \(T(n) \geq cg(n) \) } 
+                \)
+                <p>
+                    \(
+                        T(n) \geq c n \log^n
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) = 2T(\frac{n}{2}) + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \geq 2c \frac{n}{2} \log^{\frac{n}{2}} + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \geq c n \log^{\frac{n}{2}} + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        c n \log^n \geq c n \log^{\frac{n}{2}} + n
+                    \)
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_0=1\) e \(n_0=2\)}
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

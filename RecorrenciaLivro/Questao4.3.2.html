@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 4.3.2</title>
+        
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(
+                \text{Mostre que a solução de \(T(n) = T(\frac{n}{2}) + 1 \text{ é } O(\log^n)\) .}
+            \)
+            <p>
+                \(
+                    \text{Seja } T(n) = T(\frac{n}{2}) + 1
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(O\), temos que: \(\exists n_0, c_1 \) tal que \(T(n) \leq cg(n) \) } 
+                \)
+                <p>
+                    \(
+                        T(n) \leq c \log^n
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    T(n) = T(\frac{n}{2}) + 1
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq c \log^{\frac{n}{2}} + 1
+                \)
+            </p>
+            <p>
+                \(
+                    c \log^\frac{n}{2} \leq c \log^n
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_0=1\) e \(n_0=1\)}
+                    \)
+                </p>
+            </p>
+        </p>
+    </body>
+</html>
