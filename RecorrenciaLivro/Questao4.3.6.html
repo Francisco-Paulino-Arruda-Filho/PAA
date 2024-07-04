@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 4.3.6</title>
+            
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(
+                \text{Mostre que a solução para T(n) = \(2T(\frac{n}{2} + 17) + n \text{ é } O(n \log^n)\)  }
+            \)
+            <p>
+                \(
+                    \text{Pela definição de \(O\), temos que: \(\exists n_0, c_1 \) tal que \(T(n) \leq cg(n) \) }
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq c(n \log^n)
+                \)  
+            </p>
+            <p>
+                \(
+                    T(n) = 2T(\frac{n}{2} + 17) + n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq 2c(\frac{n}{2} + 17) \log^{\frac{n}{2} + 17} + n
+                \)
+            </p>
+            <p>
+                \(
+                    2c(\frac{n}{2} + 17) \log^{\frac{n}{2} + 17} + n \leq c(n \log^n)
+                \)
+            </p>
+            <p>
+                \(
+                    c(n + 34) \log^{\frac{n}{2} + 17} + n \leq c(n \log^n)
+                \)
+            </p>
+            <p>
+                \(
+                    (\frac{n}{2} + 17)^{n+34} \leq n^n
+                \)
+            </p>
+            <p>
+                \(
+                    (\frac{n}{2} + 17)^{n} * (\frac{n}{2} + 17 )^{34} \leq n^n
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_0=1\) e \(n_0 \geq 68\)}
+                    \)
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

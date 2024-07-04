@@ -314,6 +314,142 @@
                     \)
                 </p>
             </p>
+            <p>
+                \(
+                    \text{Questão 11:}
+                \)
+                <p>
+                    \(
+                        \text{Resolva a recorrência \(T (n) = 3T (\sqrt{n}) + \log^n\) fazendo uma troca de variáveis.}\)
+                        \(\text{Sua solução deve ser assintoticamente apertada. Não se preocupe com saber se os valores são inteiros.}
+                    \)
+                    <p>
+                        \(
+                            \text{Chutemos que \(T(n) = O(n^2)\)}
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq c n^2
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = 3T(\sqrt{n}) + \log^n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq 3c(\sqrt{n})^2 + \log^n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq 3c n + \log^n
+                \)
+            </p>
+            <p>
+                \(
+                    3c n + \log^n \leq cn^2
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c=1\) e \(n_0=4\) }
+                    \)
+                </p>
+                <p>
+                    \(
+                        3*1*4 + \log^4 \leq cn^2
+                    \)
+                </p>
+                <p>
+                    \(
+                        12 + 2 \leq 1*4^2
+                    \)
+                </p>
+                <p>
+                    \(
+                        14 \leq 16
+                    \)
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 24:}
+            \)
+            <p>
+                \(
+                    \text{Use o método da iteração para determinar um bom limite superior assintótico para a recorrência \(T (n) = 3T (\lfloor \frac{n}{2} \rfloor) + n\).}
+                \)
+                <p>
+                    \(
+                        T(n) = n + 3T(\lfloor \frac{n}{2} \rfloor)
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) = n + 3(\lfloor \frac{n}{2} \rfloor + 3T(\lfloor \frac{n}{4} \rfloor))
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) = n + 3(\lfloor \frac{n}{2} \rfloor + 3(\lfloor \frac{n}{4} \rfloor + 3T(\lfloor \frac{n}{8} \rfloor)))
+                    \)
+                </p>
+                <p>
+                    \(
+                        \lfloor \frac{n}{2^k} \rfloor \leq 3
+                    \)
+                </p>
+                <p>
+                    \(
+                        k + 1 > \log^{n}_{2} \geq k
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{A soma completa:}
+                    \)
+                    <p>
+                        \(
+                            T(n) = n + (3\lfloor \frac{n}{2} \rfloor + 9 \lfloor \frac{n}{4} \rfloor + 27 \lfloor \frac{n}{8} \rfloor + ... + 3^{k-1} \lfloor \frac{n}{2^{k-1}} \rfloor) + 3^k T(\lfloor \frac{n}{2^k} \rfloor)
+                        \)
+                    </p>
+                    <P>
+                        \(
+                            T(n) = n + (3\lfloor \frac{n}{2} \rfloor + 9 \lfloor \frac{n}{4} \rfloor + 27 \lfloor \frac{n}{8} \rfloor + ... + 3^{k-1} \lfloor \frac{n}{2^{k-1}} \rfloor) + 3^{k}b
+                        \)
+                    </P>
+                    <p>
+                        \(
+                            T(n) \leq n + (3\lfloor \frac{n}{2} \rfloor + 9 \lfloor \frac{n}{4} \rfloor + 27 \lfloor \frac{n}{8} \rfloor + ... + 3^{k-1} \lfloor \frac{n}{2^{k-1}} \rfloor) + 3^{\log^{n}_2 }b
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n\sum_{i=0}^{\infty} (\frac{3}{2})^i + 3^{\log^{3}_2 }b
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) = 2n + 3^{\log^{3}_2 }b
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Logo: } T(n) = O(n)
+                        \)
+                    </p>
+                </p>
+            </p>
         </p>
     </body>
 </html>

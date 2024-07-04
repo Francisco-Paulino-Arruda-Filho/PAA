@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 4.3.5</title>
+            
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(
+                T(n) = 2T(\lfloor \frac{n}{2} \rfloor) + n
+            \)
+            <p>
+                \(
+                    \text{Enunciado Mostre que \(\Theta(n \log n)\) é a solução para a recorrência “exata” (4.3) para a ordenação por intercalação.}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(\Theta\), temos que: \(\exists n_0, c_1, c_2 \) tal que \(c_1g(n) \leq T(n) \leq c_2g(n) \) }
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Seja } T(n) = 2T(\lfloor \frac{n}{2} \rfloor) + n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq 2c_1\lfloor \frac{n}{2} \rfloor \log \lfloor \frac{n}{2} \rfloor + n
+                \)
+            </p>
+            <p>
+               \(
+                    2c_1\lfloor \frac{n}{2} \rfloor \log \lfloor \frac{n}{2} \rfloor + n \leq 2c_1\frac{n}{2} \log \frac{n}{2}+ n
+                \) 
+            </p>
+            <p>
+                \(
+                    c_1\frac{n}{2} \log \frac{n}{2}+ n \leq c_1n \log n
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_1=1\) e \(n_0 \geq 4\)}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    T(n) = 2c_2\lfloor \frac{n}{2} \rfloor \log \lfloor \frac{n}{2} \rfloor + n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \geq 2c_2\frac{n}{2} \log \frac{n}{2}+ n
+                \)
+            </p>
+            <p>
+                \(
+                    2c_2\frac{n}{2} \log \frac{n}{2}+ n \geq c_2n \log n
+                \)
+            </p>
+            <p>
+                \(
+                    2c_2\frac{n}{2} \log n - \frac{n}{2}\log^2 + n \geq c_2n \log n
+                \)
+            </p>
+            <p>
+                \(
+                    c_2n \log n - \frac{n}{2}\log^2 + n \geq c_2n \log n
+                \)
+            </p>
+            <p>
+                \(
+                    - \frac{n}{2}\log^2 + n \geq 0
+                \)
+            </p>
+            <p>
+                \(
+                    -\frac{n}{2} + n \geq n
+                \)
+            </p>
+            <p>
+                \(
+                    n \geq 0
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_2=1\) e \(n_0 \geq 1\)}
+                    \)
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

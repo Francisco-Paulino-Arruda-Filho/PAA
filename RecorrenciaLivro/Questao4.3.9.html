@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lista 4.3.2</title>
+        <title>Lista 4.3.9</title>
         
         <!-- MATHJAX 3 (através da CDN) -->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -12,40 +12,40 @@
     <body>
         <p>
             \(
-                \text{Mostre que a solução de \(T(n) = T(\frac{n}{2}) + 1 \text{ é } O(\log^n)\) .}
+                T(n) = 3T(\sqrt{n} ) + \log^n
             \)
             <p>
                 \(
-                    \text{Seja } T(n) = T(\frac{n}{2}) + 1
+                    \text{Chutemos que \(T(n) = O(nlog^n)\)}
                 \)
             </p>
             <p>
                 \(
-                    \text{Pela definição de \(O\), temos que: \(\exists n_0, c_1 \) tal que \(T(n) \leq cg(n) \) } 
+                    \text{Pela definição de \(O\) temos que \(\exists n_0, c_1 \) tal que \(T(n) \leq cg(n) \)}
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq c n \log^n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = 3T(\sqrt{n} ) + \log^n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq 3c \sqrt{n} \log^{\sqrt{n}} + \log^n
+                \)
+            </p>
+            <p>
+                \(
+                    3c \sqrt{n} \log^{\sqrt{n}} + \log^n \leq c n \log^n
                 \)
                 <p>
                     \(
-                        T(n) \leq c \log^n
-                    \)
-                </p>
-            </p>
-            <p>
-                \(
-                    T(n) = T(\frac{n}{2}) + 1
-                \)
-            </p>
-            <p>
-                \(
-                    T(n) \leq c \log^{\frac{n}{2}} + 1
-                \)
-            </p>
-            <p>
-                \(
-                    c \log^\frac{n}{2} \leq c \log^n
-                \)
-                <p>
-                    \(
-                        \text{Basta tomar \(c_0=1\) e \(n_0 \geq 1\)}
+                        \text{Basta tomar \(c_0=1\) e \(n_0 \geq 16\)}
                     \)
                 </p>
             </p>

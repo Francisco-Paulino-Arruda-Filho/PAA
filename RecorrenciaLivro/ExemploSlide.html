@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exemplo slide</title>
+        
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            <p>
+                \[
+                    T(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    8T(\frac{n}{2}) + n^2, & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </p>
+            \(
+                \text{Resolva a recorrência \(T (n) = 8T (\frac{n}{2}) + n^2\) usando o método da iteração. Considere T (1) = 1.}
+            \)
+            <p>
+                \(
+                    T(n) = 8T(\frac{n}{2}) + n^2
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = 8(\lfloor \frac{n}{2} \rfloor + 8T(\lfloor \frac{n}{4} \rfloor)) + n^2
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = 8(\lfloor \frac{n}{2} \rfloor + 8(\lfloor \frac{n}{4} \rfloor + 8T(\lfloor \frac{n}{8} \rfloor) )) + n^2
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Termo geral:}
+                \)
+                <p>
+                    \(
+                        8^i\frac{n}{2^i}
+                    \)  
+                </p>
+                <p>
+                    \(
+                        \text{Argumento da função: } \frac{n}{2}
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) = n + (8\lfloor \frac{n}{2} \rfloor +  64\lfloor \frac{n}{2} \rfloor + ... + 8^{k-1}\rfloor \frac{n}{2} \rfloor) + 8^kT(\frac{n}{2^k})
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) = n + (8\lfloor \frac{n}{2} \rfloor +  64\lfloor \frac{n}{2} \rfloor + ... + 8^{k-1}\rfloor \frac{n}{2} \rfloor) + 8^kb
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq n + (8\lfloor \frac{n}{2} \rfloor +  64\lfloor \frac{n}{2} \rfloor + ... + 8^{k-1}\rfloor \frac{n}{2} \rfloor) + 8^{\log^{n}_2} b
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq n + (8\frac{n}{2} +  64\frac{n}{2} + ... + 8^{k-1}\frac{n}{2}) + 8^{\log^{n}_2} b
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq n + \sum^{\infty}_{i=0} \frac{8}{2}^i + 8^{\log^{n}_2} b
+                    \)
+                </p>
+            </p>
+        </p>
+    </body>
+</html>
