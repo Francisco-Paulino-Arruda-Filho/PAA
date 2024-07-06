@@ -193,6 +193,62 @@
             </p>
         </p>
         <p>
+            \(\text{Questão 07:}\)
+            <p>
+                \(
+                    \text{Enunciado: Mostre que a solução para \(T (n) = \Theta(n \log^n)\) é a solução para a recorrência (4.3) do livro.}
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = 2T(\lfloor \frac{n}{2} \rfloor) + n
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(\Theta\), \(\exists c_1, c_2, n_0 \) tal que } c_1g(n) \leq T(n) \leq c_2g(n)
+                \)
+                <p>
+                    \(
+                        T(n) \leq 2c_1(\lfloor \frac{n}{2} \rfloor \log^{\lfloor \frac{n}{2} \rfloor}) + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq 2c_1(\frac{n}{2} \log^{\frac{n}{2} }) + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq c_1(n \log^{\frac{n}{2} }) + n
+                    \)
+                </p>
+                <p>
+                    \(c_1(n \log^{\frac{n}{2} }) + n \leq c_1n \log^n\)
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_1=1\) e \(n_0\geq4\) }
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        T(n) \geq 2c_2(\lfloor \frac{n}{2} \rfloor \log^{\lfloor \frac{n}{2} \rfloor}) + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        c_2n \log^n \geq 2c_2(\lfloor \frac{n}{2} \rfloor \log^{\lfloor \frac{n}{2} \rfloor}) + n
+                    \)
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_2=4\) e \(n_0\geq8\) }
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
             \(
                 \text{Questão 08:}
             \)
@@ -377,6 +433,144 @@
                 <p>
                     \(
                         14 \leq 16
+                    \)
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                    \text{Questão 22:}
+            \)
+            <p>
+                \(
+                    \text{Use o método mestre para mostrar que a solução para a recorrência de busca binária}
+                \)<br>
+                \(
+                    \text{\(T (n) = T (\frac{n}{2}) + \Theta(1) \text{ é } T (n) = \Theta(\log^n)\)}
+                \)
+                <p>
+                    \(
+                        a=1
+                    \)<br>
+                    \(
+                        b=2
+                    \)<br>
+                    \(
+                        f(n) = 1
+                    \)
+                </p>
+                <p>
+                    \(
+                        f(n) \in O(n^{log^{1}_2}) \rightarrow T(n) \in \Theta(n^{log^{a}_{b}} \log^n)
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Pela definição de \(O\), \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) }
+                    \)
+                    <p>
+                        \(
+                            1 \leq c_1n^{log^{1}_2}
+                        \)
+                        <p>
+                            \(
+                                \text{Basta tomar \(c_1=1\) e \(n_0\geq1\) }
+                            \)
+                        </p>
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Logo:} T(n) \in \Theta(n^{\log^{1}_{2}}\log^n)
+                    \)
+                    <p>
+                        \(
+                            T(n) \in \Theta(n^{0}\log^n)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \in \Theta(\log^n)
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 23:}
+            \)
+            <p>
+                \(
+                    \text{Enunciado:  método mestre pode ser aplicado à recorrência \(T (n) = 4T (\frac{n}{2}) + n^2 \log^n\)? Justifique sua resposta. Dê um limite superior assintótico para essa recorrência.}
+                \)
+            </p>
+            <p>
+                \(
+                    T (n) = 4T (\frac{n}{2}) + n^2 \log^n
+                \)
+                <p>
+                    \(
+                        a=4
+                    \)<br>
+                    \(
+                        b=2
+                    \)<br>
+                    \(
+                        f(n) = n^2 \log^n
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    f(n) \in \Omega(n^{log^{a+e}_b }) \wedge a(\frac{n}{2}) \leq cf(n) \rightarrow T(n) \in \Theta(f(n))
+                \)
+            </p>
+            <p>
+                \(
+                    n^2 \log^n \in \Omega(n^{log^{4+e}_2 }) \wedge 4(\frac{n}{2}) \leq cn^2 \log^n \rightarrow T(n) \in \Theta(n^2 \log^n)
+                \)
+                <p>
+                    \(
+                        n^2 \log^n \in \Omega(n^{log^{4+e}_2 })
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de \(Omega\) temos que \(\exists c_1, n_0\) tal que \(T(n) \geq c_1g(n)\)  }
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n^2 \log^n \geq c_1(n^{log^{4+e}_2 })
+                        \)
+                        <p>
+                            \(
+                                \text{Basta tomar } n\geq4, e=1, c_1=1
+                            \)
+                        </p>
+                    </p>
+                </p>
+                <p>
+                    \(
+                        4(\frac{n}{2}) \leq cn^2 \log^n
+                    \)
+                </p>
+                <p>
+                    \(
+                        2n \leq cn^2 \log^n
+                    \)
+                    <p>
+                        \(
+                            \text{Basta tomar: } n_0 \geq 2, c_1=1
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        T(n) \in \Theta(n^2 \log^n)
                     \)
                 </p>
             </p>
