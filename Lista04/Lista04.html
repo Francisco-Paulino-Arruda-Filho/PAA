@@ -445,58 +445,77 @@
                 \(
                     \text{Use o método mestre para mostrar que a solução para a recorrência de busca binária}
                 \)<br>
+                \[
+                T(n) = \begin{cases}
+                1 & \text{se } n = 1 \\
+                3T (\lfloor \frac{n}{2} \rfloor ) + n, & \text{ se } n \geq 2
+                \end{cases}
+            \]
+            </p>
+            <p>
                 \(
-                    \text{\(T (n) = T (\frac{n}{2}) + \Theta(1) \text{ é } T (n) = \Theta(\log^n)\)}
+                    3T (\lfloor \frac{n}{2} \rfloor ) + n
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Argumento da função: } \lfloor \frac{n}{2} \rfloor
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = n + 3(\lfloor \frac{n}{2} \rfloor + 3T(\lfloor \frac{n}{4} \rfloor))
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = n + 3(\lfloor \frac{n}{2} \rfloor + 3(\lfloor \frac{n}{4} \rfloor + 3T(\lfloor \frac{n}{8} \rfloor)))
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Soma termo geral: } 3^{i} \lfloor \frac{n}{2^{i}} \rfloor
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Paramos quando:} \frac{n}{2^{k}} = 1
                 \)
                 <p>
                     \(
-                        a=1
-                    \)<br>
-                    \(
-                        b=2
-                    \)<br>
-                    \(
-                        f(n) = 1
+                        n = 2^{k}
                     \)
                 </p>
                 <p>
                     \(
-                        f(n) \in O(n^{log^{1}_2}) \rightarrow T(n) \in \Theta(n^{log^{a}_{b}} \log^n)
+                        \log^{n}_{2} = k
                     \)
-                </p>
-                <p>
-                    \(
-                        \text{Pela definição de \(O\), \(\exists c_1, n_0\) tal que \(f(n) \leq cg(n)\) }
-                    \)
-                    <p>
-                        \(
-                            1 \leq c_1n^{log^{1}_2}
-                        \)
-                        <p>
-                            \(
-                                \text{Basta tomar \(c_1=1\) e \(n_0\geq1\) }
-                            \)
-                        </p>
-                    </p>
-                </p>
-                <p>
-                    \(
-                        \text{Logo:} T(n) \in \Theta(n^{\log^{1}_{2}}\log^n)
-                    \)
-                    <p>
-                        \(
-                            T(n) \in \Theta(n^{0}\log^n)
-                        \)
-                    </p>
-                    <p>
-                        \(
-                            T(n) \in \Theta(\log^n)
-                        \)
-                    </p>
                 </p>
             </p>
             <p>
-
+                \(
+                    \text{Soma toda: } T(n) = 3^{k}T(\lfloor \frac{n}{2^k} \rfloor) + n 
+                \)
+            </p>
+            <p>
+                \(
+                    3^{\log^{n}_{2}}T(1) + n 
+                \)
+            </p>
+            <p>
+                \(
+                    n^{\log^{3}_{2}} + n 
+                \)
+            </p>
+            <p>
+                \(
+                    n^{1,5} + n 
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = O(n^2)
+                \)
             </p>
         </p>
         <p>
@@ -539,7 +558,7 @@
                     \)
                     <p>
                         \(
-                            \text{Pela definição de \(Omega\) temos que \(\exists c_1, n_0\) tal que \(T(n) \geq c_1g(n)\)  }
+                            \text{Pela definição de \(\Omega\) temos que \(\exists c_1, n_0\) tal que \(T(n) \geq c_1g(n)\)  }
                         \)
                     </p>
                     <p>

@@ -94,6 +94,55 @@
             </p>
         </p>
         <p>
+            <p>
+                \(\text{Questão 06:} \)
+            </p>
+            \(
+                \text{Uma maneira de analisar a complexidade de um algoritmo é}
+            \)<br>
+            \(
+                \text{instrumentando o (pseudo) código, ou seja, adicionando uma variável global conta inicializada com zero e,}
+            \)<br>
+            \(
+                \text{a cada instrução do algoritmo original, inserir um incremento à variável conta que corresponde ao número}
+            \)<br>
+            \(
+                \text{de instruções executadas por aquela declaração.}
+            \)
+            <p>
+                <pre>
+                    <code>
+                        Algoritmo D(x,n)
+                            i := 1;
+                            repita
+                                x[i] := x[i] + 2; i := i + 2;
+                            até (i > n);
+                                i := 1;
+                            enquanto (i ≤ ⌊n/2⌋)
+                                x[i] := x[i] + x[i + 1]; i := i + 1;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                \(  (A)
+                    \text{ Insira declarações para instrumentar o algoritmo acima introduzindo incrementos na variável conta.}
+                \)
+                \(
+                    \text{ Escolha um número de instruções adequado para cada declaração.}
+                \)
+            </p>
+            <P>
+                \(  (B)
+                    \text{ Qual é o valor exato da variável conta quando o algoritmo termina? Presuma que ela foi inicializada com zero antes da execução.}
+                \)
+            </P>
+            <p>
+                \(  (C)
+                    \text{ Obtenha uma contagem de instruções do algoritmo acima usando uma tabela de frequência. Mostre a tabela de contagem}
+                \)
+            </p>
+        </p>
+        <p>
             \(\text{Questão 07:} \)
             <pre>
                 <code>
