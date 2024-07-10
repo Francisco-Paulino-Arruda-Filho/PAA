@@ -19,6 +19,264 @@
     <body>
         <p>
             \(
+                \text{Questão 01:}
+            \)
+            <pre>
+                <code>
+                    Algoritmo3 (N):
+                        soma <- 0
+                        Para j <- 1, ..., N faça
+                            soma <- soma + j
+                        Retorne soma + Algoritmo3(N/2)
+                </code>
+            </pre>
+            <p>
+                \(
+                    \text{Linha por linha:}
+                \)
+                <p>
+                    <p>
+                        \(
+                            1. O(1)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            2. O(n+1)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            3. O(n)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            4. O(1)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Soma:} O(1) + O(n+1) + O(n) + O(1) = O(n)
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \[
+                    T(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    T(n), & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </p>
+            <p>
+                \(
+                    \text{Chutemos que \(T(n) = O(n)\)}
+                \)
+                <P>
+                    \(
+                        \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                    \)
+                    <p>
+                        \(
+                            T(n) \leq cn
+                        \)
+                    </p>
+                </P>
+            </p>
+            <P>
+                \(
+                    T(n) = T(n)
+                \)
+            </P>
+            <p>
+                \(
+                    T(n) \leq cn
+                \)
+            </p>
+            <p>
+                \(
+                    cn \leq cn
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c=1\) e \(n_0=1\) }
+                    \)
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 02:}
+            \)
+            <p>
+                <p>
+                    \(
+                        \text{Item A:}
+                    \)
+                </p>
+                <p>
+                    \[
+                        T(n) = \begin{cases}
+                        1 & \text{se } n = 1 \\
+                        T (\frac{n}{2}) + 15, & \text{ se } n \geq 2
+                        \end{cases}
+                    \]
+                </p>
+                <p>
+                   \(
+                        \text{Chutemos que \(T(n) = O(n)\)}
+                    \) 
+                    <p>
+                        \(
+                            \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                        \)
+                        <p>
+                            \(
+                                T(n) \leq cn
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            T(n) = T (\frac{n}{2}) + 15
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq c(\frac{n}{2}) + 15
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            c(\frac{n}{2}) + 15 \leq cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_1=2\) e \(n_0 \geq 15\) }
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Item B:}
+                \)
+                <p>
+                    \[
+                        F(n) = \begin{cases}
+                        1 & \text{se } n = 1 \\
+                        2F(\frac{n}{2}) + n, & \text{ se } n \geq 2
+                        \end{cases}
+                    \]
+                </p>
+                <P>
+                    \(
+                        \text{Chutemos que \(T(n) = O(n^2)\)}
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                        \)
+                        <p>
+                            \(
+                                T(n) \leq cn^2
+                            \)
+                        </p>
+                    </p>
+                </P>
+                <p>
+                    \(
+                        F(n) = 2F(\frac{n}{2}) + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        F(n) \leq 2c(\frac{n}{2})^2 + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        F(n) \leq c\frac{n^2}{4} + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        c\frac{n^2}{4} + n \leq cn^2
+                    \)
+                    <p>
+                        \(
+                            \text{Basta tomar \(c=1\) e \(n_0 \geq 4\) }
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Item C:}
+                \)
+                <p>
+                    \[
+                        G(n) = \begin{cases}
+                        1 & \text{se } n = 1 \\
+                        2G(\sqrt{n}), & \text{ se } n \geq 2
+                        \end{cases}
+                    \]
+                </p>
+                <p>
+                    \(
+                        \text{Chutemos que \(T(n) = O(\log n)\)}
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                        \)
+                        <p>
+                            \(
+                                T(n) \leq c\log n
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            G(n) = 2G(\sqrt{n})
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            G(n) \leq 2c\log \sqrt{n}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            G(n) \leq 2c\log^{n^{\frac{1}{2}}}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            G(n) \leq 2\frac{1}{2}c\log^n
+                        \)
+                    </p>
+                    <p>
+                        G(n) \leq c\log^n
+                    </p>
+                    <p>
+                        \(
+                            c\log^n \leq c\log n
+                        \)
+                        <p>
+                            \(
+                                \text{Basta tomar \(c=1\) e \(n_0 \geq 2\) }
+                            \)
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
                 \text{Questão 03:}
             \)
             <p>

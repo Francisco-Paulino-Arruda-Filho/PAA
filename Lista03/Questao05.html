@@ -24,17 +24,17 @@
         </pre>
         <p>
             \(
-                \text{Item A: Escreva uma invariante de laço adequada para o algoritmo}
+                (A)\text{ Escreva uma invariante de laço adequada para o algoritmo}
             \)
             <p>
                 \(
-                    \text{invariante: \(r = a \mod b \) }
+                    \text{Invariante: \(r = a \mod b \) ou seja, r vai ser igual ao resto da divisão de a por b.}
                 \)
             </p>
         </p>
         <p>
             \(
-                \text{Item B: Demonstre a invariante de laço.}
+                (B)\text{ Demonstre a invariante de laço.}
             \)
             <p>
                 <p>
@@ -52,25 +52,36 @@
                         \(r = 0 \)<br>
                         \(MDC=1\)
                     </p>
+                    <p>
+                        \(\text{Logo a invariante é verdadeira, pois r é igual ao resto da divisão de a por b.} \)
+                    </p>
                 </p>
                 <p>
                     \(\text{Caso indutivo:}\)
                     <p>
-                        \(
-                            \text{No início do laço temos que \(r = a \mod b \) e \(a = b \) e \(b = r \) e \(r = a \mod b \), isso na primeira iteração.}
-                        \)<br>
-                        \(
-                            \text{Ou seja a vai sempre assumir o valor de b na interação anterior e b vai assumir o valor de r na interação anterior e r vai assumir o valor de a mod b na interação anterior.}
-                        \)<br>
-                        \(
-                            \text{, isso a cada iteração, ou seja, a cada iteração a invariante se mantém.}
-                        \)<br>
-                        \(
-                            \text{Ou seja, a invariante é verdadeira e o laço se antém até o r continuar sendo diferente de 0}
-                        \)<br>
-                        \(
-                            \text{Ou seja, o laço se mantém até que o MDC seja encontrado}
-                        \)
+                        <p>
+                            \(\text{Suponha que a invariante é antes da primeira iteração, ou seja, \(r = a \mod b \)}\)
+                        </p>
+                        <p>
+                            \(
+                                \text{Nas próximas iterações o valor de recebe o de a na iteração anterior,}
+                            \)<br>
+                        </p>
+                        <p>
+                            \(
+                                \text{e o valor de b recebe o valor de r na iteração anterior,}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{e o valor de r recebe o valor de a mod b na já com os valores atualizados da atual iteração,}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{E isso se repete em todas as iterações, até que r seja igual a 0, que é o MDC.}
+                            \)
+                        </p>
                     </p>
                 </p>
                 <p>
@@ -83,7 +94,7 @@
         </p>
         <p>
             \(
-                \text{Item C: Demonstre que o algoritmo está correto utilizando a afirmação acima.}
+                (C)\text{ Demonstre que o algoritmo está correto utilizando a afirmação acima.}
             \)
             <p>
                 \(
