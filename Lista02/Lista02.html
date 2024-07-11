@@ -606,6 +606,82 @@
                     </p>
                 </p>
             </p>
+            <p>
+                \(\text{Questão 09:} \)
+                <p>
+                    \(
+                        \text{Prove que o tempo de execução de um algoritmo é \(\Theta(g(n))\) se e somente se seu tempo de}
+                    \)<br>
+                    \(
+                        \text{ execução no pior caso é \(O(g(n))\) e seu tempo de execução no melhor caso é \(\Omega(g(n)\))}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Ida:}
+                    \)
+                    <p>
+                        \(
+                            \Omega(n) \rightarrow O(n) \wedge \Theta(n)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Pela definição de \(\Omega(n)\), temos que: \(\exists c_1,c_2, n_0\) tal que \(c_1g(n) \leq f(n) \leq c_2g(n)\) para todo \(n \geq n_0\)}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            c_1g(n) \leq f(n)
+                        \)
+                        <p>
+                            \(
+                                f(n) \geq c_1g(n)
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{Essa é basicamente é a definição de \(\Omega\), logo f(n) é \(\Omega(g(n))\)}
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            f(n) \leq c_2g(n)
+                        \)
+                        <p>
+                            \(
+                                \text{Essa é a definição de \(O\), logo f(n) é \(O(g(n))\)} 
+                            \)
+                        </p>
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Volta:}
+                    \)
+                    <p>
+                        \(
+                            O(n) \wedge \Omega(n) \rightarrow \Theta(n)
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Pela definição de \(O\) temos que \(\exists c_1, n_0\) tal que \(f(n) \leq c_1g(n)\) para todo \(n \geq n_0\)}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Pela definição de \(\Omega\) temos que \(\exists c_2, n_0\) tal que \(f(n) \geq c_2g(n)\) para todo \(n \geq n_0\)}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Logo, \(f(n) \leq c_1g(n)\) e \(f(n) \geq c_2g(n)\), ou seja, \(f(n) = \Theta(g(n))\)}
+                    \)
+                </p>
+            </p>
         <p>
             <!--Prove que n^2 − 999n − 9999 = Ω(n^2).-->
             <p> 
