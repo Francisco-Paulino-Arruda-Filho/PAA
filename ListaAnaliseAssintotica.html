@@ -32,47 +32,35 @@
                     \(\text{Pela definição de \(O\), temos que \(f(n) = O(g(n))\) \(\exists c_1\),\(n_0\) tais que \(0 \leq f(n) \leq cg(n)\) para todo \( n \geq n_0\)} \).
                     <p>
                         \(2n^2 + 100n - 1 \leq cn^2\)
+                    </p>
+                    <p>
+                        \(
+                            100n \leq 100n^2, \forall n \geq 1
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            -1 \leq n^2, \forall n \geq 1
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            2n^2 + 100n - 1 \leq 2n^2 + 100n^2 + n^2, \forall n \geq 1
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            2n^2 + 100n^2 + n^2 \leq cn^2
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            103n^2 \leq cn^2
+                        \)
                         <p>
-                            \(\text{Assuma } c=4 \)
-                        </p>
-                        <p>
-                            \(2n^2 + 100n - 1 \leq 4n^2\)
-                        </p>
-                        <p>
-                            \(100n - 1\leq 2n^2\)
-                        </p>
-                        <p>
-                            \(-1\leq 2n^2 - 100n\)
-                        </p>
-                        <p>
-                            \(0 \leq 2n^2 - 100n + 1\)
-                        </p>
-                        <p>
-                            \(2n^2 - 100n + 1 \geq 0\)
-                        </p>
-                        <p>
-                            \(x"= \frac{100+\sqrt{10000-4*2*1} }{4} \)
-                        </p>
-                        <p>
-                            \(x"= \frac{100+\sqrt{10000-8} }{4} \)
-                        </p>
-                        <p>
-                            \(x"= \frac{100+\sqrt{9992} }{4} \)
-                        </p>
-                        <p>
-                            \(x"= \frac{100+100 }{4} \)
-                        </p>
-                        <p>
-                            \(x"= \frac{200}{4} \)
-                        </p>
-                        <p>
-                            \(x"= 50 \)
-                        </p>
-                        <p>
-                            \(\text{Basta tomar }n_0=50 \)
-                            <p>
-                                \(\text{Logo }n_1 \geq 50z \)
-                            </p>
+                            \(
+                                \text{Basta tomar }c_1=103 \text{ e } n_0 \geq 1
+                            \)
                         </p>
                     </p>
                 </p>
@@ -92,7 +80,7 @@
                                 \(2n^2 + 100n - 1 \leq cn^2\)
                             </p>
                             <p>
-                                \(\text{Assuma: }n=100 \)
+                                \(\text{Assuma: }n \geq 100 \)
                             </p>
                             <p>
                                 \(2*100^2 + 100*100 - 1 \leq c*100^2\)
@@ -155,7 +143,7 @@
                     \(11n^2 \leq cn^2\)
                 </p>
                 <p>
-                    \(\text{Basta tomar \(c=11, n=1\)} \)
+                    \(\text{Basta tomar \(c_1=11, n_0 \geq 1\)} \)
                 </p>
             </p>
         </p>
@@ -166,7 +154,7 @@
                 <p>
                     \(\text{Enunciado}\)
                     <p>
-                        \(\text{Mostre que a função } f(n) = 100n =O(2n)\)
+                        \(\text{Mostre que a função } f(n) = 100n=O(2n)\)
                     </p>
                 </p>
                 <p>
@@ -186,7 +174,7 @@
                         \(50(2n) \leq c2n \)
                     </p>
                     <p>
-                        \(\text{Basta tomar \(c=1, c=50\)} \)
+                        \(\text{Basta tomar \(c_1=1, n_0 \geq 50\)} \)
                     </p>
                 </p>
             </p>
@@ -227,7 +215,7 @@
                         \(n(101) \leq cn\)
                     </p>
                     <p>
-                        \(\text{Basta tomar \(c=101, n=1 \)} \)
+                        \(\text{Basta tomar \(c_1=101, n_0 \geq 1 \)} \)
                     </p>
                 </p>
             </p>
@@ -259,7 +247,7 @@
                         \(100n^2 \leq c(2n^2 + n)\)
                     </p>
                     <p>
-                        \(\text{Bast tomar c=50 e n=1} \)
+                        \(\text{Bast tomar \(c_1=50\) e \(n_0 \geq 1\)} \)
                     </p>
                 </p>
             </p>
@@ -289,13 +277,13 @@
                     \(n^2 + 999n + 9999 \leq cn^2\)
                 </p>
                 <p>
-                    \(999n \leq 999n^2, \forall \geq 1 \)
+                    \(999n \leq 999n^2, \forall n \geq 1 \)
                 </p>
                 <p>
-                    \(9999 \leq 9999n^2, \forall \geq 1\)
+                    \(9999 \leq 9999n^2, \forall n \geq 1\)
                 </p>
                 <p>
-                    \(n^2 + 999n + 9999 \leq n^2 + 999n + 9999n^2, \forall \geq 1\)
+                    \(n^2 + 999n + 9999 \leq n^2 + 999n + 9999n^2, \forall n \geq 1\)
                 </p>
                 <p>
                     \(n^2 + 999n^2 + 9999n^2 \leq cn^2\)
@@ -304,7 +292,7 @@
                     \(10009n^2 \leq cn^2\)
                 </p>
                 <p>
-                    \(\text{Basta tomar c=10009 e n=1} \)
+                    \(\text{Basta tomar \(c_1=10009\) e \(n_1 \geq 1\)} \)
                 </p>
             </p>
         </p>
@@ -330,25 +318,25 @@
                         \(\frac{1}{100n^2} - 999n - 9999 \leq cn\)
                     </p>
                     <p>
-                        \(\frac{1}{100n^2} \leq n, \forall \geq 1\)
+                        \(\frac{1}{100n^2} \leq n, \forall n \geq 1\)
                     </p>
                     <p>
-                        \(-999n \leq n, \forall \geq 1\)
+                        \(-999n \leq n, \forall n \geq 1\)
                     </p>
                     <p>
-                        \(-9999 \leq n, \forall \geq 1\)
+                        \(-9999 \leq n, \forall n \geq 1\)
                     </p>
                     <p>
-                        \(\frac{1}{100n^2} - 999n - 9999 \leq n+n+n, \forall \geq 1\)
+                        \(\frac{1}{100n^2} - 999n - 9999 \leq n+n+n, \forall n \geq 1\)
                     </p>
                     <p>
-                        \(\frac{1}{100n^2} - 999n - 9999 \leq 3n, \forall \geq 1\)
+                        \(\frac{1}{100n^2} - 999n - 9999 \leq 3n, \forall n \geq 1\)
                     </p>
                     <p>
                         \(3n \leq cn\)
                     </p>
                     <p>
-                        \(\text{Basta tomar c=3 e n=1} \)
+                        \(\text{Basta tomar \(c_1=3\) e \(n_0 \geq 1\)} \)
                     </p>
                 </p>
             </p>
@@ -380,7 +368,7 @@
                         \(\frac{1}{2}(n^2 - n) \leq cn^2\)
                     </p>
                     <p>
-                        \(\text{Basta tomar } c=\frac{1}{2}, n=1\)
+                        \(\text{Basta tomar } c_1=\frac{1}{2}, n_0 \geq 1\)
                     </p>
                 </p>
             </p>
@@ -415,7 +403,7 @@
                         \(n^2 \leq cn^2\)
                     </p>
                     <p>
-                        \(\text{Basta tomar } c=1, n=1\)
+                        \(\text{Basta tomar } c_1=1, n_0 \geq 1\)
                     </p>
                 </p>
             </p>
@@ -444,7 +432,7 @@
                         \(n \leq c2^n\)
                     </p>
                     <p>
-                        \(\text{Basta tomar \(c=1, n=1\)} \)
+                        \(\text{Basta tomar \(c_1=1, n_0= geq 1\)} \)
                     </p>
                 </p>
         </p>
@@ -469,49 +457,83 @@
                 <p>
                     \(\text{Pela definição de \(\Omega\), temos que \(f(n) = \Omega(g(n))\) \(\exists c_1\),\(n_0\) tais que \(0 \leq cg(n) \leq f(n)\) para todo \( n \geq n_0\)} \).
                     <p>
-                        \(cn^2 \leq n^2 - 999n - 9999\)
+                        \(
+                            n^2 - 999n - 9999 \geq cn^2
+                        \)
                     </p>
                     <p>
-                        \(Assuma c=\frac{1}{2}\)
+                        \(
+                            \text{Assuma \(c=\frac{1}{2}\)}
+                        \)
                     </p>
                     <p>
-                        \(\frac{1}{2}n^2 \leq n^2 - 999n - 9999\)
+                        \(
+                            \frac{1}{2}n^2 - 999n - 9999 \geq 0
+                        \)
                     </p>
                     <p>
-                        \(-999n - 9999 = -\frac{n^2}{2} \)
-                    </p>
-                    <p>
-                        \(0 = -\frac{n^2}{2} + 999n + 9999 \)
-                    </p>
-                    <p>
-                        \(\frac{n^2}{2} - 999n - 9999 = 0 \)
-                    </p>
-                    <p>
-                        \(x" = \frac{999 + \sqrt{998.001 - 4*\frac{1}{2}{9999} } }{2*\frac{1}{2}} \)
+                        \(
+                            \text{Aplicando Bhaskara}
+                        \)
                         <p>
-                            \(x" = \frac{999 + \sqrt{998.001 - 19998} }{1} \)
+                            \(
+                                x'= \frac{999-\sqrt{999^2-4*\frac{1}{2}*(-9999)} }{1}
+                            \)
                         </p>
                         <p>
-                            \(x" = \frac{999 + \sqrt{978.003} }{1} \)
+                            \(
+                                x'= \frac{999-\sqrt{998001+19998} }{2\frac{1}{2}}
+                            \)
                         </p>
                         <p>
-                            \(x" = \frac{999 + 989 }{1} \)
+                            \(
+                                x'= \frac{999-\sqrt{1017999} }{1}
+                            \)
                         </p>
                         <p>
-                            \(x" = 1988 \)
+                            \(
+                                x'= 999-1009.8 
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                x'= -10.8
+                            \)
+                            <p>
+                                \(
+                                    \text{Valor inválido}
+                                \)
+                            </p>
                         </p>
                     </p>
                     <p>
-                        \(x' = \frac{999 - \sqrt{978.003} }{1} \)
-                        <p>
-                            \(x' = \frac{999 - 989 }{1} \)
-                        </p>
-                        <p>
-                            \(x' = 10 \)
-                        </p>
+                        \(
+                            x"= \frac{999+\sqrt{999^2-4*\frac{1}{2}*(-9999)} }{1}
+                        \)
                     </p>
                     <p>
-                        \(\text{Basta tomar \(n=1988\)} \)
+                        \(
+                            x"= \frac{999+\sqrt{998001+19998} }{2\frac{1}{2}}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            x"= \frac{999+\sqrt{1017999} }{1}
+                        \)
+                    </p><p>
+                        \(
+                            x"= 999+1009.8 
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            x"= 2008.8
+                        \)
+                        <p>
+                            \(
+                                \text{Basta tomar }n_0 \geq 2009
+                            \)
+                        </p>
                     </p>
                 </p>
             </p>
@@ -548,25 +570,42 @@
             <p>
                 \(\text{Questão 11}: \)
                 <p>
-                    \(\text{Prove que }\) \(lg(n!) = \Omega(n lg n)\)
+                    \(\text{Prove que }\) \(\log^{n!} = \Omega(n \log^n)\)
                 </p>
                 <p>
-                    \(f(n) = lg(n!)\)
+                    \(f(n) = \log^{n!}\)
                 </p>
                 <p>
-                    \(g(n) = n lg n\)
+                    \(g(n) = n \log^n\)
                 </p>
             </p>
             <p>
-                \(\text{Pela definição de \(\Omega\), temos que \(f(n) = \Omega(g(n))\) \(\exists c_1\),\(n_0\) tais que \(0 \leq cg(n) \leq f(n)\) para todo \( n \geq n_0\)} \).
+                \(\text{Pela definição de \(\Omega\), temos que \(f(n) = \Omega(g(n))\) \(\exists c_1\),\(n_0\) tais que \(f(n) \geq c_1g(n) \) para todo \( n \geq n_0\)} \).
                 <p>
-                    \(lg(n!) \geq cn lg n\)
+                    \(\log^{n!} \geq cn \log^n\)
                 </p>
                 <p>
-                    \(lg(n!) \geq lg n^{nc}\)
+                    \(\log^{n!} \geq c \log^n\)
                 </p>
                 <p>
-                    \(\text{Basta tomar c=1 e n=4} \)
+                    \(
+                        \text{Tome } c = 1
+                    \)
+                </p>
+                <p>
+                    \(
+                        \log^{n!} \geq \log^n
+                    \)
+                </p>
+                <p>
+                    \(
+                        n! \geq n, \forall n \geq 1
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Basta tomar } n_0 = 1
+                    \)
                 </p>
             </p>
         </p>
@@ -593,7 +632,7 @@
                     \(\frac{1}{2}(n^2+n) \geq cn^2\)
                 </p>
                 <p>
-                    \(\text{Basta tomar}\) \(c=\frac{1}{2}, n=1\)
+                    \(\text{Basta tomar}\) \(c_1=\frac{1}{2}, n_0 \geq 1\)
                 </p>
             </p>
         </p>
@@ -620,7 +659,7 @@
                                     \(20n^3 + 10n^3 + 5n^3 \leq 35n^3 \)
                                 </p>
                                 <p>
-                                    \(\text{Basta tomar \(c=35, n=1\)} \)
+                                    \(\text{Basta tomar \(c_1=35, n_0 \geq 1\)} \)
                                 </p>
                             </p>
                         </li>
@@ -691,7 +730,11 @@
             <p>
                 \(\text{Questão 15}: \)
                 <p>
-                    <strong>Provando a ida</strong>
+                    <strong>
+                        \(
+                            \text{Provando a ida}
+                        \)
+                    </strong>
                 </p>
                 <p>
                     \(\text{Prove que } f=\Omega(g) \text{ se e somente se } g=O(f) \)
@@ -724,7 +767,11 @@
                             </p>
                         </p>
                         <p>
-                            <strong>Provando a volta</strong>
+                            <strong>
+                                \(
+                                    \text{Provando a volta}
+                                \)
+                            </strong>
                         </p>
                         <p>
                             \(g=O(f)\)
