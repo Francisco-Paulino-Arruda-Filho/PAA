@@ -31,11 +31,19 @@
                 <p>
                     \(\text{Pela definição de \(O\), temos que \(f(n) = O(g(n))\) \(\exists c_1\),\(n_0\) tais que \(0 \leq f(n) \leq cg(n)\) para todo \( n \geq n_0\)} \).
                     <p>
+                        \(
+                            \text{Assuma } c=4
+                        \)
+                    </p>
+                    <p>
                         \(2n^2 + 100n - 1 \leq cn^2\)
                     </p>
                     <p>
+                        \(2n^2 + 100n - 1 \leq 4n^2\)
+                    </p>
+                    <p>
                         \(
-                            100n \leq 100n^2, \forall n \geq 1
+                            100n^2 \leq 100n^2, \forall n \geq 1
                         \)
                     </p>
                     <p>
@@ -50,16 +58,16 @@
                     </p>
                     <p>
                         \(
-                            2n^2 + 100n^2 + n^2 \leq cn^2
+                            2n^2 + 100n^2 + n^2 \leq 4n^2
                         \)
                     </p>
                     <p>
                         \(
-                            103n^2 \leq cn^2
+                            103n^2 \leq 4n^2
                         \)
                         <p>
                             \(
-                                \text{Basta tomar }c_1=103 \text{ e } n_0 \geq 1
+                                \text{Basta tomar }c_1=26, n_0 \geq 1
                             \)
                         </p>
                     </p>
@@ -73,29 +81,60 @@
                         \(\text{Mostre que a função } f(n) = 2n^2 + 100n - 1 =O(n^2)\)
                     </p>
                     <p>
-                        \(\text{Para todo } n \geq 100 \)
                         <p>
                             \(\text{Pela definição de \(O\), temos que \(f(n) = O(g(n))\) \(\exists c_1\),\(n_0\) tais que \(0 \leq f(n) \leq cg(n)\) para todo \( n \geq n_0\)} \).
+                            <p>
+                                \(
+                                    \text{Assuma } n_0 \geq 100
+                                \)
+                            </p>
                             <p>
                                 \(2n^2 + 100n - 1 \leq cn^2\)
                             </p>
                             <p>
-                                \(\text{Assuma: }n \geq 100 \)
+                                \(
+                                    100n^2 \leq 100n^2, \forall n \geq 1
+                                \)
                             </p>
                             <p>
-                                \(2*100^2 + 100*100 - 1 \leq c*100^2\)
+                                \(
+                                    -1 \leq n^2, \forall n \geq 1
+                                \)
                             </p>
                             <p>
-                                \(2*10000 + 10000 - 1 \leq c*10000\)
+                                \(
+                                    2n^2 + 100n - 1 \leq 2n^2 + 100n^2 + n^2, \forall n \geq 1
+                                \)
                             </p>
                             <p>
-                                \(20000 + 10000 - 1 \leq c*10000\)
+                                \(
+                                    2n^2 + 100n^2 + n^2 \leq cn^2
+                                \)
                             </p>
                             <p>
-                                \(29999 \leq c*10000\)
+                                \(
+                                    103n^2 \leq cn^2
+                                \)
                             </p>
                             <p>
-                                \(\text{Basta tomar }c=3 \)
+                                \(
+                                    103*100^2 \leq c100^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    1030000 \leq 10000c
+                                \)
+                                <p>
+                                    \(
+                                        \text{Basta tomar } c_1 = 104, n_0 \geq 100
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \text{Pois, \(103n^2 \leq 104n^2, \forall n \geq 1\)}
+                                    \)
+                                </p>
                             </p>
                         </p>
                     </p>
@@ -643,7 +682,7 @@
                 <p>
                     <ol type="A">
                         <li>
-                            \(\text{O que significa a afirmação “T(n) é O(f(n))”?}\) 
+                            \(\text{O que significa a afirmação “\(T(n) \text{ é } O(f(n))\)\”?}\) 
                             <p>
                                 \(\text{Significa que a função \(T(n)\) é limitada superiormente por \(f(n)\)} \)
                             </p>
@@ -664,7 +703,7 @@
                             </p>
                         </li>
                         <li>
-                            \(\text{É verdade que \(\frac{1}{2}n^2 é O(n)\) ? Justifique.} \)
+                            \(\text{É verdade que \(\frac{1}{2}n^2 \text{ é } O(n)\) ? Justifique.} \)
                             <p>
                                 \(\text{Não é verdade.}\)
                                 <p>
@@ -679,15 +718,15 @@
                             </p>
                         </li>
                         <li>
-                            \(\text{O que significa a afirmação “T(n) é Ω(f(n))”?} \)
+                            \(\text{O que significa a afirmação “\(T(n) \text{ é } \Theta(f(n))\)”?} \)
                             <p>
-                                \(\text{Significa que a função \(T(n)\) é limitada inferiormente por \(f(n)\)} \)
+                                \(\text{Significa que a função \(T(n)\) é limitada inferiormente e inferiormente por \(f(n)\)} \)
                             </p>
                         </li>
                         <li>
-                            \(\text{O que significa a expressão “T(n) = n + Ω(n log n)”?} \)
+                            \(\text{O que significa a expressão “\(T(n) = n + \Theta(n \log^n)\)”?} \)
                             <p>
-                                \(\text{Significa que a função \(T(n)\) é limitada inferiormente por \(n log n\)} \)
+                                \(\text{Significa que a função \(T(n)\) é limitada inferiormente por \(n \log^n\)} \)
                             </p>
                         </li>
                     </ol>
