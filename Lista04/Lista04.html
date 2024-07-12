@@ -581,6 +581,126 @@
         </p>
         <p>
             \(
+                \text{Questão 09:}
+            \)
+            <p>
+                \(\text{Usando o Teorema Mestre da Seção 4.5 do livro, você pode mostrar que a solução}\)<br>
+                \(\text{para a recorrência \(T (n) = 4T (\frac{n}{3}) + n \text{ é } T (n) = \Theta(nlog^{4}_{3})\). Mostre que uma prova de substituição que}\)<br>
+                \(\text{considere \(T (n) \leq cnlog^{4}_{3}\) falha. Depois, mostre como subtrair um termo de ordem mais baixa para fazer}\)<br>
+                \(\text{com que uma prova de substituição funcione}\)
+            </p>
+            <p>
+                \(
+                    \text{Prove que \(T (n) \leq cnlog^{4}_{3}\) falha:}
+                \)
+                <p>
+                    \(
+                        \text{Pela definição de \(\Theta\), \(\exists c_1, c_2, n_0 \) tal que } c_1g(n) \leq T(n) \leq c_2g(n)
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq 4c(\frac{n}{3})\log^{4}_{3} + n
+                    \)
+                </p>
+                <p>
+                    \(
+                        4c(\frac{n}{3})\log^{4}_{3} + n \leq cn\log^{4}_{3}
+                    \)
+                </p>
+                <p>
+                    \(
+                        4c(\frac{n}{3}) \geq cn
+                    \)
+                </p>
+                <p>
+                    \(
+                        4cn \geq 3cn, \forall n \geq 1
+                    \)
+                    <p>
+                        \(\text{Logo, a prova falha}\)
+                        <p>
+                            \(\text{Suponha que \(T(n) = O(n^2)\)}\)
+                            <p>
+                                \(
+                                    \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    T(n) \leq cn^2
+                                \)
+                            </p>
+                        </p>
+                        <p>
+                            \(
+                                T(n) = 4T(\frac{n}{3}) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                T(n) \leq 4c(\frac{n}{3})^2 + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                T(n) \leq 4c(\frac{n}{9}) + n
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                4c(\frac{n^2}{9}) + n \leq cn^2
+                            \)
+                            <p>
+                                \(
+                                    n \leq n^2, \forall n \geq 1
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    4c(\frac{n^2}{9}) + n \leq 4c(\frac{n^2}{9}) + n^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    4c(\frac{n^2}{9}) + n^2 \leq cn^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    \text{Assuma: } c=2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    4*2(\frac{n^2}{9}) + n^2 \leq 2n^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    8(\frac{n^2}{9}) + n^2 \leq n^2 + n^2
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    8c(\frac{n^2}{9}) \leq n^2, \forall n \geq 1
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    \text{Logo, é verdade que \(T(n) = O(n^2)\)}
+                                \)
+                            </p>
+                        </p>
+                    </p>
+                </p>
+            </p>
+            <P>
+                \(\text{Prova bem sucedida:}\)
+            </P>
+        </p>
+        <p>
+            \(
                 \text{Questão 10:}
             \)
             <p>

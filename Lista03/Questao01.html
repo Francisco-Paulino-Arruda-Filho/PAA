@@ -25,7 +25,7 @@
         <p>
             <p>
                 \(
-                    text{O que cada variável representa: n é o tamanho do vetor, v é o vetor e x o valor chave}
+                    \text{O que cada variável representa: n é o tamanho do vetor, v é o vetor e x o valor chave}
                 \)
             </p>
             <p>
@@ -34,12 +34,25 @@
                 \)
                 <p>
                     \(
+                        \text{Invariante de laço:}
+                    \)
+                    <p>
+                        \(
+                            \text{\(i \leq n\)}
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
                         \text{Caso base:}
                     \)
                     <p>
                         \(
-                            \text{Se } n = 1 \text{, então } v[1] = x \text{ e a função retorna 1, pois o elemento vai estar na posição inicial}
-                        \)
+                            \text{Se } n = 1 \text{, então } v[1] = x \text{ e a função retorna 1, pois o elemento vai estar na posição inicial.}
+                        \)<br>
+                        \(
+                            \text{Assim essa sequência de comandos é repetida por todas as iterações, e se o valor de x estiver em \(v[n]=x\),}
+                        \)<br>
                     </p>
                 </p>
                 <p>
@@ -48,11 +61,11 @@
                     \)
                     <p>
                        \(
-                            \text{Na linha do laço for, o índice é iniciado como 1, o vetor é incrementado enquanto i < n ou v[i] != x,}
-                            \text{ se ele encontrar o valor x, a função retorna i, que o índice atual que o laço está.}
-                            \text{Se o laço terminar sem encontrar o valor x, a função retorna -1,}
-                            \text{Logo, independente do caso, a função retorna o índice do valor x no vetor ou -1 se não encontrar, pois graças ao for o índice é incrementado.}
-                        \) 
+                            \text{Se \(n > 1\) e \(v[1]!=x\), comparação feita na linha 3 então o \(i\) é incrementado}
+                        \)<br>
+                        \(
+                            \text{então o vetor inteiro será percorrido, ou seja, enquanto i for menor ou igual a n, essa chegagem é feita na linha 2}
+                        \)
                     </p>
                 </p>
                 <p>
@@ -62,7 +75,10 @@
                     <p>
                         \(
                             \text{O laço for é finito, pois i é incrementado a cada iteração e o laço termina quando i = n,}
-                            \text{Logo, a função sempre termina.}
+                            \text{Logo, a função sempre termina}
+                        \)<br>
+                        \(
+                            \text{Ou seja, como o número de interações só vai até n, então o algoritmo é da base de } \Theta(n)
                         \)
                     </p>
                 </p>

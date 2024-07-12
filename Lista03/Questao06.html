@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 03 - Questão 06</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(\text{Questão 06:}\)
+            <p>
+                \(\text{Seja \(f (x)\) uma função real contínua e suponha que ela tem uma ou mais raízes entre \(a, b\)}\)<br>
+                \(\text{(uma raiz é um número \(r \in (a, b)\) com f (r) = 0). Dado \(\varepsilon > 0\), uma ε-aproximação de uma raiz, é um número}\)<br>
+                \(\text{\(x \in (a, b)\) tal que \(x ∈ (r - \varepsilon, r + \varepsilon)\) em que \(r\) é uma raiz. O método de aproximação da raiz baseado em busca}\)<br>
+                \(\text{binária é descrito no algoritmo a seguir}\)
+            </p>
+            <pre>
+                <code>
+                    Bisect(a, b, ε)
+                        enquanto b - a > ε:
+                            se f ((a + b)/2) ≤ 0:
+                                a ← (a + b)/2
+                            senão:
+                                b ← (a + b)/2
+                        devolva (a + b)/2
+                </code>
+            </pre>
+            <p>
+                \(
+                    \text{\((a)\) Analise o tempo de execução desse algoritmo em termos \(b - a\) e \(\varepsilon\).}
+                \)
+                <p>
+                    \(\text{Seja \(n\) o número de iterações do algoritmo.}\)<br>
+                    \(\text{Então, temos que:}\)
+                    \[
+                        \begin{align*}
+                            b - a & = \frac{b - a}{2^{n}} \\
+                            \Rightarrow 2^{n} & = \frac{b - a}{\varepsilon} \\
+                            \Rightarrow n & = \log_{2}\left(\frac{b - a}{\varepsilon}\right)
+                        \end{align*}
+                    \]
+                    \(\text{Portanto, o tempo de execução do algoritmo é \(O(\log_{2}\left(\frac{b - a}{\varepsilon}\right))\).}\)
+                </p>
+            </p>
+            <p>
+                \(\text{\((b)\) Dê condições (suficientes) sobre o entrada para que o algoritmo termine com uma resposta correta.}\)<br>
+                \(\text{Depois demonstre que o algoritmo está correto (quando dada uma entrada válida).}\)
+                <p>
+                    \(\text{O algoritmo termina com uma resposta correta se:}\)
+                    \[
+                        \begin{align*}
+                            & \text{1.} \quad f(a) \leq 0 \quad \text{e} \quad f(b) \geq 0 \quad \text{ou} \\
+                            & \text{2.} \quad f(a) \geq 0 \quad \text{e} \quad f(b) \leq 0
+                        \end{align*}
+                    \]
+                    \(\text{O algoritmo está correto, pois:}\)
+                    <p>
+                        \(\text{Seja \(r\) a raiz da função \(f(x)\) tal que \(r \in (a, b)\).}\)<br>
+                        \(\text{Seja \(x\) a aproximação da raiz \(r\) tal que \(x \in (r - \varepsilon, r + \varepsilon)\).}\)<br>
+                        \(\text{Seja \(n\) o número de iterações do algoritmo.}\)<br>
+                        \(\text{Então, temos que:}\)
+                        \[
+                            \begin{align*}
+                                b - a & = \frac{b - a}{2^{n}} \\
+                                \Rightarrow 2^{n} & = \frac{b - a}{\varepsilon} \\
+                                \Rightarrow n & = \log_{2}\left(\frac{b - a}{\varepsilon}\right)
+                            \end{align*}
+                        \]
+                        \(\text{Portanto, o algoritmo está correto.}\)
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>
