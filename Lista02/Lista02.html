@@ -512,28 +512,158 @@
             </p>
         </p>
         <p>
+            \(
+                \text{Questão 7}
+            \)
+            <p>
+                \(
+                    \text{Sejam \(f(n)\) e \(g(n) \) duas funções assintóticamente não negativas. Usando a definição básica da}
+                \)<br>
+                \(
+                    \text{notação \(\Theta\), prove que \(max{(f(n), g(n))} = \Theta(f(n) + g(n))\).}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Prova por casos}
+                \)
+                <p>
+                    \(
+                        \text{Caso 1:} f(n) \geq g(n)
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de \(\Theta\) temos que \(\exists c_1, c_2, n_0\) tal que \(c_1(f(n)+g(n)) \leq max(f(n),g(n)) \leq c_2(f(n)+g(n)) \) para todo \(n \geq n_0\) }
+                        \)
+                    </p>
+                    <p>
+                        \(c_1(f(n)+g(n)) \leq f(n) \leq c_2(f(n)+g(n)) \)
+                    </p>
+                    <p>
+                        \(
+                            f(n) \leq c_2(f(n)+g(n)) 
+                        \)
+                        <p>
+                            \(
+                                \text{Basta tomar \(c_2=1\) para que a desigualdade seja verdadeira, pois como \(g(n) \geq 0 \) então \(f(n) \leq f(n)+g(n) \) }
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(c_1(f(n)+g(n)) \leq f(n) \)
+                        <p>
+                            \(
+                                \text{Basta tomar \(c_1=\frac{1}{2}\) para que a desigualdade seja verdadeira, pois:}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}(f(n)+g(n)) \leq f(n)
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}f(n)+\frac{1}{2}g(n) \leq f(n)
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}f(n)+\frac{1}{2}g(n) \leq \frac{1}{2}f(n)+\frac{1}{2}f(n)
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}f(n) \leq f(n), \forall f(n) \geq 0
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}g(n) \leq f(n), \forall g(n) \geq 0
+                            \)
+                        </p>
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Caso 2:} g(n) \geq f(n)
+                    \)
+                    <P>
+                        \(
+                            \text{Pela definição de \(\Theta\) temos que \(\exists c_1, c_2, n_0\) tal que \(c_1(f(n)+g(n)) \leq max(f(n),g(n)) \leq c_2(f(n)+g(n)) \) para todo \(n \geq n_0\) }
+                        \)
+                    </P>
+                    <p>
+                        \(c_1(f(n)+g(n)) \leq g(n) \leq c_2(f(n)+g(n)) \)
+                    </p>
+                    <p>
+                        \(
+                            g(n) \leq c_2(f(n)+g(n)) 
+                        \)
+                        <p>
+                            \(
+                                \text{Basta tomar \(c_2=1\) para que a desigualdade seja verdadeira, pois como \(f(n) \geq 0 \) então \(g(n) \leq f(n)+g(n) \) }
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(c_1(f(n)+g(n)) \leq g(n) \)
+                        <p>
+                            \(
+                                \text{Basta tomar \(c_1=\frac{1}{2}\) para que a desigualdade seja verdadeira, pois:}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}(f(n)+g(n)) \leq g(n)
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}f(n)+\frac{1}{2}g(n) \leq g(n)
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}f(n)+\frac{1}{2}g(n) \leq \frac{1}{2}g(n)+\frac{1}{2}g(n)
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}g(n) \leq \frac{1}{2}g(n), \forall g(n) \geq 0
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \frac{1}{2}f(n) \leq \frac{1}{2}g(n), \forall f(n) \geq 0
+                            \)
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
             <p>
                 \(\text{Questão 8} \)
             </p>
             \(\text{Enunciado} \)
             <p>
-                \(\text{Questão 8. É verdade que 2n+1 = O(2n)? É verdade que\( 2^{2n} = O(2^n)\)?} \)
+                \(\text{Questão 8. É verdade que 2^{n+1} = O(2n)? É verdade que\( 2^{2n} = O(2^n)\)?} \)
             </p>
             <p>
                 <p>
                     \(\text{Primeiro item:} \)
                 </p>
                 <p>
-                    \(2n+1 = O(2n)\)
+                    \(2n+1 = O(2^n)\)
                 </p>
                 <p>
                     \[
-                        f(n)=2n+1
+                        f(n)=2^{n+1}
                     \]
                 </p>
                 <p>
                     \[
-                        g(n)=2n
+                        g(n)=2^n
                     \]
                 </p>
             </p>
@@ -544,16 +674,12 @@
                         \(f(n) \leq cg(n)\)
                     </p>
                     <p>
-                        \(2n+1 \leq c2n\)
+                        \(2^{n+1} \leq c2^n\)
                     </p>
                     <p>
-                        \(1 \leq n, \forall n \geq 1 \)
-                    </p>
-                    <p>
-                        \(2n+n \leq c2n\)
-                    </p>
-                    <p>
-                        \(3n \leq c2n\)
+                        \(
+                            2^{1}*2^{n} \leq c2^n
+                        \)
                     </p>
                     <p>
                         \(\text{Basta tomar \(n=1\) e \(c=2\) } \)
@@ -588,19 +714,22 @@
                                 \(2^{2n} \leq c2^n\)
                             </p>
                             <p>
-                                \(2^{2n} \leq c2^n\)
+                                \(
+                                    2^n*2^n \leq c2^n
+                                \)
                             </p>
                             <p>
-                                \(2^{2n} \leq c2^n\)
+                                \(
+                                    \text{c teria que ser \(c \geq 2^n\) para que a desigualdade fosse verdadeira, mas n é uma constante, logo não é verdadeira}
+                                \)
                             </p>
                             <p>
-                                \(2^{2n} \leq c2^n\)
+                                \(
+                                    \text{Absurdo, pois é uma constante e não pode ser maior que uma variável como \(2^n\)}
+                                \)
                             </p>
                             <p>
-                                \(2^{n} \leq c\)
-                            </p>
-                            <p>
-                                \(\text{Basta tomar \(n=1\) e \(c=2\) } \)
+                                \(\text{Portanto não é verdade} \)
                             </p>
                         </p>
                     </p>
@@ -700,32 +829,81 @@
                             </p>
                             <p>
                                 \[
-                                    g(n) = n^2]
+                                    g(n) = n^2
                                 \]
                             </p>
                         </p>
                         <p>
-                            \(\text{Pela definição de \(\Omega\), temos que \(f(n) = \Omega(g(n))\) se existirem constantes positivas \(c\) e \(n_0\) tais que \(0 \leq cg(n) \leq f(n)\) para todo \(n \geq n_0\).}\)
+                            \(\text{Pela definição de \(\Omega\), temos que \(f(n) = \Omega(g(n))\) se existirem constantes positivas \(c_1\) e \(n_0\) tais que \(f(n) \geq c_1g(n) \) para todo \(n \geq n_0\).}\)
                             <p>
                                 \(
-                                    f(n)  \leq cg(n)
+                                    n^2 - 999n - 9999 \geq c_1n^2
                                 \)
                             </p>
                             <p>
                                 \(
-                                    n^2 - 999n - 9999 \geq cn^2
+                                    \text{Assuma } c_1=\frac{1}{2}
                                 \)
                             </p>
                             <p>
                                 \(
-                                    -999n - 9999 \geq (c-1)n^2
+                                    n^2 - 999n - 9999 \geq \frac{1}{2}n^2
                                 \)
                             </p>
                             <p>
-                                \(n^2 + n^2 \geq cn^2\)
+                                \(
+                                    \frac{n^2}{2} - 999n - 9999 \geq 0
+                                \)
                             </p>
                             <p>
-                                \(\text{Basta tomar } c=2, n=1 \)
+                                \(
+                                    \text{Aplicando bhaskara:}
+                                \)
+                                <p>
+                                    \(
+                                        \frac{-(-999) \pm \sqrt{(-999)^2 - 4*\frac{1}{2}*(-9999)}}{2*\frac{1}{2}}
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \frac{999 \pm \sqrt{998001 + 19998}}{1}
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \frac{999 \pm \sqrt{1017999}}{1}
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \sqrt{1017999} \approx 1009
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        999 \pm 1009
+                                    \)
+                                    <p>
+                                        \(
+                                            x' = \frac{999 + 1009}{1} = 2008
+                                        \)
+                                    </p>
+                                    <p>
+                                        \(
+                                            x" = \frac{999 - 1009}{1} = -10
+                                        \)
+                                        <p>
+                                            \(
+                                                \text{Valor inválido, pois não pode ser negativo}
+                                            \)
+                                        </p>
+                                    </p>
+                                    <p>
+                                        \(
+                                            \text{Basta tomar } n_0 \geq 2008
+                                        \)
+                                    </p>
+                                </p>
                             </p>
                         </p>
                     </p>
