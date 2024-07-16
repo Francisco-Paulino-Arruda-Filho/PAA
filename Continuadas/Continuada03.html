@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- MATHJAX 3 (através da CDN) -->
+        <title>Avaliação continuada 03</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(
+                \text{Questão 01: Utilize o método da substituição para calcular a complexidade de tempo de pior caso do algoritmo abaixo.}
+            \)
+        </p>
+        <pre>
+            <code>
+                Algoritmo(N):
+                soma = 0
+                Para j = 1, ..., N faça
+                    soma = soma + j
+                Retorne soma + Algoritmo(N/2)
+            </code>
+        </pre>
+        <p>
+            \[
+                T(n) = \begin{cases}
+                1 & \text{se } n = 1 \\
+                T(\frac{n}{2}) + O(n) , & \text{ se } n \geq 2
+                \end{cases}
+            \]
+        </p>
+        <p>
+            \(
+                \text{Vamos chutar que \(T(n) = O(n\log^n)\).}
+            \)
+        </p>
+        <p>
+            \(
+                T(n) = T(\frac{n}{2}) + O(n)
+            \)
+        </p>
+        <p>
+            \(
+                \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(T(n) \leq c_1n\) para \(n \geq n_0\).}
+            \)
+        </p>
+        <p>
+            \(
+                T(n) \leq c_1\frac{n}{2} + c_1n
+            \)
+        </p>
+        <p>
+            \(
+                T(n) \leq k\frac{n}{2}\log^{\frac{k}{2}} + c_1n
+            \)
+        </p>
+        <p>
+            \(
+                T(n) \leq k\frac{n}{2}(\log^k - \log^2 ) + c_1n
+            \)
+        </p>
+        <p>
+            \(
+                T(n) \leq k\frac{n}{2}(\log^k - 1 ) + c_1n
+            \)
+        </p>
+        <p>
+            \(
+                T(n) \leq k(\frac{n}{2}\log^k - \frac{n}{2}) + c_1n
+            \)
+        </p>
+        <p>
+            \(
+                T(n) \leq k\frac{n}{2}\log^k - k\frac{n}{2} + c_1n
+            \)
+        </p>
+        <p>
+            \(
+                k\frac{n}{2}\log^k - k\frac{n}{2} + c_1n \leq knlog^n
+            \)
+        </p>
+        <p>
+            \(
+                k\frac{n}{2}\log^k - k\frac{n}{2} + c_1n \leq kn\log^n
+            \)
+        </p>
+        <p>
+            \(
+                k\frac{n}{2}\log^k + c_1n \leq kn\log^n + k\frac{n}{2} 
+            \)
+        </p>
+        <p>
+            \(
+                k\frac{1}{2}\log^k + c_1 \leq k\log^n + k\frac{1}{2} 
+            \)
+        </p>
+        <p>
+            \(
+                c \leq k\log^n - k\frac{1}{2}\log^k + k\frac{1}{2}
+            \)
+        </p>
+        <p>
+            \(
+                c \leq k\frac{1}{2}\log^k + k\frac{1}{2}
+            \)
+        </p>
+        <p>
+            \(
+                \text{Para \(n\) suficientemente grande, podemos ver que a constante \(c\) pode ser absorvida no termo}
+            \)<br>
+            \(
+                \text{\(\frac{k\log^n}{2} \), portanto, a desigualdade é satisfeita para um valor apropriado de \(k\).}
+            \)
+        </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 02:}
+            \)
+            <p>
+                \(
+                    \text{A: \(T(n)=T(\frac{n}{2})+15\), onde \(T(1)=1\).}
+                \)
+            </p>
+            <p>
+                \[
+                    T(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    T(\frac{n}{2})+15, & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </p>
+            <p>
+                \(
+                    \text{Vamos chutar que \(T(n) = O(n)\).}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(T(n) \leq c_1n\) para \(n \geq n_0\).} 
+                \)
+            </p>
+            <p>
+                \(
+                    T(n)=T(\frac{n}{2})+15
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq c_1\frac{n}{2}+15
+                \)
+            </p>
+            <p>
+                \(
+                    c_1\frac{n}{2}+15 \leq c_1n
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_1 = 2\) e \(n_0 \geq 15\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Item B: \(F(n)=2F(\frac{n}{2})+n, \text{ onde } F(1)=1.\)}
+                \)
+            </p>
+            <p>
+                \[
+                    F(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    2F(\frac{n}{2})+n, & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </p>
+            <p>
+                \(
+                    \text{Vamos chutar que \(F(n) = O(n\log n)\).}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(F(n) \leq c_1n\log n\) para \(n \geq n_0\).} 
+                \)
+            </p>
+            <p>
+                \(
+                    F(n)=2F(\frac{n}{2})+n
+                \)
+            </p>
+            <p>
+                \(
+                    F(n) \leq 2c_1(\frac{n}{2})\log(\frac{n}{2})+n
+                \)
+            </p>
+            <p>
+                \(
+                    2c_1(\frac{n}{2})\log(\frac{n}{2})+n \leq c_1n\log n
+                \)
+            </p>
+            <p>
+                \(
+                    c_1n\log(\frac{n}{2})+n \leq c_1n\log n
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_1 = 2\) e \(n_0 \geq 2\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{C: \(G(n)=2G(\sqrt{n})\), onde \(G(1)=1.\)}
+                \)
+            </p>
+            <p>
+                \[
+                    G(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    2G(\sqrt{n}), & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </p>
+            <p>
+                \(
+                    \text{Vamos chutar que \(G(n) = O(n)\).}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(G(n) \leq c_1n\) para \(n \geq n_0\).} 
+                \)
+            </p>
+            <p>
+                \(
+                    G(n)=2G(\sqrt{n})
+                \)
+            </p>
+            <p>
+                \(
+                    G(n) \leq 2c_1n
+                \)
+            </p>
+            <p>
+                \(
+                    2c_1\sqrt{n} \leq c_1n
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_1 = 2\) e \(n_0 \geq 4\).}
+                    \)
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 03: Usando o método da substituição, prove que a solução para a relação de recorrência \(T(n)=2T(\lfloor \frac{n}{2} \rfloor +17)+n\) é \(O(n\log^n)\).}
+            \)
+            <p>
+                \[
+                    T(n) = \begin{cases}
+                    1 & \text{se } n = 1 \\
+                    2T(\lfloor \frac{n}{2} \rfloor +17)+n, & \text{ se } n \geq 2
+                    \end{cases}
+                \]
+            </p>
+            <p>
+                \(
+                    \text{Queremos provar que \(T(n) \leq cn\log n\).}
+                \)<br>
+                \(
+                    \text{\(\forall n \geq n_0\) tal que \(c, n_0 \in \mathbb{R}_+\ \) }
+                \)<br>
+                \(
+                    \text{Vou usar indução em \(n\).}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Hipótese indutiva: } n_0 \leq k < n, T(k) \leq c(k-17)\log^{k-17}
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = 2T(\lfloor \frac{n}{2} \rfloor +17)+n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq 2c(\lfloor \frac{n}{2} \rfloor +17-17)\log^{\lfloor \frac{n}{2} \rfloor +17-17}+n
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) \leq 2c(\lfloor \frac{n}{2} \rfloor)\log^{\lfloor \frac{n}{2} \rfloor}+n
+                \)
+            </p>
+            <p>
+                \(
+                    2c(\lfloor \frac{n}{2} \rfloor)\log^{\lfloor \frac{n}{2} \rfloor}+n \leq 2c(\frac{n}{2})\log^{\frac{n}{2}}+n, \forall n \geq 1
+                \)
+            </p>
+            <p>
+                \(
+                    c(n)\log^{\frac{n}{2}}+n \leq cn\log n, \forall n \geq 1
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c = 2\) e \(n_0 \geq 1\).}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Logo, \(T(n) = O(n\log n)\)}
+                    \)
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 04:}
+            \)
+            <p>
+                <p>
+                    \(\text{Usando o Teorema Mestre da Seção 4.5 do livro, você pode mostrar que a solução}\)<br>
+                    \(\text{para a recorrência \(T (n) = 4T (\frac{n}{3}) + n \text{ é } T (n) = \Theta(nlog^{4}_{3})\). Mostre que uma prova de substituição que}\)<br>
+                    \(\text{considere \(T (n) \leq cnlog^{4}_{3}\) falha. Depois, mostre como subtrair um termo de ordem mais baixa para fazer}\)<br>
+                    \(\text{com que uma prova de substituição funcione}\)
+                </p>
+                <p>
+                    \(
+                        \text{Prove que \(T (n) \leq cnlog^{4}_{3}\) falha:}
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de \(\Theta\), \(\exists c_1, c_2, n_0 \) tal que } c_1g(n) \leq T(n) \leq c_2g(n)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq 4c(\frac{n}{3})\log^{4}_{3} + n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            4c(\frac{n}{3})\log^{4}_{3} + n \leq cn\log^{4}_{3}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            4c(\frac{n}{3}) \geq cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            4cn \geq 3cn, \forall n \geq 1
+                        \)
+                        <p>
+                            \(\text{Logo, a prova falha}\)
+                            <p>
+                                \(\text{Suponha que \(T(n) = O(n^2)\)}\)
+                                <p>
+                                    \(
+                                        \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        T(n) \leq cn^2
+                                    \)
+                                </p>
+                            </p>
+                            <p>
+                                \(
+                                    T(n) = 4T(\frac{n}{3}) + n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    T(n) \leq 4c(\frac{n}{3})^2 + n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    T(n) \leq 4c(\frac{n}{9}) + n
+                                \)
+                            </p>
+                            <p>
+                                \(
+                                    4c(\frac{n^2}{9}) + n \leq cn^2
+                                \)
+                                <p>
+                                    \(
+                                        n \leq n^2, \forall n \geq 1
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        4c(\frac{n^2}{9}) + n \leq 4c(\frac{n^2}{9}) + n^2
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        4c(\frac{n^2}{9}) + n^2 \leq cn^2
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \text{Assuma: } c=2
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        4*2(\frac{n^2}{9}) + n^2 \leq 2n^2
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        8(\frac{n^2}{9}) + n^2 \leq n^2 + n^2
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        8c(\frac{n^2}{9}) \leq n^2, \forall n \geq 1
+                                    \)
+                                </p>
+                                <p>
+                                    \(
+                                        \text{Logo, é verdade que \(T(n) = O(n^2)\)}
+                                    \)
+                                </p>
+                            </p>
+                        </p>
+                    </p>
+                </p>
+                <P>
+                    \(\text{Prova bem sucedida:}\)
+                </P>
+            </p>
+        </p>
+    </body>
+</html>
