@@ -339,85 +339,72 @@
                         \)
                         <p>
                             \(\text{Logo, a prova falha}\)
-                            <p>
-                                \(\text{Suponha que \(T(n) = O(n^2)\)}\)
-                                <p>
-                                    \(
-                                        \text{Pela definição de O, \(\exists c_1, n_0 \) tal que } T(n) \leq cg(n)
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        T(n) \leq cn^2
-                                    \)
-                                </p>
-                            </p>
-                            <p>
-                                \(
-                                    T(n) = 4T(\frac{n}{3}) + n
-                                \)
-                            </p>
-                            <p>
-                                \(
-                                    T(n) \leq 4c(\frac{n}{3})^2 + n
-                                \)
-                            </p>
-                            <p>
-                                \(
-                                    T(n) \leq 4c(\frac{n}{9}) + n
-                                \)
-                            </p>
-                            <p>
-                                \(
-                                    4c(\frac{n^2}{9}) + n \leq cn^2
-                                \)
-                                <p>
-                                    \(
-                                        n \leq n^2, \forall n \geq 1
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        4c(\frac{n^2}{9}) + n \leq 4c(\frac{n^2}{9}) + n^2
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        4c(\frac{n^2}{9}) + n^2 \leq cn^2
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        \text{Assuma: } c=2
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        4*2(\frac{n^2}{9}) + n^2 \leq 2n^2
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        8(\frac{n^2}{9}) + n^2 \leq n^2 + n^2
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        8c(\frac{n^2}{9}) \leq n^2, \forall n \geq 1
-                                    \)
-                                </p>
-                                <p>
-                                    \(
-                                        \text{Logo, é verdade que \(T(n) = O(n^2)\)}
-                                    \)
-                                </p>
-                            </p>
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            \text{Prova substituindo o termo de ordem mais baixa:}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Considere \(T(n) \leq cnlog_3^4-kn\), onde \(k\) é uma constante positiva que vamos determinar.}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) = 4T(\frac{n}{3})+n
+                        \)
+                        <p>
+                            \(
+                                \text{Pela definição de \(O, \exists n_0, c_1\) tal que \(T(n) \leq c_1n\log_3^4-kn, \forall n \geq n_0\).}
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq 4(c(\frac{n}{3})^{\log_3^4}-k\frac{n}{3})+n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq 4c(\frac{n^{\log_3^4}}{3^{\log_3^4} })-4k\frac{n}{3}+n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq 4c(\frac{n^{\log_3^4}}{4})-4k\frac{n}{3}+n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq c(n^{\log_3^4})-4k\frac{n}{3}+n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            cn^{\log_3^4}-4k\frac{n}{3}+n \leq cn\log_3^4-kn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            -4k\frac{n}{3}+n \leq -kn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n \leq -kn+4k\frac{n}{3}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n \leq \frac{kn}{3}
+                        \)
+                        <p>
+                            \(\text{Basta tomar \(k \geq 3\) e \(n_0 \geq 1\).}\)
                         </p>
                     </p>
                 </p>
-                <P>
-                    \(\text{Prova bem sucedida:}\)
-                </P>
             </p>
         </p>
     </body>
