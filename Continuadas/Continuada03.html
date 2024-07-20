@@ -41,34 +41,80 @@
             \)
             <p>
                 \(
-                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(T(n) \leq c_1n\) para \(n \geq n_0\).} 
+                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0 \geq 0\) tal que \(0 \leq T(n) \leq c_1n\)  \(\forall n \geq n_0\).} 
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Vou aplicar indução em \(n\).}
                 \)
             </p>
         </p>
         <p>
             \(
-                T(n) = T(\frac{n}{2}) + O(n)
-            \)
-        </p>
-        <P>
-            \(
-                T(N)=N+T(\frac{N}{2})
-            \)
-        </P>
-        <p>
-            \(
-                T(N) \leq c_1\frac{N}{2} + N
-            \)
-        </p>
-        <p>
-            \(
-                c_1\frac{N}{2} + N \leq c_1N
+                \text{Caso base: } N=1
             \)
             <p>
                 \(
-                    \text{Basta tomar \(c_1 = 2\) e \(n_0 \geq 2\).}
+                    T(1) \leq c_1n
                 \)
             </p>
+            <p>
+                \(
+                    1 \leq c_1*1
+                \)
+            </p>
+            <p>
+                \(
+                    c_1 \geq 1
+                \)
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Hipótese indutiva: } \forall k, n_0 \leq k < n, T(k) \leq c_1k
+            \)
+        </p>
+        <p>
+            \(
+                \text{Passo indutivo: }
+            \)
+        </p>
+        <p>
+            \(
+                T(n) = n+T(\frac{n}{2})
+            \)
+        </p>
+        <p>
+            \(
+                T(n) \leq n+c_1\frac{n}{2}
+            \)
+        </p>
+        <p>
+            \(
+                n+c_1\frac{n}{2} \leq c_1n
+            \)
+        </p>
+        <p>
+            \(
+                n+c_1\frac{n}{2} \leq c_1n\frac{n}{2} + c_1\frac{n}{2}
+            \)
+        </p>
+        <p>
+            \(
+                n \leq c_1n\frac{n}{2}
+            \)
+            <p>
+                \(
+                    \text{Basta tomar \(c_1 = 2\) e \(n_0 \geq 1\).}
+                \)
+            </p>
+        </p>
+        </p>
+        <p>
+            \(
+                \text{Logo, a prova está correta e a complexidade de tempo de pior caso do algoritmo é \(O(n)\).}
+            \)
         </p>
         <p>
             \(
@@ -88,18 +134,60 @@
                 \]
             </p>
             <p>
+                <p>
+                    \(
+                        \text{Limite superior: }
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Vamos chutar que \(T(n) = O(n)\).}
+                    \)
+                </p>
+            </p>
+            <p>
                 \(
-                    \text{Vamos chutar que \(T(n) = O(n)\).}
+                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0 \geq 0\), tal que \(0 leq T(n) \leq c_1n\) para \(n \geq n_0\).} 
+                \)
+                <p>
+                    \(
+                        \text{Vou aplicar indução em \(n\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Caso base: } n=1
+                \)
+                <p>
+                    \(
+                        T(1) \leq c_1*1
+                    \)
+                </p>
+                <p>
+                    \(
+                        1 \leq c_1*1
+                    \)
+                    <p>
+                        \(
+                            1 \geq 0
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Hipótese indutiva: } \forall k, n_0 \leq k < n, T(k) \leq c_1k
                 \)
             </p>
             <p>
                 \(
-                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(T(n) \leq c_1n\) para \(n \geq n_0\).} 
+                    \text{Passo indutivo: }
                 \)
             </p>
             <p>
                 \(
-                    T(n)=T(\frac{n}{2})+15
+                    T(n) = T(\frac{n}{2})+15
                 \)
             </p>
             <p>
@@ -113,7 +201,114 @@
                 \)
                 <p>
                     \(
+                        c_1\frac{n}{2}+15 \leq c_1\frac{n}{2} + c_1\frac{n}{2}
+                    \)
+                </p>
+                <p>
+                    \(
+                        15 \leq c_1\frac{n}{2}
+                    \)
+                </p>
+                <p>
+                    \(
+                        c_1n \geq 30
+                    \)
+                </p>
+                <p>
+                    \(
                         \text{Basta tomar \(c_1 = 2\) e \(n_0 \geq 15\).}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Logo o limite superior é \(O(n)\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                <p>
+                    \(
+                        \text{Limite inferior:}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Vamos chutar que \(T(n) = \Omega(\log^n )\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(\Omega\), temos que: \(\exists c_1, n_0\) tal que \(T(n) \geq c_1\log^{n}\) para \(n \geq n_0\).} 
+                \)
+                <p>
+                    \(
+                        \text{Vou aplicar indução em \(n\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Caso base: } n=1
+                \)
+            </p>
+            <p>
+                \(
+                    T(1) \geq c_1\log^{1}
+                \)
+            </p>
+            <p>
+                \(
+                    1 \geq c_1*0
+                \)
+                <p>
+                    \(
+                        c_1 \geq 1
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{H.I: \(\forall k, n_0 \geq 0\), \(\leq k < n, T(k) \geq c_1\log^{k}\)}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Passo indutivo: } 
+                \)
+                <p>
+                    \(
+                        T(n) = T(\frac{n}{2})+15
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{} T(n) \geq c_1\log^{\frac{n}{2}}+15
+                    \)
+                </p>
+                <p>
+                    \(
+                        \geq c_1(\log^{n} - \log^2) + 15
+                    \)
+                </p>
+                <p>
+                    \(
+                        \geq c_1\log^{n} - c_1 + 15
+                    \)
+                </p>
+                <p>
+                    \(
+                        -c_1 + 15 \geq 0
+                    \)
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_1 \leq 15\) e \(n_0 \geq 1\).}
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Logo o limite inferior é \(\Omega(\log^n)\).}
                     \)
                 </p>
             </p>
@@ -132,12 +327,32 @@
             </p>
             <p>
                 \(
-                    \text{Vamos chutar que \(F(n) = O(n\log n)\).}
+                    \text{Limite superior: }
                 \)
             </p>
             <p>
                 \(
-                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(F(n) \leq c_1n\log n\) para \(n \geq n_0\).} 
+                    \text{Vamos chutar que \(F(n) = O(n)\).}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(F(n) \leq c_1n\) para \(n \geq n_0\).} 
+                \)
+                <p>
+                    \(
+                        \text{Vou aplicar indução em \(n\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Hipótese indutiva: \(\forall k, n_0 \geq 0\), \(\leq k < n, T(k) \leq c_1k\)}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Passo indutivo: }
                 \)
             </p>
             <p>
@@ -147,17 +362,72 @@
             </p>
             <p>
                 \(
-                    F(n) \leq 2c_1(\frac{n}{2})\log(\frac{n}{2})+n
+                    F(n) \leq 2c_1(\frac{n}{2})+n
                 \)
             </p>
             <p>
                 \(
-                    2c_1(\frac{n}{2})\log(\frac{n}{2})+n \leq c_1n\log n
+                    2c_1(\frac{n}{2})+n \leq c_1n
                 \)
             </p>
             <p>
                 \(
-                    c_1n\log(\frac{n}{2})+n \leq c_1n\log n
+                    c_1n \leq c_1n
+                \)
+                <p>
+                    \(
+                        \text{Basta tomar \(c_1 = 1\) e \(n_0 \geq 1\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Limite inferior:}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Vamos chutar que \(F(n) = \Omega(log^n)\).}
+                \)
+                <p>
+                    \(
+                        \text{Pela definição de \(\Omega\), temos que: \(\exists c_1, n_0\) tal que \(F(n) \geq c_1n\log n\) para \(n \geq n_0\).} 
+                    \)
+                    <p>
+                        \(
+                            \text{Vou aplicar indução em \(n\).}
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Hipótese indutiva: \(\forall k, n_0 \geq 0\), \(\leq k < n, T(k) \geq c_1k\)}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Passo indutivo: }
+                \)
+            </p>
+            <p>
+                \(
+                    F(n)=2F(\frac{n}{2})+n
+                \)
+            </p>
+            <p>
+                \(
+                    F(n) \geq 2c_1(\frac{n}{2})\log(\frac{n}{2})+n
+                \)
+            </p>
+            <p>
+                \(
+                    2c_1(\frac{n}{2})\log(\frac{n}{2})+n \geq c_1n\log n
+                \)
+            </p>
+            <p>
+                \(
+                    c_1n\log(\frac{n}{2})+n \geq c_1n\log n
                 \)
                 <p>
                     \(
@@ -180,12 +450,52 @@
             </p>
             <p>
                 \(
+                    \text{Limite superior: }
+                \)
+            </p>
+            <p>
+                \(
                     \text{Vamos chutar que \(G(n) = O(n)\).}
                 \)
             </p>
             <p>
                 \(
                     \text{Pela definição de \(O\), temos que: \(\exists c_1, n_0\) tal que \(G(n) \leq c_1n\) para \(n \geq n_0\).} 
+                \)
+                <p>
+                    \(
+                        \text{Vou aplicar indução em \(n\).}
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Caso base: } n=1
+                \)
+                <p>
+                    \(
+                        G(1) \leq c_1*1
+                    \)
+                </p>
+                <p>
+                    \(
+                        1 \leq c_1*1
+                    \)
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_1 \geq 1\)}
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Hipótese indutiva: \(\forall k, n_0 \geq 0\), \(\leq k < n, T(k) \leq c_1k\)}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Passo indutivo: }
                 \)
             </p>
             <p>
@@ -207,6 +517,101 @@
                         \text{Basta tomar \(c_1 = 2\) e \(n_0 \geq 4\).}
                     \)
                 </p>
+            </p>
+            <p>
+                \(
+                    \text{Logo o limite superior é \(O(n)\).}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Limite inferior:}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Vamos chutar que \(G(n) = \Omega(\log^n)\).}
+                \)
+                <p>
+                    \(
+                        \text{Pela definição de \(\Omega\), temos que: \(\exists c_1, n_0\) tal que \(G(n) \geq c_1n\) para \(n \geq n_0\).} 
+                    \)
+                    <p>
+                        \(
+                            \text{Vou aplicar indução em \(n\).}
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Caso base: } n=1
+                \)
+                <p>
+                    \(
+                        G(1) \geq c_1\log^{1}
+                    \)
+                </p>
+                <p>
+                    \(
+                        1 \geq c_1*0
+                    \)
+                    <p>
+                        \(
+                            c_1 \geq 0
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_1 \geq 1\)}
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Hipótese indutiva: \(\forall k, n_0 \geq 0\), \(\leq k < n, T(k) \geq c_1k\)}
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Passo indutivo: }
+                \)
+            </p>
+            <p>
+                \(
+                    G(n)=2G(\sqrt{n})
+                \)
+            </p>
+            <p>
+                \(
+                    G(n) \geq 2c_1\log^{n^{\frac{n}{2}} }
+                \)
+            </p>
+            <p>
+                \(
+                    2c_1\log^{n^{\frac{n}{2}}} \geq c_1\log^{n}
+                \)
+            </p>
+            <p>
+                \(
+                    2*\frac{n}{2}*c_1\log^{n} \geq c_1\log^{n}
+                \)
+            </p>
+            <p>
+                \(
+                    n(c_1\log^{n}) \geq c_1\log^n
+                \)
+            </p>
+            <p>
+                \(
+                    n \geq 1
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Logo o limite inferior é \(\Omega(\log^n)\).}
+                \)
             </p>
         </p>
         <p>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Continuada 02</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <h3>Questão 1</h3>
+        <h4>Item A</h4>
+            <p>
+                <strong>Medida de progresso:</strong> A medida de progresso é a diferença \(j-i\). 
+                A cada iteração do loop, \(j\) diminui ou \(i\) aumenta, ou ambos. 
+                Portanto, a diferença \(j-i\) diminui. 
+                Como \(j\) e \(i\) são limitados pelos extremos da lista, 
+                a diferença \(j-i\) também é limitada. 
+                Portanto, o loop termina.
+          </p>
+        <h4>Item B</h4>
+        <p>
+            <p>
+              <strong>Inicialização(Caso base):</strong> Antes da primeira iteração do laço, 
+              o array \(L[1]\) contém o pivô, que é um array de um elemento, e portanto já está ordenado.
+            </p>
+            <p>
+              <strong>Manutenção:</strong> Suponha que o invariante é verdadeiro no início de uma iteração. 
+              Se \(L[i] \leq L[1]\), então \(L[i]\) está na posição correta, e \(i\) é incrementado. 
+              Se \(L[j] > L[1]\), então \(L[j]\) está na posição correta, e \(j\) é decrementado. 
+              Se \(L[i] > L[1]\) e \(L[j] \leq L[1]\), então \(L[i]\) e \(L[j]\) são trocados, 
+              e \(i\) é incrementado e \(j\) é decrementado. 
+              Portanto, o invariante é mantido.
+            </p>
+            <p>
+              <strong>Conclusão:</strong> O invariante é verdadeiro antes da primeira iteração e é mantido 
+              a cada iteração. Portanto, o invariante é verdadeiro em todas as iterações.
+            </p>
+            <p>
+              <strong>Obs.:</strong> O invariante do loop é importante para garantir que o algoritmo 
+              está correto. Se o invariante é verdadeiro antes da primeira iteração e é mantido 
+              a cada iteração, então o algoritmo está correto.
+            </p>
+          </p>
+        <h4>Item C</h4>
+        <p>
+            <p>Qual o código do loop?</p>
+            <pre>
+                <code>
+                    particao(L, inicio, fim)
+                        1    i = 2
+                        2    j = fim
+                        3    enquanto (j >= i) faça
+                        4        enquanto (L[i] <= L[1]) e (i <= fim) faça
+                        5            i = i + 1
+                        6        enquanto (L[j] > L[1]) e (j >= 1) faça
+                        7            j = j - 1
+                        8        se (j >= i) então
+                        9            troque L[i] com L[j]
+                        10           i = i + 1
+                        11           j = j - 1
+                        12   troque L[1] com L[j]
+                </code>
+            </pre>
+            <p>Argumente que ele mantém o invariante do loop.</p>   
+            <p>
+                O invariante do loop é mantido porque o índice \(i\) é incrementado enquanto o valor do vetor na posição \(i\)
+                é menor que o pivô. O índice \(j\) é decrementado enquanto o valor do vetor na posição \(j\) é maior que o pivô. 
+                Quando o valor do vetor na posição \(i\) é maior ou igual ao pivô e o valor do vetor na posição \(j\) é menor ou 
+                igual ao pivô, os valores são trocados e os índices \(i\) e \(j\) são incrementados e decrementados, respectivamente.
+            </p>
+        </p>
+        <h4>Item D</h4>
+            <p>
+                Argumente que o invariante do loop e a condição de saída garantem que, assim que a execução sair do loop teremos \(j = i - 1 \)
+                <p>
+                    O invariante do loop garante que, quando a execução sair do loop, 
+                    o valor de \(j\) será tal que \(L[j] > L[1]\) e \(L[j+1] \leq L[1]\). 
+                    Portanto, o pivô \(L[1]\) será trocado com \(L[j]\), e todos os elementos 
+                    à esquerda de \(j\) terão valor menor ou igual ao pivô, e todos os elementos 
+                    à direita de \(j\) terão valor maior que o pivô. Portanto, \(j = i-1\).
+                </p>
+            </p>
+        <h4>Item E</h4>
+            <p>
+                Qual o código pós-loop?
+            </p>
+            <p>
+                <pre>
+                    <code>
+                        particicao(L, inicio, j);
+                        particao(L, i, fim);
+                    </code>
+                </pre>  
+            </p>
+            <p>
+                Argumente que as pós-condições são satisfeitas.
+                <p>
+                    As pós-condições são satisfeitas porque a lista foi dividida em duas partes, 
+                </p>
+            </p>
+        <h4>Item F</h4>
+        <p>
+            Forneça o pseudocódigo.
+            <p>
+                <pre>
+                    <code>
+                        particao(L, inicio, fim)
+                      1    i = 2
+                      2    j = fim
+                      3    enquanto (j >= i) faça
+                      4        enquanto (L[i] <= L[1]) e (i <= fim) faça
+                      5            i = i + 1
+                      6        enquanto (L[j] > L[1]) e (j >= 1) faça
+                      7            j = j - 1
+                      8        se (j >= i) então
+                      9            troque L[i] com L[j]
+                      10           i = i + 1
+                      11           j = j - 1
+                      12   troque L[1] com L[j]
+                      13. particicao(L, inicio, j);
+                      14. particao(L, i, fim);
+                    </code>
+                </pre>
+            </p>
+        </p>
+        <h4>Item G</h4>
+            <p>
+                Considere os casos especiais a seguir e indique, caso necessário, quais adaptações devem ser feitas no algoritmo para atendê-los. 
+                <p>
+                    \((i)\) Se a lista tem apenas \(1\) elemento, o algoritmo já está correto,
+                  </p>
+                  <p>
+                    \((ii)\) Se nenhum elemento é maior que o pivô, o algoritmo também está correto.
+                  </p>
+                  <p>
+                    \((iii)\) Se todos os elementos, exceto o pivô, são maiores que o pivô, 
+                    o algoritmo também está correto.
+                </p>
+            </p>
+        <h4>Item H</h4>
+            <p>
+                <p>Qual a complexidade do algoritmo no pior caso em notação \(\Theta\) ?</p>
+                <p>
+                    \(\Theta(n^2) \)
+                </p>
+            </p>
+        <h3>Questão 2</h3>
+        <p>
+            Determine a complexidade do algoritmo abaixo em função do valor de \(n\) . Forneça também a 
+            complexidade de cada linha. Cada execução \(f(i)\) de tem tempo \(\Theta(i)\), cada execução de \(g(j)\) tem tempo \(\Theta(\log(n)) \) , e 
+            cada execução \(h(i)\) de tem tempo \(\Theta(n^2) \) .
+        </p>
+        <pre>
+            <code>
+                algoritmo(n):
+                    1    para i de 1 até n 
+                    2        f(i)
+                    3        para j de i+1 até n 
+                    4            g(j)
+                    5    para i de 1 até n 
+                    6        h(i)
+            </code>
+        </pre>
+        <p>
+            <p>Complexidade de cada linha:</p>
+            <p>
+                <p>Linha 1: \(\Theta(n)\)</p>
+                <p>Linha 2: \(\Theta(i)\)</p>
+                <p>Linha 3: \(\Theta(n)\)</p>
+                <p>Linha 4: \(\Theta(\log(n))\)</p>
+                <p>Linha 5: \(\Theta(n)\)</p>
+                <p>Linha 6: \(\Theta(n^2)\)</p>
+            </p>
+            <p>Complexidade do algoritmo:</p>
+            <p>
+                \(\Theta(n) + \sum_{i=1}^{n} \Theta(i) + \Theta(n) + \sum_{j=i+1}^{n} \Theta(\log(n)) + \Theta(n) + \sum_{i=1}^{n} \Theta(n^2) \)
+            </p>
+        </p>
+    </body>
+</html>
