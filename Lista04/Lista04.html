@@ -125,6 +125,11 @@
                     \]
                 </p>
                 <p>
+                    <P>
+                        \(
+                            \text{Limite superior: }
+                        \)
+                    </P>
                    \(
                         \text{Chutemos que \(T(n) = O(n)\)}
                     \) 
@@ -156,6 +161,36 @@
                     <p>
                         \(
                             \text{Basta tomar \(c_1=2\) e \(n_0 \geq 15\) }
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Limite inferior: }
+                    \)
+                    <p>
+                        \(
+                            \text{Chutemos que \(T(n) = \Omega(log^n)\)}
+                        \)
+                        <p>
+                            \(
+                                \text{Pela definição de \(\Omega\), \(\exists c_1, n_0 \) tal que } T(n) \geq cg(n)
+                            \)
+                            <p>
+                                \(
+                                    T(n) \geq c\log n
+                                \)
+                            </p>
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            T(n) = T (\frac{n}{2}) + 15
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \geq c\log \frac{n}{2} + 15
                         \)
                     </p>
                 </p>
@@ -264,7 +299,7 @@
                     </p>
                     <p>
                         \(
-                            c\log^n \leq c\log n
+                            c\log^n \leq c\log^n
                         \)
                         <p>
                             \(

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teorema mestre</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            <p>
+                \(
+                    1. f(n) \leq n^{log^{a-e}_b} \rightarrow T(n) = \Theta(n^{\log^a_b})
+                \)
+            </p>
+            <p>
+                \(
+                    2. f(n) = \Theta(n^{log^{a}_b} * lg^k(n)) \rightarrow T(n) = \Theta(n^{\log^a_b} * lg^{k+1}(n))
+                \)
+            </p>
+            <p>
+                \(
+                    3. f(n) \geq n^{log^{a+e}_b} \text{ e } af(\frac{n}{b}) \leq cf(n) \rightarrow T(n) = \Theta(f(n))  
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = 9T(\frac{n}{3}) + n
+                \)
+                <p>
+                    \(
+                        a = 9, b = 3, f(n) = n
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    n^{\log^a_b} = n^{\log^9_3} = n^2
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Veja que \(f(n) \leq n^{2-e}\) para \(e=1 > 0\).}
+                \)<br>
+                \(
+                    \text{Ou seja, \(f(n)=O(\log^{a-1}_b)\) e o caso 1 do}
+                \)<br>
+                \(
+                    \text{o teorema mestre se aplica.}
+                \)
+                <p>
+                    \(
+                        T(n) = \Theta(n^{\log^a_b}) =\Theta(n^2)
+                    \)
+                </p>
+            </p>
+            <p>
+                \(
+                    T(n) = 4T(\frac{n}{2}) + n\log^n_b
+                \)
+                <p>
+                    \(
+                        a = 4, b = 2, f(n) = n\log^n_2
+                    \)  
+                    <p>
+                        \(
+                            n^{\log^a_b} = n^{\log^4_2} = n^2
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            f(n) = n\log^n
+                        \)
+                    </p>
+                </p>
+            </p>
+            <p>
+                \(
+                    \text{Veja que \(f(n) \leq n*n^{0.5} = n^{1.5} = n^{2-0.5} = n^{\log^{4-e}_2} \)}. Tome \(e=0.5\)
+                \)
+            </p>
+            <p>
+                \(
+                    f(n) = \Theta(n^2)
+                \)
+            </p>
+            <p>
+                \(
+                    T(n) = (\frac{2n}{3}) + 1
+                \)
+            </p>
+            <p>
+                \(
+                    \text{Neste caso: \(a = 1, b = \frac{2n}{3}, f(n) = 1\)}
+                \)
+            </p>
+            <p>
+                \(
+                    n^{\log^a_b} = n^{\log^1_{\frac{2n}{3}}} = n^0 = 1
+                \)
+            </p>
+            <p>
+                \(
+                    f(n) = \Theta(n^{\log^a_b*\log^k}) = \Theta(n^1*\log^1(n)) = \Theta(\log^n)
+                \)
+            </p>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Árvore de recorrência</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \[
+                T(n) = \begin{cases}
+                1 & \text{se } n \leq 3 \\
+                3T(\floor \frac{n}{4} \rfloor)+cn^2 , & \text{ se } n \geq 4
+                \end{cases}
+            \]
+            <p>
+                \[
+                    \begin{array}{|c|c|c|}
+                    \hline
+                    \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                    \hline
+                    1 & n & 1 & n \\
+                    2 & \frac{n}{4} & 4 & \frac{n}{4} \\
+                    3 & \frac{n}{16} & 16 & \frac{n}{9} \\
+                    4 & \frac{n}{16} & 16 & \frac{n}{16} \\
+                    x & 1 & 4^x & 1 \\
+                    \hline
+                    \end{array}
+                \]
+            </p>
+            <p>
+                \[
+                    \frac{n}{4^x} = 1 \Rightarrow x = \log_{4}(n)
+                \]
+            </p>
+            <p>
+                \[
+                    \begin{array}{|c|c|c|}
+                    \hline
+                    \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                    \hline
+                        1 & n & 1 & n \\
+                        2 & \frac{n}{4} & 4 & \frac{n}{4} \\
+                        3 & \frac{n}{16} & 16 & \frac{n}{9} \\
+                        4 & \frac{n}{64} & 64 & \frac{n}{64} \\
+                        \log^n_4 & \frac{n}{4^{\log^n_4}} & 4^{\log^n_4} & \frac{n}{4^{\log^n_4}} \\
+                    \hline
+                    \end{array}
+                \]
+            </p>
+            <p>
+                \[
+                    \begin{array}{|c|c|c|}
+                    \hline
+                    \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                    \hline
+                        1 & n & 1 & n \\
+                        2 & \frac{n}{4} & 4 & \frac{n}{4} \\
+                        3 & \frac{n}{16} & 16 & \frac{n}{9} \\
+                        4 & \frac{n}{64} & 64 & \frac{n}{64} \\
+                        \log^n_4 & 1 & n & 1 \\
+                    \hline
+                    \end{array}
+                \]
+            </p>
+            <p>
+                <p>
+                    \(
+                        \text{Termo geral}
+                    \)
+                </p>
+                <p>
+                    \[
+                        3^i \cdot \left(\frac{n}{4^i}\right)
+                    \]
+                </p>
+            </p>
+            <p>
+                <p>
+                    \(
+                        \text{Soma dos termos}
+                    \)
+                </p>
+                <p>
+                    \[
+                        \sum_{i=0}^{\log^n_4} 3^i \cdot \left(\frac{n}{4^i}\right)
+                    \]
+                </p>
+                <p>
+                    \(
+                        \text{Simplificando}
+                    \)
+                </p>
+                <p>
+                    \[
+                        \sum_{i=0}^{\log^n_4} n \cdot \left(\frac{3}{4}\right)^i
+                    \]
+                </p>
+                <p>
+                    \(
+                        \text{Soma de PG infinita:}
+                    \)
+                    <p>
+                        \[
+                            S_{\infty} = \frac{a}{1 - q}
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            S_{\infty} =\frac{n}{1 - \frac{3}{4}}
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            S_{\infty} =\frac{n}{\frac{1}{4}}
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            S_{\infty} =4n
+                        \]
+                    </p>
+                    <p>
+                        \[
+                            \sum_{i=0}^{\log^n_4} cn^2
+                        \]
+                    </p>
+                    <p>
+                        \(
+                            = \log^n_4 \cdot cn^2	
+                        \)
+                    </p>
+                    <p>
+                        \[
+                            T(n) \leq 4n + \log^n_4 \cdot cn^2\
+                        \]
+                        <p>
+                            \[
+                                O(n^2)
+                            \]
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \[
+
+            \]
+        </p>
+    </body>
+</html>
