@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Continuada 04</title>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <p>
+            \(
+                \text{Questão 01: } T(n)=4T(\lfloor \frac{n}{2} \rfloor)+cn
+            \)
+            <p>
+                \(
+                    \text{Desconsidere pisos e tetos e vamos supor que \(n=2^k\) }
+                \)
+            </p>
+            <p>
+                \[
+                    \begin{array}{|c|c|c|}
+                        \hline
+                            \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                            \hline
+                            1 & n & 1 & cn \\
+                            2 & \frac{n}{2} & 4 & \frac{cn}{2} \\
+                            3 & \frac{n}{4} & 16 & \frac{cn}{4} \\
+                            4 & \frac{n}{8} & 64 & \frac{cn}{8} \\
+                            x & 1 & 4^i & 1 \\
+                        \hline
+                    \end{array}
+                \]
+            </p>
+            <p>
+                \(
+                    n = 2^k
+                \)
+                <p>
+                    \(
+                        \log^n_2 = k
+                    \)
+                </p>
+            </p>
+            <p>
+                \[
+                    \begin{array}{|c|c|c|c|}
+                        \hline
+                            \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                            \hline
+                            1 & n & 1 & cn \\
+                            2 & \frac{n}{2} & 4 & \frac{cn}{2} \\
+                            3 & \frac{n}{4} & 16 & \frac{cn}{4} \\
+                            4 & \frac{n}{8} & 64 & \frac{cn}{8} \\
+                            \log_2^n & 1 & 4^{\log_2^n} & 1 \\
+                        \hline
+                    \end{array}
+                \]   
+                <p>
+                    \(
+                        4^{\log_2^n} = 2^{\log_2^n} * 2^{\log_2^n} = n * n = n^2
+                    \)
+                </p>
+            </p>
+            <p>
+                \[
+                    \begin{array}{|c|c|c|}
+                        \hline
+                            \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                            \hline
+                            1 & n & 1 & cn \\
+                            2 & \frac{n}{2} & 4 & \frac{cn}{2} \\
+                            3 & \frac{n}{4} & 16 & \frac{cn}{4} \\
+                            4 & \frac{n}{8} & 64 & \frac{cn}{8} \\
+                            log_2^n & 1 & n^2 & 1 \\
+                        \hline
+                    \end{array}
+                \]
+            </p>
+            <p>
+                \(
+                    \text{Termo geral:}
+                \)
+                <p>
+                    \(
+                        \sum_{i=0}^{\log_2^n-1} cn4^i * \frac{n}{2^i}	    
+                    \)
+                </p>
+                <p>
+                    \(
+                        cn\sum_{i=0}^{\log_2^n-1} 4^i * \frac{n}{2^i}
+                    \)
+                </p>
+                <p>
+                    \(
+                        cn\sum_{i=0}^{\log_2^n-1} 2^{2i} * \frac{n}{2^i}
+                    \)
+                </p>
+                <p>
+                    \(
+                        cn\sum_0^{\log_2^n-1} 2^i
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Soma total:}
+                    \)
+                    <p>
+                        \(
+                            n^2 + cn\sum_0^{\log_2^n-1} 2^i
+                        \)
+                        <p>
+                            \(
+                                \text{\(n^2\) é o último termo o somatório vai até \(\log_2^n-1\)}
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            \text{Fórmula: \(\sum_{i=0}^k n^i = \frac{n^{i+1}-1}{n-1} \) }
+                        \)
+                    </p>
+                    <p>
+                       \(
+                            n^2 + cn\sum_0^{\log_2^n-1} 2^i = n^2 + cn(\frac{2^{\log_2^n-1+1}-1}{2-1})
+                        \) 
+                    </p>   
+                    <p>
+                        \(
+                            n^2 + cn(2^{\log_2^n}-1)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n^2 + cn(n-1)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n^2 + cn^2 - cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Logo, \(T(n) = \Theta(n^2)\)}
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 02: Verifique o limite superior obtido na questão anterior usando o método de substituição.}
+            \)
+            <p>
+                \(
+                    \text{Queremos provar que \(T(n) = O(n^2)\)}
+                \)
+                <p>
+                    \(
+                        \text{H.I: Suponha que \(T(k) \leq ck^2\) para todo \(n_0 \leq k < n\)}
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Passo indutivo}
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n)=4T(\lfloor \frac{n}{2} \rfloor)+cn
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq 4c(\lfloor \frac{n}{2} \rfloor)^2 + cn
+                    \)
+                </p>
+                <p>
+                    \(
+                        4c(\lfloor \frac{n}{2} \rfloor)^2 + cn \leq 4c(\frac{n}{2})^2 + cn
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq 4c(\frac{n}{2})^2 + cn
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq 4c(\frac{n^2}{4}) + cn
+                    \)
+                </p>
+                <p>
+                    \(
+                        T(n) \leq cn^2 + cn
+                    \)
+                    <p>
+                        \( 
+                            cn^2 + cn \leq cn^2
+                        \)
+                        <p>
+                            \(
+                                \text{É necessário fortalecer a hipótese}
+                            \)
+                        </p>
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{H.I: Suponha que \(T(k) \leq ck^2 - dk\) para todo \(n_0 \leq k < n\)}
+                    \)
+                    <p>
+                        \(
+                            \text{Passo indutivo}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n)=4T(\lfloor \frac{n}{2} \rfloor)+cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            4T(\lfloor \frac{n}{2} \rfloor)+cn \leq T(n)=4T(\frac{n}{2})+cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq T(n)=4T(\frac{n}{2})+cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq 4c((\frac{n}{2})^2 - d(\frac{n}{2})) + cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq 4c(\frac{n^2}{4} - \frac{dn}{2}) + cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq cn^2 - 2dcn + cn
+                        \)
+                        <p>
+                            \(
+                                \text{Basta tomar \(d=\frac{1}{2}\) }
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq cn^2 - 2\frac{cn}{2} + cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq cn^2 - cn + cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            T(n) \leq cn^2
+                        \)
+                    </p>
+                    <p>
+                        cn^2 \leq cn^2
+                    </p>
+                    <p>
+                        \(
+                            \text{Logo, \(T(n) = O(n^2)\)}
+                        \)
+                    </p>
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
+                \text{Questão 03:}
+            \)
+            <p>
+                \[
+                    a. T(n) = 2T(\frac{n}{4}) + 1
+                \]
+                <p>
+                    \(
+                        a=2, b=4, f(n)=1
+                    \)
+                </p>
+                <p>
+                    \(
+                        f(n) \leq n^{\log^a_b - \epsilon}
+                    \)
+                </p>
+                <p>
+                    \(
+                        1 \leq n^{\log^{2}_4 - \epsilon}
+                    \)
+                    <p>
+                        \(
+                            1 \leq n^{\frac{1}{2} - \epsilon}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            1 \leq n^{0.5 - \epsilon}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Assuma \(\epsilon = 0.1\)}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            1 \leq n^{0.4}
+                        \)
+                        <p>
+                            \(
+                                \text{Como \(n\geq1\) então pelo caso 1 do teorema mestre \(T(n)=\Theta(n^{\log^a_b})\)}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{Logo, \(T(n)=\Theta(n^{\log^2_4})\)}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \Theta(n^{\frac{1}{2}})
+                            \)
+                        </p>
+                    </p>
+                </p>
+            </p>
+            <p>
+                \[
+                    b. T(n) = 2T(\frac{n}{4}) + n^2
+                \]
+                <p>
+                    \(
+                        a=2, b=4, f(n)=n^2
+                    \)
+                </p>
+                <p>
+                    \(
+                        n^{\log^a_b} = n^{\log^2_4} = n^{\frac{1}{2}}
+                    \)
+                </p>
+                <p>
+                    \(
+                        f (n) = \Omega(n^{\log^{a}_b+\epsilon}) \wedge af(\frac{n}{b}) \leq cf(n) \rightarrow T(n) = \Theta(f(n))
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de \(\Omega\) \(\exists c_1,n_0\) temos que \(n^2 \geq c_1n^{\log^{2+\epsilon}_4}\) }
+                        \)
+                    </p>
+                </p>
+                <P>
+                    \(
+                        n^2 = \Omega(n^{\log^{a}_b+\epsilon}) = \Omega(n^{\log^{2+\epsilon}_4})
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de \(\Omega\) \(\exists c_1,n_0\) temos que \(n^2 \geq c_1n^{\log^{2}_4+\epsilon}\) }
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n^2 \geq c_1n^{\log^{2}_4+\epsilon}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n^2 \geq c_1n^{\frac{1}{2}+\epsilon}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n^2 \geq c_1n^{0.5+\epsilon}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \text{Basta tomar \(c_1 = 1\) e \(\epsilon = \frac{1}{2}\) }
+                        \)
+                    </p>
+                    <P>
+                        \(
+                            n^2 \geq 1*n^{0.5+\frac{1}{2}}
+                        \)
+                    </P>
+                    <p>
+                        \(
+                            n^2 \geq n^{0.5+0.5}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            n^2 \geq n
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            af(\frac{n}{b}) \leq cf(n)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            2(\frac{n}{4})^2 \leq cn^2
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            2(\frac{n^2}{16}) \leq cn^2
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \frac{n^2}{8} \leq cn^2
+                        \)
+                        <p>
+                            \(
+                                \text{Bastar tomar \(c = \frac{1}{4}\)}
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            \text{Ou seja, \(\Theta(f(n))\) e o caso 3 do teorema mestre se aplica.}
+                        \)
+                    </p>
+                    <P>
+                        \(
+                            T(n) = \Theta(n^2)
+                        \)
+                    </P>
+                </P>
+            <p>
+                \[
+                    c. T(n) = 2T(\frac{n}{4}) + n
+                \]
+                <p>
+                    \(
+                        a=2, b=4, f(n)=n
+                    \)
+                </p>
+                <p>
+                    \(
+                        n^{\log^a_b} = n^{\log^2_4} = n^{\frac{1}{2}}
+                    \)
+                </p>
+                <p>
+                    \(
+                        f (n) = \Omega(n^{\log^{a}_b+\epsilon}) \wedge af(\frac{n}{b}) \leq cf(n) \rightarrow T(n) = \Theta(f(n))
+                    \)
+                    <p>
+                        \(
+                            \text{Pela definição de \(\Omega\) \(\exists c_1,n_0\) temos que \(n \geq c_1n^{\log^{2}_4+\epsilon}\) }
+                        \)
+                    </p>
+                    <p>
+                        \( 
+                            n \geq cn^{\log^{2}_4+\epsilon}
+                        \)
+                        <p>
+                            \(
+                                n \geq cn^{\frac{1}{2}+\epsilon}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                n \geq cn^{0.5+\epsilon}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{Assuma \(c_1=1\) e\(\epsilon = 0.1\)}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                n \geq cn^{0.5+0.1}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                n \geq cn^{0.6}
+                            \)
+                        </p>
+                    </p>
+                    <p>
+                        \(
+                            2f(\frac{n}{4}) \leq cf(n)
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            2\frac{n}{4} \leq cn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            \frac{n}{2} \leq cn
+                        \)
+                    </p>
+                </p>
+                <p>
+                    \(
+                        \text{Logo, pelo caso 3 do teorema mestre \(T(n)=\Theta(f(n))=\Theta(n)\) }
+                    \)
+                </p>
+            </p>
+            <p>
+                \[
+                    d. T(n) = 2T(\frac{n}{4}) + \sqrt{n}
+                \]
+                <p>
+                    \(
+                        a=2, b=4, f(n)=\sqrt{n}
+                    \)
+                </p>
+                <p>
+                    \(
+                        n^{\log^a_b} = n^{\log^2_4} = n^{\frac{1}{2}}
+                    \)
+                </p>
+                <p>
+                    \(
+                        f (n) = O(n^{log^a_b}) \rightarrow T(n) = \Theta(n^{\log^a_b\lg^n})
+                    \)
+                </p>
+                <p>
+                    \(
+                        \text{Pela definição de \(\Theta\) temos que \(\exists c_1,c_2, n_0\) tal que \(\sqrt{n} \leq c_1n^{\log^{2}_4}\) }
+                    \)
+                    <p>
+                        \(
+                            c_1n^{\log^{2}_4} \leq \sqrt{n} \leq c_2n^{\log^{2}_4}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            c_1n^{\frac{1}{2}} \leq \sqrt{n} \leq c_2n^{\frac{1}{2}}
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            c_1n^{\frac{1}{2}} \leq \sqrt{n} \leq c_1\sqrt{n}
+                        \)
+                        <p>
+                            \(
+                                \text{Bastar tomar \(c_1 = 1\), \(c_2=1\) e \(n_0 = 1\)}
+                            \)
+                        </p>
+                        <p>
+                            \(
+                                \text{Logo, \(T(n)=\Theta(n^{\log^2_4}\lg^n)\) pelo segundo caso do teorema mestre}
+                            \)
+                        </p>
+                    </p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>
