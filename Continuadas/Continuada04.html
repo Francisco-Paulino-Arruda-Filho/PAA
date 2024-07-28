@@ -11,6 +11,46 @@
     <body>
         <p>
             \(
+                \text{Vamos supor a altura}
+            \)
+            <p>
+                \(
+                    \frac{n}{2^k} = 1
+                \)
+            </p>
+            <p>
+                \(
+                    4^{\log^n_2}
+                \)
+                <p>
+                    \(
+                        4^{\frac{\log^n_4}{\log^2_4}}
+                    \)
+                </p>
+                <p>
+                    \(
+                        4^{\frac{\log^n_4}{\frac{1}{2}}}
+                    \)
+                </p>
+                <p>
+                    \(
+                        4^{2\log^n_4}
+                    \)
+                </p>
+                <p>
+                    \(
+                        4^{\log^{n^2}_4}
+                    \)
+                </p>
+                <p>
+                    \(
+                        n^2
+                    \)
+                </p>
+            </p>
+        </p>
+        <p>
+            \(
                 \text{Questão 01: } T(n)=4T(\lfloor \frac{n}{2} \rfloor)+cn
             \)
             <p>
@@ -79,6 +119,16 @@
                 \]
             </p>
             <p>
+                <p>
+                    \(
+                        4^i\frac{n}{2^i}
+                    \)
+                </p>
+                <p>
+                    \(
+                        4^i = 2^{2*i} =  2^{2i}
+                    \)
+                </p>
                 \(
                     \text{Termo geral:}
                 \)
@@ -258,57 +308,57 @@
                     </p>
                     <p>
                         \(
-                            T(n)=4T(\lfloor \frac{n}{2} \rfloor)+cn
+                            T(n) = 4T(\lfloor \frac{n}{2} \rfloor) + cn
                         \)
                     </p>
                     <p>
                         \(
-                            4T(\lfloor \frac{n}{2} \rfloor)+cn \leq T(n)=4T(\frac{n}{2})+cn
+                            T(n) \leq 4(c(\lfloor \frac{n}{2} \rfloor)^2 - d(\lfloor \frac{n}{2} \rfloor))+ cn
                         \)
                     </p>
                     <p>
                         \(
-                            T(n) \leq T(n)=4T(\frac{n}{2})+cn
+                            4((c\lfloor \frac{n}{2} \rfloor)^2 - d(\lfloor \frac{n}{2} \rfloor))+ cn \leq 4((\frac{n}{2})^2 - d(\frac{n}{2})) + cn
                         \)
                     </p>
                     <p>
                         \(
-                            T(n) \leq 4c((\frac{n}{2})^2 - d(\frac{n}{2})) + cn
+                            T(n) \leq 4(c(\frac{n}{2})^2 - d(\frac{n}{2})) + cn
                         \)
                     </p>
                     <p>
                         \(
-                            T(n) \leq 4c(\frac{n^2}{4} - \frac{dn}{2}) + cn
+                            T(n) \leq 4(c\frac{n^2}{4} - \frac{dn}{2}) + cn
                         \)
                     </p>
                     <p>
                         \(
-                            T(n) \leq cn^2 - 2dcn + cn
-                        \)
-                        <p>
-                            \(
-                                \text{Basta tomar \(d=\frac{1}{2}\) }
-                            \)
-                        </p>
-                    </p>
-                    <p>
-                        \(
-                            T(n) \leq cn^2 - 2\frac{cn}{2} + cn
+                            T(n) \leq cn^2 - 2dn + cn
                         \)
                     </p>
                     <p>
                         \(
-                            T(n) \leq cn^2 - cn + cn
+                            cn^2 - 2dn + cn \leq cn^2 - dn
                         \)
                     </p>
                     <p>
                         \(
-                            T(n) \leq cn^2
+                            2dn - cn \leq -dn
                         \)
                     </p>
                     <p>
                         \(
-                            cn^2 \leq cn^2
+                            -cn \leq -3dn
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            c \geq 3d
+                        \)
+                    </p>
+                    <p>
+                        \(
+                            d \leq \frac{c}{3}
                         \)
                     </p>
                     <p>
