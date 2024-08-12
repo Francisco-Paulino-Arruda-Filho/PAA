@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MATHJAX 3 (salvo no computador) -->
+  <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+<body>
+  <p>
+  <strong>ATENÇãO 1:</strong> Essa atividade deve 
+  ser entregue no formato MathJax (html + Latex) 
+  diretamente pelo Moodle. 
+  </p>
+
+  
+  
+  <h1>Questões</h1>
+
+  <ul>
+    <li>
+      <p><strong>Questão 1 (Encontrar o máximo de um vetor)</strong> 
+        Considere o problema de encontrar o máximo em um vetor de \(n\) números.
+        Projete um algoritmo de divisão e conquista para o problema. 
+        Experimente duas abordagens: usar um subproblema de tamanho \(n-1\) e,
+        a segunda, dividir o subproblema em
+        dois subproblemas de tamanho aproximadamente \(\frac{n}{2}\). 
+        Qual a melhor abordagem? Qual tem a melhor 
+        complexidade no pior caso? (Justifique formalmente)
+        <p>
+          <p>
+            \(
+              \text{Primeira abordagem:}
+            \)
+          </p>
+          <pre>
+            <code>
+              ALGORITMO FindMaxNMinus1(arr, n)
+                SE n = 1 ENTÃO
+                    RETORNE arr[0]
+                FIM SE
+                
+                maxNMinus1 ← FindMaxNMinus1(arr, n-1)
+                
+                SE maxNMinus1 > arr[n-1] ENTÃO
+                    RETORNE maxNMinus1
+                SENÃO
+                    RETORNE arr[n-1]
+                FIM SE
+              FIM ALGORITMO
+            </code>
+          </pre>
+        </p>
+        <p>
+          \(
+              \text{Recorrência:}
+          \)
+          <p>
+            \[
+                T(n) = T(n-1) + n
+            \]
+          </p>
+          <p>
+            \(
+               \text{Vamos chutar que a complexidade é:} O(n^2)
+            \)
+          </p>
+          <p>
+            \(
+                \text{Pela definição da \(O\) temos que \(\exists c_1, n_0\) tal que \(T(n) \leq c_1n^2\) quando \(\forall n > n_0\). Vamos aplicar indução em \(n\)}
+            \)
+          </p>
+          <p>
+            \(
+              \text{Base:} T(1) = 1 \leq c_1 \cdot 1^2
+            \)
+            <p>
+              \(
+                  T(1) = 1 \leq c_1 \cdot 1^2
+              \)
+            </p>
+            <p>
+              \(
+                  1 \leq c_1
+              \)
+            </p>
+            <p>
+              \(
+                \text{Passo indutivo:} \text{Suponha que} T(k) \leq c_1k^2 \text{para} n_0 \leq k < n
+              \)
+            </p>
+            <p>
+              \[
+                  T(n) = T(n-1) + n
+              \]
+            </p>
+            <p>
+              \[
+                  T(n) \leq c_1(n-1)^2 + n
+              \]
+            </p>
+            <p>
+              \[
+                  c_1(n-1)^2 + n \leq c_1n^2
+              \]
+            </p>
+            <p>
+              \[
+                  c_1(n^2 - 2n + 1) + n \leq c_1n^2
+              \]
+            </p>
+            <p>
+              \[
+                  \text{Assuma que} c_1 = 1
+              \]
+            </p>
+            <p>
+              \[
+                  n^2 - 2n + 1 + n \leq n^2
+              \]
+            </p>
+            <p>
+              \[
+                  n^2 - n + 1 \leq n^2
+              \]
+            </p>
+            <p>
+              \[
+                  -n + 1 \leq 0
+              \]
+            </p>
+            <p>
+              \[
+                  n \geq 1
+              \]
+            </p>
+            <p>
+              \[
+                  \text{Logo,} T(n) = O(n^2)
+              \]
+            </p>
+          </p>      
+        </p>
+        <p>
+          <p>
+            \(
+              \text{Segunda abordagem:}
+            \)
+          </p>
+          <pre>
+            <code>
+              ALGORITMO FindMaxDivideAndConquer(arr, left, right)
+                SE left = right ENTÃO
+                    RETORNE arr[left]
+                FIM SE
+                
+                mid ← (left + right) / 2
+                
+                maxLeft ← FindMaxDivideAndConquer(arr, left, mid)
+                maxRight ← FindMaxDivideAndConquer(arr, mid + 1, right)
+                
+                SE maxLeft > maxRight ENTÃO
+                    RETORNE maxLeft
+                SENÃO
+                    RETORNE maxRight
+                FIM SE
+              FIM ALGORITMO
+            </code>
+          </pre>
+          <p>
+            \(
+              \text{Recorrência:}
+            \)
+            <p>
+              \[
+                T(n) = 2T\left(\frac{n}{2}\right) + n
+              \]
+            </p>
+            <p>
+              \(
+                  \text{Vamos supor conveniente mente que } k = \log_2 n
+              \)
+            </p>
+            <p>
+              \[
+                  \begin{array}{|c|c|c|}
+                      \hline
+                          \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                          \hline
+                          0 & n & 1 & cn \\
+                          1 & \frac{n}{2} & 2 & c\frac{n}{2} \\
+                          2 & \frac{n}{4} & 4 & c\frac{n}{4} \\
+                          3 & \frac{n}{8} & 8 & c\frac{n}{8} \\
+                          4 & \frac{n}{16} & 16 & c\frac{n}{16} \\
+                          i & \frac{n}{2^i} & 2^i & c\frac{n}{2^i} \\
+                          log_2^n & 1 & n & 1 \\
+                      \hline
+                  \end{array}
+              \]
+            </p>
+            <p>
+              \(
+                  \text{Somatório}
+              \)
+            </p>
+            <p>
+              \[
+                  \sum_{i=0}^{\log^n_2-1} \frac{2^i}{2^i} n
+              \]
+            </p>
+            <p>
+              \[
+                  n\sum_{i=0}^{\log^n_2-1} \frac{2^i}{2^i}
+              \]
+            </p>
+            <p>
+              \[
+                  n\sum_{i=0}^{\log^n_2-1} 1
+              \]
+            </p>
+            <p>
+              \[
+                  n\log^n_2
+              \]
+            </p>
+            <p>
+              \(
+                  \text{Somando com o último nível: } n + n\log^n_2
+              \)
+            </p>
+            <p>
+              \(
+                  \text{Logo, } T(n) = O(n\log^n_2)
+              \)
+            </p>
+            <p>
+              \(
+                  \text{Por tanto a melhor abordagem é a segunda, pois tem complexidade \(O(n\log^n_2)\)}
+              \)
+            </p>
+          </p>
+        </p>
+      </p>
+    </li>
+
+    <hr>
+
+    <li>
+      <p><strong>Questão 2.</strong>  
+        O <strong>transposto</strong> do grafo direcionado \(G = (V, E)\) é o 
+        grafo \(G^T = (V, E^T)\), em que \( E^T = \{(v,u) \mid u,v \in V \text{ e } 
+        (u, v) \in E\} \). 
+        Assim, de um modo informal, podemos dizer que 
+        \(G^T\) é \(G\) com todas as suas arestas invertidas. 
+        Descreva (forneça)
+        algoritmos eficientes para calcular \(G^T\) a partir de \(G\), 
+        para as representações de lista de adjacências e matriz 
+        de adjacências de \(G\). Analise os tempos de execução dos seus dois algoritmos.
+        <br><br>As análises de complexidade feitas nessa questão não precisam ser feitas
+        de modo formal, podem ser feitas de modo informal. 
+        Só se certifique de que sejam o mais fiéis possíveis à 
+        complexidade real dos seus algoritmos.
+      </p>
+      <p>
+        \(\text{Primeiro algortimo}\)
+        <pre>
+          <code>
+            ALGORITMO TransposeGraphAdjList(G)
+                1. Para cada vértice u em G:
+                    2. Crie uma lista de adjacências vazia para u em G^T
+                3. Para cada vértice u em G:
+                    4. Para cada vértice v na lista de adjacências de u:
+                        5. Adicione u à lista de adjacências de v em G^T
+                6. Retorne G^T
+            FIM ALGORITMO
+          </code>
+        </pre>
+      </p>
+      <p>
+        \(\text{Análise de complexidade:}\)
+        <p>
+          \[
+            \text{Seja } n = |V| \text{ e } m = |E|
+          \]
+        </p>
+        <p>
+          \(
+              \text{As linhas que vão executar mais vezes são as linhas 3 e 4, logo:}
+          \)
+        </p>
+        <p>
+          \[
+            \text{O algoritmo tem complexidade } O(n + m)
+          \]
+        </p>
+      </p>
+      <p>
+        \(\text{Segundo algortimo}\)
+        <pre>
+          <code>
+            ALGORITMO TransposeGraphAdjMatrix(G)
+                1. Crie uma matriz de adjacências vazia para G^T
+                2. Para cada vértice u em G:
+                    3. Para cada vértice v em G:
+                        4. Se (u, v) é uma aresta em G:
+                            5. Adicione (v, u) como uma aresta em G^T
+                6. Retorne G^T
+            FIM ALGORITMO
+          </code>
+        </pre>
+      </p>
+      <p>
+        \(\text{Análise de complexidade:}\)
+        <p>
+          \[
+            \text{Seja } n = |V| \text{ e } m = |E|
+          \]
+        </p>
+        <p>
+          \(
+              \text{As linhas que vão executar mais vezes são as linhas 3,ou seja, quando u e v são iguais a \(G\) logo:}
+          \)
+        </p>
+        <p>
+          \[
+            \text{O algoritmo tem complexidade } O(n^2)
+          \]
+        </p>
+      </p>
+    </li>
+
+  <hr>
+
+  <li>
+    <p><strong>Questão 3.</strong> 
+      Nesta questão, vamos precisar da seguinte definição: 
+      Dado um grafo direcionado \(G=(V,E)\), um 
+      <strong>sorvedouro universal</strong> de \(G\) é um vértice de \(G\) 
+      com grau de entrada \(|V|-1\) e grau de saída \(0\).<br><br>
+      A maioria dos algoritmos em grafos que adota uma representação 
+      por matriz de adjacências como entrada exige o tempo \(O(V^2)\), 
+      mas há algumas exceções. 
+      Mostre como determinar se um grafo direcionado \(G\) contém
+      um sorvedouro universal no tempo \(O(V)\), 
+      dada como entrada uma matriz de adjacências para \(G\).<br><br>
+      A análise de complexidade feita nessa questão não precisa ser feita
+      de modo formal, pode ser feita de modo informal. 
+      Só se certifique de que seja o mais fiél possível à 
+      complexidade real do seu algoritmo.
+    </p>
+    <p>
+      <p>
+        <strong>Passo 1: </strong>
+      </p>
+      <p>
+        \(
+          \text{Começa com dois índices apontando para o primeiro vértice e comparando ambos}
+        \)
+      </p>
+      <p>
+        \(
+          \text{Se houver uma aresta de i para j \((G[i][j]=1)\), então \(i\) não pode ser o sorvedouro, e passamos a considerar \(j\) como o próximo candidato \(i=j\).}
+        \)
+      </p>
+    </p>
+    <p>
+      <p>
+        <strong>Passo 2: </strong>
+      </p>
+      <p>
+        \(
+          \text{Se \(i\) não tem nenhuma aresta saindo dele (ou seja, para todos os vértices \(v\), \(G[i][v]=0)\).}
+        \)
+      </p>
+      <p>
+        \(
+          \text{Se \(i\) tem uma aresta entrando de todos os outros vértices (ou seja, para todos os \(v \neq i\), \(G[v][i]=1)\).}
+        \)
+      </p>
+    </p>
+    <p>
+      <pre>
+        <code>
+          ALGORITMO EncontrarSorvedouroUniversal(G, n)
+              i ← 0
+              j ← 1
+              
+              ENQUANTO j < n FAÇA
+                  SE G[i][j] = 1 ENTÃO
+                      i ← j
+                  FIM SE
+                  j ← j + 1
+              FIM ENQUANTO
+              
+              // Verificar se i é realmente um sorvedouro universal
+              PARA k ← 0 ATÉ n-1 FAÇA
+                  SE k ≠ i E (G[i][k] = 1 OU G[k][i] = 0) ENTÃO
+                      RETORNE "Não existe sorvedouro universal"
+                  FIM SE
+              FIM PARA
+              
+              RETORNE "O vértice " i " é um sorvedouro universal"
+          FIM ALGORITMO
+        </code>
+      </pre>
+    </p>
+  </li>
+
+  </ul>
+
+</body>
+</html>
