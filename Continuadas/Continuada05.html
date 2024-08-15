@@ -63,89 +63,51 @@
           \)
           <p>
             \[
-                T(n) = T(n-1) + n
+                T(n) = T(n-1) + O(1)
             \]
           </p>
           <p>
             \(
-               \text{Vamos chutar que a complexidade é:} O(n^2)
+              \text{Vamos resolver essa recorrência:}
             \)
           </p>
           <p>
             \(
-                \text{Pela definição da \(O\) temos que \(\exists c_1, n_0\) tal que \(T(n) \leq c_1n^2\) quando \(\forall n > n_0\). Vamos aplicar indução em \(n\)}
+                \text{Expansão da recorrência:}
             \)
           </p>
           <p>
+            \[
+              T(n) = T(n-1) + O(1)
+            \]
+            \[
+              T(n-1) = T(n-2) + O(1)
+            \]
+            \[
+              T(n-2) = T(n-3) + O(1)
+            \]
+            \[
+              \vdots
+            \]
+            \[
+              T(2) = T(1) + O(1)
+            \]
+          </p>
+          <p>
             \(
-              \text{Base:} T(1) = 1 \leq c_1 \cdot 1^2
+              \text{Somando todas as equações:}
             \)
-            <p>
-              \(
-                  T(1) = 1 \leq c_1 \cdot 1^2
-              \)
-            </p>
-            <p>
-              \(
-                  1 \leq c_1
-              \)
-            </p>
-            <p>
-              \(
-                \text{Passo indutivo:} \text{Suponha que} T(k) \leq c_1k^2 \text{para} n_0 \leq k < n
-              \)
-            </p>
-            <p>
-              \[
-                  T(n) = T(n-1) + n
-              \]
-            </p>
-            <p>
-              \[
-                  T(n) \leq c_1(n-1)^2 + n
-              \]
-            </p>
-            <p>
-              \[
-                  c_1(n-1)^2 + n \leq c_1n^2
-              \]
-            </p>
-            <p>
-              \[
-                  c_1(n^2 - 2n + 1) + n \leq c_1n^2
-              \]
-            </p>
-            <p>
-              \[
-                  \text{Assuma que} c_1 = 1
-              \]
-            </p>
-            <p>
-              \[
-                  n^2 - 2n + 1 + n \leq n^2
-              \]
-            </p>
-            <p>
-              \[
-                  n^2 - n + 1 \leq n^2
-              \]
-            </p>
-            <p>
-              \[
-                  -n + 1 \leq 0
-              \]
-            </p>
-            <p>
-              \[
-                  n \geq 1
-              \]
-            </p>
-            <p>
-              \[
-                  \text{Logo,} T(n) = O(n^2)
-              \]
-            </p>
-          </p>      
+          </p>
+          <p>
+            \[
+              T(n) = O(1) + (n-1) \cdot O(1) = O(n)
+            \]
+          </p>
+          <p>
+            \(
+              \text{Portanto, a complexidade de tempo da primeira abordagem é } O(n).
+            \)
+          </p>
         </p>
         <p>
           <p>
@@ -179,76 +141,39 @@
             \)
             <p>
               \[
-                T(n) = 2T\left(\frac{n}{2}\right) + n
+                T(n) = 2T\left(\frac{n}{2}\right) + O(1)
               \]
             </p>
             <p>
               \(
-                  \text{Vamos supor conveniente mente que } k = \log_2 n
+                \text{Para resolver essa recorrência, aplicamos o Teorema Mestre.}
               \)
             </p>
             <p>
               \[
-                  \begin{array}{|c|c|c|}
-                      \hline
-                          \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
-                          \hline
-                          0 & n & 1 & cn \\
-                          1 & \frac{n}{2} & 2 & c\frac{n}{2} \\
-                          2 & \frac{n}{4} & 4 & c\frac{n}{4} \\
-                          3 & \frac{n}{8} & 8 & c\frac{n}{8} \\
-                          4 & \frac{n}{16} & 16 & c\frac{n}{16} \\
-                          i & \frac{n}{2^i} & 2^i & c\frac{n}{2^i} \\
-                          log_2^n & 1 & n & 1 \\
-                      \hline
-                  \end{array}
+                \log_b a = \log_2 2 = 1 \quad \text{e} \quad d = 0
               \]
             </p>
             <p>
               \(
-                  \text{Somatório}
-              \)
-            </p>
-            <p>
-              \[
-                  \sum_{i=0}^{\log^n_2-1} \frac{2^i}{2^i} n
-              \]
-            </p>
-            <p>
-              \[
-                  n\sum_{i=0}^{\log^n_2-1} \frac{2^i}{2^i}
-              \]
-            </p>
-            <p>
-              \[
-                  n\sum_{i=0}^{\log^n_2-1} 1
-              \]
-            </p>
-            <p>
-              \[
-                  n\log^n_2
-              \]
-            </p>
-            <p>
-              \(
-                  \text{Somando com o último nível: } n + n\log^n_2
-              \)
-            </p>
-            <p>
-              \(
-                  \text{Logo, } T(n) = O(n\log^n_2)
-              \)
-            </p>
-            <p>
-              \(
-                  \text{Por tanto a melhor abordagem é a segunda, pois tem complexidade \(O(n\log^n_2)\)}
+                \text{Como } d < \log_b a \text{, estamos no Caso 3 do Teorema Mestre, o que resulta em } T(n) = O(n).
               \)
             </p>
           </p>
+          <p>
+            \(
+              \text{Portanto, a complexidade de tempo da segunda abordagem também é } O(n).
+            \)
+          </p>
+        </p>
+        <p>
+            \(
+              \text{Conclusão: Ambas as abordagens têm complexidade \(O(n)\). No entanto, a segunda abordagem pode ser mais eficiente em termos práticos devido à possibilidade de paralelização e estrutura balanceada.}
+            \)
+        </p>
         </p>
       </p>
     </li>
-
     <hr>
 
     <li>
