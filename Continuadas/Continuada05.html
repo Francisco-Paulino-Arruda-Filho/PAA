@@ -73,39 +73,52 @@
           </p>
           <p>
             \(
-                \text{Expansão da recorrência:}
+                \text{Expansão da recorrência por substituição:}
+            \)
+          </p>
+          <p>
+            \(
+              \text{Vamos supor que } T(n) = O(n) \text{.}
+            \)
+          </p>
+          <p>
+            \(
+              \text{Caso base: } n=1 \text{.}
             \)
           </p>
           <p>
             \[
-              T(n) = T(n-1) + O(1)
-            \]
-            \[
-              T(n-1) = T(n-2) + O(1)
-            \]
-            \[
-              T(n-2) = T(n-3) + O(1)
-            \]
-            \[
-              \vdots
-            \]
-            \[
-              T(2) = T(1) + O(1)
+              T(1) = T(0) + O(1)
             \]
           </p>
           <p>
             \(
-              \text{Somando todas as equações:}
+              \text{Pela definição de \(\exists c_1, n_0\) tal que \(T(n) \leq c_1 \cdot n_0\) para \(n \geq n_0\), temos que \(O(n) \leq n+0 \cdot c_1\).}\
             \)
           </p>
           <p>
             \[
-              T(n) = O(1) + (n-1) \cdot O(1) = O(n)
+              T(1) \leq T(0) + c_1 \cdot n_0
+            \]
+          </p>
+          <p>
+            \[
+              n_0=1, \text{Pois, na recorrência está o valor 1}
+            \]
+          </p>
+          <p>
+            \[
+              T(1) \leq T(1-1) + c_1 \cdot 1
+            \]
+          </p>
+          <p>
+            \[
+              1 \leq T(0) + c_1 \cdot 1
             \]
           </p>
           <p>
             \(
-              \text{Portanto, a complexidade de tempo da primeira abordagem é } O(n).
+              \text{Como a função é assintóticamente positiva e \(c_1 \geq 1\) por definição, a complexidade de tempo da primeira abordagem é } O(n).
             \)
           </p>
         </p>
@@ -146,18 +159,82 @@
             </p>
             <p>
               \(
-                \text{Para resolver essa recorrência, aplicamos o Teorema Mestre.}
+                \text{Vamos supor convenientemente que \(n = 2^k\).}
+              \)
+            </p>
+            <p>
+              \(
+                k = log_2^n
               \)
             </p>
             <p>
               \[
-                \log_b a = \log_2 2 = 1 \quad \text{e} \quad d = 0
+                \begin{array}{|c|c|c|}
+                    \hline
+                        \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                        \hline
+                        0 & n & 1 & cn \\
+                        1 & \frac{n}{2} & 2 & 1 \\
+                        2 & \frac{n}{4} & 4 & 1 \\
+                        3 & \frac{n}{8} & 8 & 1 \\
+                        4 & \frac{n}{16} & 16 & 1 \\
+                        i & \frac{n}{2^i} & 2^i & 1 \\
+                        k & \frac{n}{2^k} & 2^k & 1 \\
+                    \hline
+                \end{array}
               \]
             </p>
             <p>
-              \(
-                \text{Como } d < \log_b a \text{, estamos no Caso 3 do Teorema Mestre, o que resulta em } T(n) = O(n).
-              \)
+              <p>
+                \(
+                  \text{OBS: Na penúltima linha temos \(k = \log_2^n\).}
+                \)
+              </p>
+              \[
+                \begin{array}{|c|c|c|}
+                    \hline
+                        \text{Nível \(i\)} & \text{Tamanho da entrada} & \text{Nós} & \text{Tempo nó} \\
+                        \hline
+                        0 & n & 1 & cn \\
+                        1 & \frac{n}{2} & 2 & 1 \\
+                        2 & \frac{n}{4} & 4 & 1 \\
+                        3 & \frac{n}{8} & 8 & 1 \\
+                        4 & \frac{n}{16} & 16 & 1 \\
+                        i & \frac{n}{2^i} & 2^i & 1 \\
+                        k & 1 & 2^{\log_2^n} & 1\\
+                        k & 1 & n & 1\\
+                    \hline
+                \end{array}
+              \]
+            </p>
+          <p>
+            \(
+              \text{Somando níveis}
+            \)
+            <p>
+              \[
+                \sum^{\log_2^n -1 }_{i=0} \frac{2i}{2^i} \cdot 1
+              \]
+            </p>
+            <p>
+              \[
+                \sum^{\log_2^n - 1}_{i=0} 1
+              \]
+            </p>
+          </p>
+          <p>
+            \[
+              \sum^{\log_2^n - 1}_{i=0} 1 = \log_2^n
+            \]
+          </p>
+          <p>
+            \(
+              \text{Somando com o nível \(k\)}
+            \)
+            <p>
+              \[
+                \log_2^n + n
+              \]
             </p>
           </p>
           <p>
