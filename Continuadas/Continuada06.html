@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Continuada 06</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MATHJAX 3 (salvo no computador) -->
+  <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+<body>
+  <p>
+  <strong>ATENÇãO 1:</strong> Essa atividade pode ser entregue no formato MathJax (html + Latex) 
+  diretamente pelo Moodle ou pode ser entregue como um pdf produzido em latex/word. 
+  Não serão aceitas soluções em papel ou escaneadas. 
+  </p>
+
+  
+  
+  <h1>Questões</h1>
+
+  <ul>
+    <li>
+    <p><strong>Questão 1.</strong>  
+        Considere o grafo abaixo:        
+    </p>
+    <p><img src="g2.png" /></p>
+    <p>
+      Um teste de mesa consiste em executar manualmente os passos do algoritmo, 
+      anotando os estados das variáveis ao longo da execução. 
+      Realize um teste de mesa do algoritmo de <strong>busca em largura</strong> no grafo acima, 
+      iniciando no nó \(a\).  
+      <strong>Forneça a distância e o predecessor de cada nó</strong>, conforme obtido através do algoritmo. 
+      A distância de um nó é o menor número de arestas do nó até o nó inicial \(a\). 
+      O predecessor de um nó é o pai deste nó na árvore de busca em largura com raiz no nó \(a\).<br>
+      Obs.: Um mesmo grafo pode ter várias árvores de busca em largura corretas. 
+      Isto significa que cada aluno pode obter predecessores distintos para os nós. 
+      A distância, por outro lado, é única. 
+      Ou seja, todos os alunos devem obter as mesmas distâncias.
+    </p>
+    </li>
+        \begin{array}{|c|c|c|}
+        \hline
+        Nó & Distância & Predecessor \\
+        \hline
+            a & 0 & - \\
+            b & 1 & a \\
+            c & 2 & b \\
+            d & 3 & c \\
+            e & 4 & d \\
+            f & 5 & e \\
+            g & 6 & f \\
+            h & 5 & j \\
+            i & 7 & g \\
+            j & 4 & m \\
+            k & 5 & j \\
+            l & 4 & m \\
+            m & 3 & c \\
+            n & 5 & l \\
+            p & 1 & a \\
+        \hline
+        \end{array}
+        $$
+    <li>
+      <p><strong>Questão 2.</strong> 
+        Considere o grafo abaixo:
+      </p>
+      <p><img src="g3.png" /></p>
+      <p>
+        <ol>
+          <li>
+            Um teste de mesa consiste em executar manualmente os passos do algoritmo, 
+            anotando os estados das variáveis ao longo da execução. 
+            Realize um teste de mesa do algoritmo de <strong>busca em profundidade</strong> 
+            no grafo acima, iniciando no nó \(a\). Forneça (i) o predecessor de cada nó, 
+            (ii) o instante \(d\) que cada nó foi descoberto, e (iii) o instante \(f\) em 
+            que o nó foi finalizado, conforme obtido através da execução do algoritmo 
+            <strong>recursivo</strong> visto em aula. 
+            O predecessor de um nó é o pai deste nó na árvore de busca 
+            em profundidade com raiz no nó \(a\). Os nós vizinhos devem ser explorados 
+            em ordem alfabética, ou seja, todos os alunos devem obter a mesma árvore de 
+            busca em profundidade.      
+          </li>
+          <p>
+            \begin{array}{|c|c|c|}
+                \hline
+                Nó & Predecessor & Descoberta & Finalização\\
+                \hline
+                    g & - & 1 & 22 \\
+                    j & g & 2 & 21 \\
+                    f & j & 3 & 19 \\
+                    h & h & 4 & 18 \\
+                    l & h & 5 & 17 \\
+                    k & L & 6 & 13 \\
+                    e & k & 7 & 12 \\
+                    b & e & 8 & 9 \\
+                    i & e & 10 & 11 \\
+                    d & L & 14 & 16 \\
+                    a & j & 19 & 20 \\
+                \hline
+            \end{array}
+          </p>
+          <li>
+            Realize um teste de mesa do algoritmo que encontra os 
+            <strong>componentes fortemente conexos</strong> para o grafo acima. 
+            <strong>Forneça os componentes fortemente conexos encontrados</strong>, 
+            ou seja, os conjuntos maximais de vértices mutuamente alcançáveis.
+            Obs.: Independente da ordem em que os vértices vizinhos são explorados, 
+            os componentes conexos encontrados
+             são os mesmos. Dado a execução da quesão anterior
+          </li>
+        </ol>
+        </p>
+        <p>
+          \begin{array}{|c|c|c|}
+                \hline
+                Pilha & Visitamos & Raiz & \text{Nós da raiz} & \text{Componente atual} & Componentes\\ 
+                \hline
+                    [k, e, b, l, h, f, d, a, i, c, j, g] & [] & & &  & [] \\
+                    [k, e, b, l, h, f, d, a, i, c, j] & [] & g & [] & [g] & [[g]] \\
+                    [k, e, b, l, h, f, d, a, i, c] & [g] & j & [g] & [j] & [[g], [l]] \\
+                    [k, e, b, l, h, f, d, a, i ] & [g, j] & c & [] & [c] & [[g], [l], [c]] \\
+                    [k, e, b, l, h, f, d, a] & [g, j, c] & i & [c] & [i] & [[g], [l], [c], [i]] \\
+                    [k, e, b, l, h, f, d] & [g, j, c, i] & a & [j] & [a] & [[g], [l], [c], [i], [a]] \\
+                    [k, e, b, l, h, f] & [g, j, c, i, a] & d & [a, l] & [d] & [[g], [l], [c], [i], [a], [d], [a]] \\
+                    [k, e, b, l, h] & [g, j, c, i, a] & f & [d, j] & [d, f] & [[g], [l], [c], [i], [a], [d], [a]] \\
+                    [k, e, b, l] & [g, j, c, i, a] & h & [a, f, g] & [d, f, h] & [[g], [l], [c], [i], [a], [d], [a]] \\
+                    [k, e, b] & [g, j, c, i, a] & l & [d, h] & [d, f, h, l] & [[g], [l], [c], [i], [a], [d], [a], [d, f, h, l]] \\
+                    [k, e] & [g, j, c, i, a, d, f, h, l] & b & [a, e] & [b] & [[g], [l], [c], [i], [a], [d], [a], [d, f, h, l]] \\
+                    [k] & [g, j, c, i, a, d, f, h, l] & e & [a, b, k] & [b, e] & [[g], [l], [c], [i], [a], [d], [a], [d, f, h, l]] \\
+                    [] & [g, j, c, i, a, d, f, h, l] & k & [e, l] & [b, e, k] & [[g], [l], [c], [i], [a], [d], [a], [d, f, h, l], [b, k]] \\
+                \hline
+            \end{array}
+        </p>
+    </li>
+    </ul>
+  </p>
+</body>
+</html>
